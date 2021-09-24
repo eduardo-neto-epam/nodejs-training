@@ -1,0 +1,24 @@
+{
+  "name": "nodejs-training",
+  "version": "1.0.0",
+  "description": "Homework tasks for Node.js training.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon ./src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eduardo-neto-epam/nodejs-training.git"
+  },
+  "keywords": [],
+  "author": "eduard_neto@epam.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/eduardo-neto-epam/nodejs-training/issues"
+  },
+  "homepage": "https://github.com/eduardo-neto-epam/nodejs-training#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.13"
+  }
+}

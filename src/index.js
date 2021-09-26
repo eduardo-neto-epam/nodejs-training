@@ -6,7 +6,7 @@ const rl = readline.createInterface({
     prompt: 'Type a string to reverse: '
 });
 
-printString = function (str) {
+const printString = function (str) {
     rl.output.write(str + '\n');
   };
 

@@ -6,11 +6,15 @@ const rl = readline.createInterface({
     prompt: 'Type a string to reverse: '
 });
 
+printString = function (str) {
+    rl.output.write(str + '\n');
+  };
+
 rl.prompt();
 
 rl.on('line', (line) => {   
     const reversedStr = line.trim().split("").reverse().join("");
-    console.log(reversedStr);
+    printString(reversedStr);
     rl.prompt();
 }).on('close', ()=> {
     console.log('Program terminated!');

@@ -2,10 +2,10 @@
   "name": "nodejs-training",
   "version": "1.0.0",
   "description": "Homework tasks for Node.js training.",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon ./src/index.js"
+    "start": "nodemon --exec babel-node ./src/index.js"
   },
   "repository": {
     "type": "git",
@@ -19,6 +19,12 @@
   },
   "homepage": "https://github.com/eduardo-neto-epam/nodejs-training#readme",
   "devDependencies": {
+    "@babel/core": "^7.15.5",
+    "@babel/node": "^7.15.4",
+    "@babel/preset-env": "^7.15.6",
     "nodemon": "^2.0.13"
+  },
+  "dependencies": {
+    "csvtojson": "^2.0.10"
   }
 }

@@ -20,5 +20,8 @@
   "homepage": "https://github.com/eduardo-neto-epam/nodejs-training#readme",
   "devDependencies": {
     "nodemon": "^2.0.13"
+  },
+  "dependencies": {
+    "csvtojson": "^2.0.10"
   }
 }

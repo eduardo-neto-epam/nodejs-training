@@ -6,7 +6,7 @@ const rl = readline.createInterface({
     prompt: 'Type a string to reverse: '
 });
 
-const printString = function (str) {
+const printString = (str) => {
     rl.output.write(str + '\n');
   };
 
@@ -16,7 +16,7 @@ rl.on('line', (line) => {
     const reversedStr = line.trim().split("").reverse().join("");
     printString(reversedStr);
     rl.prompt();
-}).on('close', ()=> {
+}).on('close', () => {
     console.log('Program terminated!');
     process.exit(0);
 })

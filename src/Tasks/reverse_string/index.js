@@ -7,7 +7,7 @@ const reverseString = () => {
         prompt: 'Type a string to reverse: '
     });
 
-    const printString = function (str) {
+    const printString = (str) => {
         rl.output.write(str + '\n');
     };
 

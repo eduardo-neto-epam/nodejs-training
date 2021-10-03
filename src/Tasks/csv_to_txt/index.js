@@ -1,46 +1,20 @@
-import fs from 'fs';
-import path from 'path';
 import csv from 'csvtojson';
+import { TXT_DIR, TXT_FILE_NAME } from './constants'
+import {
+    makeDirIfNotExistsAndReturnFilePath,
+    subscribeHandler,
+    subscribeErrorHandler,
+    endOfConversionNoticeAndCallNextFunction,
+} from './utils';
 
-import reverseString from '../reverse_string/index';
-
-const csvToTxt = async () => {
-    const txtDir = path.join(__dirname, '../../../', 'txt');
-    const txtFilePath = path.join(__dirname, '../../../', 'txt/txt-result.txt');
-    if (!fs.existsSync(txtDir)) {
-        try {
-            await fs.promises.mkdir(txtDir);
-        } catch(err) {
-            return console.log('Error: ', err.message);
-        }
-    }
-    csv()
-    .fromFile(path.join(__dirname, '../../../', 'csv/csv-sample.csv'))
-    .subscribe(async(json, lineNumber) => {
-        try {
-            const data = JSON.stringify(json);
-            if (lineNumber === 0) {
-                try {
-                    await fs.promises.writeFile(txtFilePath, data)
-                } catch(err) {
-                    throw new Error(`on writeFile: ${err.message}`)
-                }
-            } else {
-                try {
-                    await fs.promises.appendFile(txtFilePath, `\n${data}`);
-                } catch(err) {
-                    throw new Error(`on appendFile: ${err.message}`)
-                }
-            }
-        } catch(err) {
-            console.error(`Error ${err.message}`);
-        }
-    }, (err) => {
-        console.error(`Error ${err.message}`);
-    }, () => {
-        console.log('File conversion completed')
-        reverseString();
-    })
+const csvToTxtConverter = (csvFilePath, nextFunc) => {
+    makeDirIfNotExistsAndReturnFilePath(TXT_DIR, TXT_FILE_NAME)
+        .then((txtFilePath) => {
+            if (!txtFilePath) return console.error('Error on creating path to save txt file');
+            csv()
+            .fromFile(csvFilePath)
+            .subscribe(subscribeHandler(txtFilePath), subscribeErrorHandler, endOfConversionNoticeAndCallNextFunction(nextFunc))
+        })
 };
 
-export default csvToTxt;
+export default csvToTxtConverter;

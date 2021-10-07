@@ -1,10 +1,6 @@
-import express from 'express';
+import App from './app';
+import UserController from './user/user.controller';
 
-const app = express();
-const port = 3000;
+const app = new App([new UserController()], 3000);
 
-const sayHelloTo = (name: string) => `Hello ${name}`;
-
-app.get('/', (_req, res) => res.send(sayHelloTo('UK')));
-
-app.listen(port, () => console.log(`Test app listening on port ${port}!`));
+app.listen();

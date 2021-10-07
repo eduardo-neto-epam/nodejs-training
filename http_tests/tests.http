@@ -1,0 +1,40 @@
+POST http://localhost:3000/users HTTP/1.1
+content-type: application/json
+
+{
+    "login": "aaa0",
+    "password": "123",
+    "age": 45,
+    "isDeleted": false
+}
+
+###
+
+GET http://localhost:3000/users/0f3d3d51-e55a-4d18-b5a8-3d803ee539a0" HTTP/1.1
+content-type: application/json
+
+###
+
+GET http://localhost:3000/users HTTP/1.1
+content-type: application/json
+
+###
+
+###
+
+GET http://localhost:3000/users?pattern=12&order=desc&limit=1 HTTP/1.1
+content-type: application/json
+
+###
+
+PATCH  http://localhost:3000/users/0f3d3d51-e55a-4d18-b5a8-3d803ee539a0 HTTP/1.1
+content-type: application/json
+
+{
+    "isDeleted": false
+}
+
+###
+
+DELETE  http://localhost:3000/users/0f3d3d51-e55a-4d18-b5a8-3d803ee539a0 HTTP/1.1
+content-type: application/json

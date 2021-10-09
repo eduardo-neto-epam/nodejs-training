@@ -1,11 +1,9 @@
 export interface IBaseRecord {
     id: string;
-    isDeleted: boolean;
-    login: string;
 }
 
 export interface Database<T extends IBaseRecord> {
-    create(newValue: T): Promise<T>;
+    create(newValue: T): Promise<T | undefined>;
     getById(id: string): Promise<T | undefined>;
     get(): Promise<T[]>;
     update(id: string, newData: T): Promise<T | undefined>;

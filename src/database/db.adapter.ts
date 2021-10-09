@@ -1,20 +1,19 @@
 import { v4 as uuid_v4 } from 'uuid';
 import InMemoryDatabase from '../database';
-import { RecordHandler } from '../interfaces/db.interfaces';
-import { IUser } from './user.interface';
+import { IBaseRecord, RecordHandler } from './db.interfaces';
 
-class UserAdapter<T extends InMemoryDatabase<IUser>> implements RecordHandler<IUser> {
+class DbAdapter<S extends IBaseRecord, T extends InMemoryDatabase<S>> implements RecordHandler<S> {
     db: T;
 
     constructor(db: T) {
         this.db = db;
     }
 
-    addRecord(data: IUser): void {
+    addRecord(data: S): void {
         const id = { id: uuid_v4() };
         const record = { ...id, ...data };
         this.db.create(record);
     }
 }
 
-export default UserAdapter;
+export default DbAdapter;

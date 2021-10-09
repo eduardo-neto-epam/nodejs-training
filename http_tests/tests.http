@@ -2,6 +2,7 @@ POST http://localhost:3000/users HTTP/1.1
 content-type: application/json
 
 {
+    "id": "aaaa123",
     "login": "aaa0",
     "password": "123",
     "age": 45,
@@ -10,7 +11,7 @@ content-type: application/json
 
 ###
 
-GET http://localhost:3000/users/0f3d3d51-e55a-4d18-b5a8-3d803ee539a0" HTTP/1.1
+GET http://localhost:3000/users/0060b729-ec0f-4dd9-872b-3b930bec1eb8 HTTP/1.1
 content-type: application/json
 
 ###
@@ -27,7 +28,7 @@ content-type: application/json
 
 ###
 
-PATCH  http://localhost:3000/users/0f3d3d51-e55a-4d18-b5a8-3d803ee539a0 HTTP/1.1
+PATCH  http://localhost:3000/users/458feaec-dbd1-4df8-9f0f-d39bce01c3e4 HTTP/1.1
 content-type: application/json
 
 {
@@ -36,5 +37,5 @@ content-type: application/json
 
 ###
 
-DELETE  http://localhost:3000/users/0f3d3d51-e55a-4d18-b5a8-3d803ee539a0 HTTP/1.1
+DELETE  http://localhost:3000/users/458feaec-dbd1-4df8-9f0f-d39bce01c3e4 HTTP/1.1
 content-type: application/json

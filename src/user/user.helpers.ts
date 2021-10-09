@@ -1,10 +1,11 @@
 import HttpException from '../exceptions/HttpException';
 import UserNotFoundException from '../exceptions/UserNotFoundException';
-import { IHelperArgs } from '../interfaces/helpers.interface';
+import { IHelperArgs, IHelperArgsWithValidation } from '../interfaces/helpers.interface';
 import { IUser } from './user.interface';
 import { v4 as uuid_v4 } from 'uuid';
 import * as utils from '../utils';
 import InvalidIDException from '../exceptions/InvalidIDException';
+import * as valid from './user.validation';
 
 export const getUserByIdHelper = async (userHelpersArgs: IHelperArgs<IUser>): Promise<void> => {
     const { db, request, response, next } = userHelpersArgs;
@@ -27,7 +28,9 @@ export const getUserByIdHelper = async (userHelpersArgs: IHelperArgs<IUser>): Pr
     }
 };
 
-export const createUserHelper = async (userHelpersArgs: IHelperArgs<IUser>): Promise<void> => {
+export const createUserHelper = async (
+    userHelpersArgs: IHelperArgsWithValidation<IUser, valid.IUserBodySchema>,
+): Promise<void> => {
     const { db, request, response, next } = userHelpersArgs;
     const user: IUser = { id: uuid_v4(), ...request.body, isDeleted: false };
     try {
@@ -40,7 +43,9 @@ export const createUserHelper = async (userHelpersArgs: IHelperArgs<IUser>): Pro
     }
 };
 
-export const updateUserHelper = async (userHelpersArgs: IHelperArgs<IUser>): Promise<void> => {
+export const updateUserHelper = async (
+    userHelpersArgs: IHelperArgsWithValidation<IUser, valid.IUserBodySchema>,
+): Promise<void> => {
     const { db, request, response, next } = userHelpersArgs;
     const { id } = request.params;
     try {

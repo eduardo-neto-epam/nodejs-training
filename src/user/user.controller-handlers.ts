@@ -1,14 +1,14 @@
 import HttpException from '../exceptions/HttpException';
 import UserNotFoundException from '../exceptions/UserNotFoundException';
-import { IHelperArgs, IHelperArgsWithValidation } from '../interfaces/helpers.interface';
-import { IUser } from './user.interface';
+import { IControllerHandlerArgs } from '../interfaces/controller.interfaces';
+import { IUser } from './user.interfaces';
 import { v4 as uuid_v4 } from 'uuid';
 import * as utils from '../utils';
 import InvalidIDException from '../exceptions/InvalidIDException';
 import * as valid from './user.validation';
 
-export const getUserByIdHelper = async (userHelpersArgs: IHelperArgs<IUser>): Promise<void> => {
-    const { db, request, response, next } = userHelpersArgs;
+export const getUserByIdHandler = async (userHandlerArgs: IControllerHandlerArgs<IUser, null>): Promise<void> => {
+    const { db, request, response, next } = userHandlerArgs;
     const { id } = request.params;
     try {
         const user = await db.getById(id);
@@ -28,10 +28,10 @@ export const getUserByIdHelper = async (userHelpersArgs: IHelperArgs<IUser>): Pr
     }
 };
 
-export const createUserHelper = async (
-    userHelpersArgs: IHelperArgsWithValidation<IUser, valid.IUserBodySchema>,
+export const createUserHandler = async (
+    userHandlerArgs: IControllerHandlerArgs<IUser, valid.IUserBodySchema>,
 ): Promise<void> => {
-    const { db, request, response, next } = userHelpersArgs;
+    const { db, request, response, next } = userHandlerArgs;
     const user: IUser = { id: uuid_v4(), ...request.body, isDeleted: false };
     try {
         const newUser = await db.create(user);
@@ -43,10 +43,10 @@ export const createUserHelper = async (
     }
 };
 
-export const updateUserHelper = async (
-    userHelpersArgs: IHelperArgsWithValidation<IUser, valid.IUserBodySchema>,
+export const updateUserHandler = async (
+    userHandlerArgs: IControllerHandlerArgs<IUser, valid.IUserBodySchema>,
 ): Promise<void> => {
-    const { db, request, response, next } = userHelpersArgs;
+    const { db, request, response, next } = userHandlerArgs;
     const { id } = request.params;
     try {
         const updatedUser = await db.update(id, request.body);
@@ -58,8 +58,8 @@ export const updateUserHelper = async (
     }
 };
 
-export const deleteUserHelper = async (userHelpersArgs: IHelperArgs<IUser>): Promise<void> => {
-    const { db, request, response, next } = userHelpersArgs;
+export const deleteUserHandler = async (userHandlerArgs: IControllerHandlerArgs<IUser, null>): Promise<void> => {
+    const { db, request, response, next } = userHandlerArgs;
     const { id } = request.params;
     try {
         const deletedUser = await db.delete(id);
@@ -71,22 +71,24 @@ export const deleteUserHelper = async (userHelpersArgs: IHelperArgs<IUser>): Pro
     }
 };
 
-export const getUserAutoSuggestions = async (userHelpersArgs: IHelperArgs<IUser>): Promise<void> => {
-    const { db, request, response, next } = userHelpersArgs;
+export const getUserAutoSuggestionsHandler = async (
+    userHandlerArgs: IControllerHandlerArgs<IUser, null>,
+): Promise<void> => {
+    const { db, request, response, next } = userHandlerArgs;
     const { pattern, order, limit } = request.query;
     let parsedLimit = 0;
     let processedUsers: IUser[] = [];
     try {
         const users = await db.get();
-        processedUsers = users.filter(utils.removeDeletedByIsDeletedProp);
+        processedUsers = users.filter(utils.removeDeletedRecordsByIsDeletedProp);
         if (typeof limit === 'string') {
             parsedLimit = parseInt(limit, 10);
         }
         if (typeof pattern === 'string' && pattern.length > 0) {
-            processedUsers = processedUsers.filter(utils.filterByPatternInLoginProp(pattern));
+            processedUsers = processedUsers.filter(utils.filterRecordsByPatternInLoginProp(pattern));
         }
         if (typeof order === 'string') {
-            processedUsers.sort(utils.sortSuggestionsByLoginProp(order));
+            processedUsers.sort(utils.sortRecordsByLoginProp(order));
         }
         if (parsedLimit) {
             processedUsers = processedUsers.slice(0, parsedLimit);

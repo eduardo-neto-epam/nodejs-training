@@ -1,9 +1,8 @@
 import { Router, Request, Response, NextFunction } from 'express';
-import { IUser } from './user.interface';
-import { IController } from '../interfaces/controller.interface';
-import { IHelperArgs, IHelperArgsWithValidation } from '../interfaces/helpers.interface';
+import { IUser } from './user.interfaces';
+import { IController } from '../interfaces/controller.interfaces';
 import InMemoryDatabase from '../database';
-import * as helpers from './user.helpers';
+import * as handlers from './user.controller-handlers';
 import DbAdapter from '../database/db.adapter';
 import { loader } from '../database/loader';
 import { ValidatedRequest, createValidator } from 'express-joi-validation';
@@ -13,10 +12,11 @@ class UserController implements IController {
     public path = '/users';
     public router = Router();
 
-    private usersDb = new InMemoryDatabase<IUser>();
+    private usersDb: InMemoryDatabase<IUser>;
     private validator = createValidator();
 
-    constructor() {
+    constructor(db: InMemoryDatabase<IUser>) {
+        this.usersDb = db;
         this.initializeRoutes();
         loader('src/database/data.json', new DbAdapter<IUser, InMemoryDatabase<IUser>>(this.usersDb));
     }
@@ -30,8 +30,7 @@ class UserController implements IController {
     }
 
     getUserById = async (request: Request, response: Response, next: NextFunction): Promise<void> => {
-        const helperArgs: IHelperArgs<IUser> = { db: this.usersDb, request, response, next };
-        helpers.getUserByIdHelper(helperArgs);
+        handlers.getUserByIdHandler({ db: this.usersDb, request, response, next });
     };
 
     createUser = async (
@@ -39,13 +38,7 @@ class UserController implements IController {
         response: Response,
         next: NextFunction,
     ): Promise<void> => {
-        const helperArgs: IHelperArgsWithValidation<IUser, valid.IUserBodySchema> = {
-            db: this.usersDb,
-            request,
-            response,
-            next,
-        };
-        helpers.createUserHelper(helperArgs);
+        handlers.createUserHandler({ db: this.usersDb, request, response, next });
     };
 
     updateUser = async (
@@ -53,28 +46,15 @@ class UserController implements IController {
         response: Response,
         next: NextFunction,
     ): Promise<void> => {
-        const helperArgs: IHelperArgsWithValidation<IUser, valid.IUserBodySchema> = {
-            db: this.usersDb,
-            request,
-            response,
-            next,
-        };
-        helpers.updateUserHelper(helperArgs);
+        handlers.updateUserHandler({ db: this.usersDb, request, response, next });
     };
 
     deleteUser = async (request: Request, response: Response, next: NextFunction): Promise<void> => {
-        const helperArgs: IHelperArgs<IUser> = { db: this.usersDb, request, response, next };
-        helpers.deleteUserHelper(helperArgs);
+        handlers.deleteUserHandler({ db: this.usersDb, request, response, next });
     };
 
     getSuggestions = async (request: Request, response: Response, next: NextFunction): Promise<void> => {
-        const helperArgs: IHelperArgs<IUser> = {
-            db: this.usersDb,
-            request,
-            response,
-            next,
-        };
-        helpers.getUserAutoSuggestions(helperArgs);
+        handlers.getUserAutoSuggestionsHandler({ db: this.usersDb, request, response, next });
     };
 }
 

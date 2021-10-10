@@ -1,6 +1,6 @@
 import express from 'express';
 
-import { IController } from '../interfaces/controller.interface';
+import { IController } from '../interfaces/controller.interfaces';
 import errorMiddleware from '../middleware/error.middleware';
 
 class App {

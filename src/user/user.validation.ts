@@ -28,8 +28,10 @@ export const UserBodySchema = Joi.object({
 
 export const UserUpdateBodySchema = Joi.object({
     id: Joi.string(),
-    login: Joi.string(),
-    password: Joi.string(),
-    age: Joi.number(),
+    login: Joi.string().min(3).max(20),
+    password: Joi.string().min(6).max(30).pattern(new RegExp('^(?=.*[0-9])(?=.*[a-zA-Z])([a-zA-Z0-9]+)$')).messages({
+        'string.pattern.base': `{#label} must include letters and numbers`,
+    }),
+    age: Joi.number().integer().min(4).max(130),
     isDeleted: Joi.boolean(),
 });

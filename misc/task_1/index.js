@@ -6,7 +6,7 @@ import reverseString from './Tasks/reverse_string';
 
 const main = (csvToTxtConverter, CSV_FILE_PATH) => {
     return (reverseString) => {
-        const csvFilePath = path.join(__dirname, '../', CSV_FILE_PATH);
+        const csvFilePath = path.join(process.env.PWD, CSV_FILE_PATH);
         csvToTxtConverter(csvFilePath, reverseString);
     }
 }

@@ -1,8 +1,8 @@
 import { v4 as uuid_v4 } from 'uuid';
+import { StatusCodes } from 'http-status-codes';
 
 import HttpException from '../exceptions/HttpException';
 import UserNotFoundException from '../exceptions/UserNotFoundException';
-import InvalidIDException from '../exceptions/InvalidIDException';
 import { IHelperArgs } from '../interfaces/helpers.interface';
 import * as utils from '../utils';
 
@@ -13,18 +13,13 @@ export const getUserByIdHelper = async (userHelpersArgs: IHelperArgs<IUser>): Pr
     const { id } = request.params;
     try {
         const user = await db.getById(id);
-        if (user) {
-            if (user.isDeleted) {
-                next(new UserNotFoundException(id));
-            } else {
-                response.send(user);
-            }
-        } else {
+        if (!user || user.isDeleted) {
             next(new UserNotFoundException(id));
         }
+        response.send(user);
     } catch (error) {
         if (error instanceof Error) {
-            next(new HttpException(500, `Unable to get user with id ${id}. Error: ${error.message}`));
+            next(new HttpException(StatusCodes.INTERNAL_SERVER_ERROR));
         }
     }
 };
@@ -34,10 +29,10 @@ export const createUserHelper = async (userHelpersArgs: IHelperArgs<IUser>): Pro
     const user: IUser = { id: uuid_v4(), ...request.body, isDeleted: false };
     try {
         const newUser = await db.create(user);
-        newUser ? response.send(newUser) : next(new InvalidIDException(user.id));
+        newUser ? response.send(newUser) : next(new HttpException(StatusCodes.BAD_REQUEST));
     } catch (error) {
         if (error instanceof Error) {
-            next(new HttpException(500, `Unable to create user. Error: ${error.message}`));
+            next(new HttpException(StatusCodes.INTERNAL_SERVER_ERROR));
         }
     }
 };
@@ -50,7 +45,7 @@ export const updateUserHelper = async (userHelpersArgs: IHelperArgs<IUser>): Pro
         updatedUser ? response.send(updatedUser) : next(new UserNotFoundException(id));
     } catch (error) {
         if (error instanceof Error) {
-            next(new HttpException(500, `An Error occurred when updating user with id ${id}. Error: ${error.message}`));
+            next(new HttpException(StatusCodes.INTERNAL_SERVER_ERROR));
         }
     }
 };
@@ -63,7 +58,7 @@ export const deleteUserHelper = async (userHelpersArgs: IHelperArgs<IUser>): Pro
         deletedUser ? response.send(deletedUser.id) : next(new UserNotFoundException(id));
     } catch (error) {
         if (error instanceof Error) {
-            next(new HttpException(500, `An Error occurred when updating user with id ${id}. Error: ${error.message}`));
+            next(new HttpException(StatusCodes.INTERNAL_SERVER_ERROR));
         }
     }
 };
@@ -91,7 +86,7 @@ export const getUserAutoSuggestions = async (userHelpersArgs: IHelperArgs<IUser>
         response.send(processedUsers);
     } catch (error) {
         if (error instanceof Error) {
-            next(new HttpException(500, `An Error occurred when retrieving users. Error: ${error.message}`));
+            next(new HttpException(StatusCodes.INTERNAL_SERVER_ERROR));
         }
     }
 };

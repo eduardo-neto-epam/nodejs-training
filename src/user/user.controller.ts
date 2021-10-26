@@ -9,6 +9,8 @@ import { loader } from '../database/loader';
 import * as helpers from './user.helpers';
 import { IUser } from './user.interface';
 
+const PATH_TO_DUMMY_DATA = process.env.PATH_TO_DUMMY_DATA as string;
+
 class UserController implements IController {
     public path = '/users';
     public router = Router();
@@ -17,7 +19,7 @@ class UserController implements IController {
 
     constructor() {
         this.initializeRoutes();
-        loader('src/database/data.json', new DbAdapter<IUser, InMemoryDatabase<IUser>>(this.usersDb));
+        loader(PATH_TO_DUMMY_DATA, new DbAdapter<IUser, InMemoryDatabase<IUser>>(this.usersDb));
     }
 
     initializeRoutes(): void {

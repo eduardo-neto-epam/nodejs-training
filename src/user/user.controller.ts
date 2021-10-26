@@ -4,7 +4,7 @@ import { IController } from '../interfaces/controller.interface';
 import { IHelperArgs } from '../interfaces/helpers.interface';
 import InMemoryDatabase from '../database';
 import DbAdapter from '../database/db.adapter';
-import { loader } from '../database/loader';
+import loader from '../database/loader';
 
 import * as helpers from './user.helpers';
 import { IUser } from './user.interface';

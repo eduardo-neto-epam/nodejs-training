@@ -1,8 +1,15 @@
-import * as fs from 'fs';
+import { readFileSync } from 'fs';
 
 import { RecordHandler } from './db.interfaces';
 
-export function loader<T>(filename: string, recordHandler: RecordHandler<T>): void {
-    const data: T[] = JSON.parse(fs.readFileSync(filename).toString());
-    data.forEach((record) => recordHandler.addRecord(record));
-}
+const getData = <T extends unknown>(filename: string): T[] => JSON.parse(readFileSync(filename).toString());
+
+const processRecord = <T extends unknown>(record: T, recordHandler: RecordHandler<T>) =>
+    recordHandler.addRecord(record);
+
+const loader = <T extends unknown>(filename: string, recordHandler: RecordHandler<T>): void => {
+    const data: T[] = getData(filename);
+    data.forEach((record) => processRecord(record, recordHandler));
+};
+
+export default loader;

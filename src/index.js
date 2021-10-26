@@ -1,22 +1,23 @@
-const readline = require('readline');
+const path = require('path');
+const csv = require('csvtojson');
+const { TXT_DIR, TXT_FILE_NAME, CSV_FILE_PATH } = require('./constants');
+const { 
+    makeDirIfNotExistsAndReturnFilePath,
+    subscribeHandler,
+    subscribeErrorHandler,
+    endOfConversionNotice,
+ } = require('./utils');
 
-const rl = readline.createInterface({
-    input: process.stdin,
-    output: process.stdout,
-    prompt: 'Type a string to reverse: '
-});
+const csvFilePath = path.join(__dirname, '../', CSV_FILE_PATH);
 
-const printString = (str) => {
-    rl.output.write(str + '\n');
-  };
+const csvToTxtConverter = (csvFilePath) => {
+    makeDirIfNotExistsAndReturnFilePath(TXT_DIR, TXT_FILE_NAME)
+        .then((txtFilePath) => {
+            if (!txtFilePath) return console.error('Error on creating path to save txt file');
+            csv()
+            .fromFile(csvFilePath)
+            .subscribe(subscribeHandler(txtFilePath), subscribeErrorHandler, endOfConversionNotice)
+        })
+};
 
-rl.prompt();
-
-rl.on('line', (line) => {   
-    const reversedStr = line.trim().split("").reverse().join("");
-    printString(reversedStr);
-    rl.prompt();
-}).on('close', () => {
-    console.log('Program terminated!');
-    process.exit(0);
-})
+csvToTxtConverter(csvFilePath);

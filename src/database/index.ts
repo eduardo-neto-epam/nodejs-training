@@ -4,8 +4,8 @@ class InMemoryDatabase<T extends IBaseRecord> implements Database<T> {
     private db: Record<string, T> = {};
 
     async create(newValue: T): Promise<T | undefined> {
-        const itExists = Boolean(await this.getById(newValue.id));
-        if (itExists) return;
+        const valueInDb = await this.getById(newValue.id);
+        if (valueInDb) return;
         this.db[newValue.id] = newValue;
         return this.db[newValue.id];
     }
@@ -16,10 +16,12 @@ class InMemoryDatabase<T extends IBaseRecord> implements Database<T> {
         return Object.values(this.db);
     }
     async update(id: string, newData: T): Promise<T | undefined> {
-        return this.db[id] ? (this.db[id] = { ...this.db[id], ...newData }) : undefined;
+        let valueInDb = this.db[id];
+        return valueInDb ? (valueInDb = { ...valueInDb, ...newData }) : undefined;
     }
     async delete(id: string): Promise<T | undefined> {
-        return this.db[id] ? (this.db[id] = { ...this.db[id], isDeleted: true }) : undefined;
+        let valueInDb = this.db[id];
+        return valueInDb ? (valueInDb = { ...valueInDb, isDeleted: true }) : undefined;
     }
 }
 

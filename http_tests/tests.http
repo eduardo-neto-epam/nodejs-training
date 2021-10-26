@@ -2,9 +2,9 @@ POST http://localhost:3000/users HTTP/1.1
 content-type: application/json
 
 {
-    "login": "aaa0",
+    "login": "aaa01212",
     "password": "123",
-    "age": 45,
+    "age": 45
 }
 
 ###
@@ -21,15 +21,12 @@ content-type: application/json
 
 ###
 
-GET http://localhost:3000/users HTTP/1.1
-    ?pattern=12
-    &order=desc
-    &limit=1 
+GET http://localhost:3000/users?pattern=12&order=asc&limit=3 HTTP/1.1
 content-type: application/json
 
 ###
 
-PATCH  http://localhost:3000/users/458feaec-dbd1-4df8-9f0f-d39bce01c3e4 HTTP/1.1
+PATCH  http://localhost:3000/users/123456 HTTP/1.1
 content-type: application/json
 
 {
@@ -38,5 +35,5 @@ content-type: application/json
 
 ###
 
-DELETE  http://localhost:3000/users/458feaec-dbd1-4df8-9f0f-d39bce01c3e4 HTTP/1.1
+DELETE  http://localhost:3000/users/123456 HTTP/1.1
 content-type: application/json

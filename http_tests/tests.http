@@ -2,16 +2,14 @@ POST http://localhost:3000/users HTTP/1.1
 content-type: application/json
 
 {
-    "id": "aaaa123",
     "login": "aaa0",
     "password": "123",
     "age": 45,
-    "isDeleted": false
 }
 
 ###
 
-GET http://localhost:3000/users/4ccb679c-9175-42d4-a4de-a28f91c4f880 HTTP/1.1
+GET http://localhost:3000/users/123456 HTTP/1.1
 content-type: application/json
 
 ###

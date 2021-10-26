@@ -6,8 +6,8 @@ import InMemoryDatabase from '../database';
 import DbAdapter from '../database/db.adapter';
 import loader from '../database/loader';
 
-import * as helpers from './user.helpers';
 import { IUser } from './user.interface';
+import UserService from './user.service';
 
 const PATH_TO_DUMMY_DATA = process.env.PATH_TO_DUMMY_DATA as string;
 
@@ -15,6 +15,7 @@ class UserController implements IController {
     public path = '/users';
     public router = Router();
 
+    private service = new UserService();
     private usersDb = new InMemoryDatabase<IUser>();
 
     constructor() {
@@ -32,27 +33,27 @@ class UserController implements IController {
 
     getUserById = async (request: Request, response: Response, next: NextFunction): Promise<void> => {
         const helperArgs: IHelperArgs<IUser> = { db: this.usersDb, request, response, next };
-        helpers.getUserByIdHelper(helperArgs);
+        this.service.getUserByIdHelper(helperArgs);
     };
 
     createUser = async (request: Request, response: Response, next: NextFunction): Promise<void> => {
         const helperArgs: IHelperArgs<IUser> = { db: this.usersDb, request, response, next };
-        helpers.createUserHelper(helperArgs);
+        this.service.createUserHelper(helperArgs);
     };
 
     updateUser = async (request: Request, response: Response, next: NextFunction): Promise<void> => {
         const helperArgs: IHelperArgs<IUser> = { db: this.usersDb, request, response, next };
-        helpers.updateUserHelper(helperArgs);
+        this.service.updateUserHelper(helperArgs);
     };
 
     deleteUser = async (request: Request, response: Response, next: NextFunction): Promise<void> => {
         const helperArgs: IHelperArgs<IUser> = { db: this.usersDb, request, response, next };
-        helpers.deleteUserHelper(helperArgs);
+        this.service.deleteUserHelper(helperArgs);
     };
 
     getSuggestions = async (request: Request, response: Response, next: NextFunction): Promise<void> => {
         const helperArgs: IHelperArgs<IUser> = { db: this.usersDb, request, response, next };
-        helpers.getUserAutoSuggestions(helperArgs);
+        this.service.getUserAutoSuggestions(helperArgs);
     };
 }
 

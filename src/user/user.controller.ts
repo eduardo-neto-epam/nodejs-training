@@ -1,11 +1,13 @@
 import { Router, Request, Response, NextFunction } from 'express';
-import { IUser } from './user.interface';
+
 import { IController } from '../interfaces/controller.interface';
 import { IHelperArgs } from '../interfaces/helpers.interface';
 import InMemoryDatabase from '../database';
-import * as helpers from './user.helpers';
 import DbAdapter from '../database/db.adapter';
 import { loader } from '../database/loader';
+
+import * as helpers from './user.helpers';
+import { IUser } from './user.interface';
 
 class UserController implements IController {
     public path = '/users';

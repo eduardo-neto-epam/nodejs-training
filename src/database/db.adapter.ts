@@ -1,5 +1,7 @@
 import { v4 as uuid_v4 } from 'uuid';
+
 import InMemoryDatabase from '../database';
+
 import { IBaseRecord, RecordHandler } from './db.interfaces';
 
 class DbAdapter<S extends IBaseRecord, T extends InMemoryDatabase<S>> implements RecordHandler<S> {

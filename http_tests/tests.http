@@ -11,7 +11,7 @@ content-type: application/json
 
 ###
 
-GET http://localhost:3000/users/0060b729-ec0f-4dd9-872b-3b930bec1eb8 HTTP/1.1
+GET http://localhost:3000/users/4ccb679c-9175-42d4-a4de-a28f91c4f880 HTTP/1.1
 content-type: application/json
 
 ###
@@ -23,7 +23,10 @@ content-type: application/json
 
 ###
 
-GET http://localhost:3000/users?pattern=12&order=desc&limit=1 HTTP/1.1
+GET http://localhost:3000/users HTTP/1.1
+    ?pattern=12
+    &order=desc
+    &limit=1 
 content-type: application/json
 
 ###

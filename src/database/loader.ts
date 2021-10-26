@@ -1,4 +1,5 @@
 import * as fs from 'fs';
+
 import { RecordHandler } from './db.interfaces';
 
 export function loader<T>(filename: string, recordHandler: RecordHandler<T>): void {

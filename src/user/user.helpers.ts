@@ -1,10 +1,12 @@
+import { v4 as uuid_v4 } from 'uuid';
+
 import HttpException from '../exceptions/HttpException';
 import UserNotFoundException from '../exceptions/UserNotFoundException';
-import { IHelperArgs } from '../interfaces/helpers.interface';
-import { IUser } from './user.interface';
-import { v4 as uuid_v4 } from 'uuid';
-import * as utils from '../utils';
 import InvalidIDException from '../exceptions/InvalidIDException';
+import { IHelperArgs } from '../interfaces/helpers.interface';
+import * as utils from '../utils';
+
+import { IUser } from './user.interface';
 
 export const getUserByIdHelper = async (userHelpersArgs: IHelperArgs<IUser>): Promise<void> => {
     const { db, request, response, next } = userHelpersArgs;

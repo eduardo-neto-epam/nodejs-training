@@ -1,4 +1,5 @@
 import { Request, Response, NextFunction } from 'express';
+
 import InMemoryDatabase from '../database';
 import { IBaseRecord } from '../database/db.interfaces';
 

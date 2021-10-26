@@ -1,4 +1,5 @@
 import express from 'express';
+
 import { IController } from '../interfaces/controller.interface';
 import errorMiddleware from '../middleware/error.middleware';
 

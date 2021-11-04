@@ -1,8 +1,9 @@
 import { Router, Request, Response, NextFunction } from 'express';
 import { StatusCodes } from 'http-status-codes';
 import { v4 as uuid_v4 } from 'uuid';
+import { createValidator } from 'express-joi-validation';
 
-import { IController } from '../interfaces/controller.interface';
+import { IController } from '../interfaces/controller.interfaces';
 import InMemoryDatabase from '../database';
 import DbAdapter from '../database/db.adapter';
 import loader from '../database/loader';
@@ -10,7 +11,8 @@ import UserNotFoundException from '../exceptions/UserNotFoundException';
 import HttpException from '../exceptions/HttpException';
 import { processedDataByQueryParams } from '../utils';
 
-import { IUser } from './user.interface';
+import { IUser } from './user.interfaces';
+import * as valid from './user.validation';
 
 const PATH_TO_DUMMY_DATA = process.env.PATH_TO_DUMMY_DATA as string;
 
@@ -18,18 +20,20 @@ class UserController implements IController {
     public path = '/users';
     public router = Router();
 
-    private usersDb = new InMemoryDatabase<IUser>();
+    private usersDb: InMemoryDatabase<IUser>;
+    private validator = createValidator();
 
-    constructor() {
+    constructor(db: InMemoryDatabase<IUser>) {
+        this.usersDb = db;
         this.initializeRoutes();
         loader(PATH_TO_DUMMY_DATA, new DbAdapter<IUser, InMemoryDatabase<IUser>>(this.usersDb));
     }
 
     initializeRoutes(): void {
         this.router.get(this.path, this.getSuggestions);
-        this.router.post(this.path, this.createUser);
+        this.router.post(this.path, this.validator.body(valid.UserBodySchema), this.createUser);
         this.router.get(`${this.path}/:id`, this.getUserById);
-        this.router.patch(`${this.path}/:id`, this.updateUser);
+        this.router.patch(`${this.path}/:id`, this.validator.body(valid.UserUpdateBodySchema), this.updateUser);
         this.router.delete(`${this.path}/:id`, this.deleteUser);
     }
 

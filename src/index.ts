@@ -1,10 +1,14 @@
-import express from 'express';
+import 'dotenv/config';
 
-const app = express();
-const port = 3000;
+import App from './app';
+import UserController from './user/user.controller';
 
-const sayHelloTo = (name: string) => `Hello ${name}`;
+if (!process.env.PORT) {
+    process.exit(1);
+}
 
-app.get('/', (_req, res) => res.send(sayHelloTo('UK')));
+const PORT: number = parseInt(process.env.PORT as string, 10);
 
-app.listen(port, () => console.log(`Test app listening on port ${port}!`));
+const app = new App([new UserController()], PORT);
+
+app.listen();

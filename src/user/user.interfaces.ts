@@ -11,6 +11,11 @@ export interface IUser extends IUserBase {
     isDeleted: boolean;
 }
 
+export interface UserAttributes extends IUser {
+    createdAt: Date;
+    updatedAt: Date;
+}
+
 export interface IUserBodySchema extends ValidatedRequestSchema {
     [ContainerTypes.Query]: {
         id: string;

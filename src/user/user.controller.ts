@@ -1,32 +1,27 @@
 import { Router, Request, Response, NextFunction } from 'express';
 import { StatusCodes } from 'http-status-codes';
-import { v4 as uuid_v4 } from 'uuid';
 import { createValidator } from 'express-joi-validation';
+import { v4 as uuid_v4 } from 'uuid';
 
 import { IController } from '../interfaces/controller.interfaces';
-import InMemoryDatabase from '../database';
-import DbAdapter from '../database/db.adapter';
-import loader from '../database/loader';
 import UserNotFoundException from '../exceptions/UserNotFoundException';
 import HttpException from '../exceptions/HttpException';
-import { processedDataByQueryParams } from '../utils';
 
-import { IUser } from './user.interfaces';
+import { IUser, IUserBase, UserAttributes } from './user.interfaces';
+import { User } from './user.model';
+import UserService from './user.service';
 import * as valid from './user.validation';
-
-const PATH_TO_DUMMY_DATA = process.env.PATH_TO_DUMMY_DATA as string;
 
 class UserController implements IController {
     public path = '/users';
     public router = Router();
 
-    private usersDb: InMemoryDatabase<IUser>;
     private validator = createValidator();
+    private userService: UserService;
 
-    constructor(db: InMemoryDatabase<IUser>) {
-        this.usersDb = db;
+    constructor() {
+        this.userService = new UserService(User);
         this.initializeRoutes();
-        loader(PATH_TO_DUMMY_DATA, new DbAdapter<IUser, InMemoryDatabase<IUser>>(this.usersDb));
     }
 
     initializeRoutes(): void {
@@ -39,57 +34,74 @@ class UserController implements IController {
 
     getUserById = async (request: Request, response: Response, next: NextFunction): Promise<void> => {
         const { id } = request.params;
-        try {
-            const user = await this.usersDb.findById(id);
-            if (!user || user.isDeleted) {
-                next(new UserNotFoundException(id));
-            }
+        const data = await this.userService.findById(id).catch((e) => next(e));
+        if (data instanceof HttpException) {
+            next(data);
+        } else if (!data) {
+            next(new HttpException(StatusCodes.INTERNAL_SERVER_ERROR, 'Unable to get user'));
+        } else {
+            const user = data.toJSON();
             response.send(user);
-        } catch (error) {
-            next(new HttpException(StatusCodes.INTERNAL_SERVER_ERROR));
         }
     };
 
     createUser = async (request: Request, response: Response, next: NextFunction): Promise<void> => {
-        const payload: IUser = { id: uuid_v4(), ...request.body, isDeleted: false };
         try {
-            const newUser = await this.usersDb.create(payload);
-            newUser ? response.send(newUser) : next(new HttpException(StatusCodes.BAD_REQUEST));
+            const userDTO: IUserBase = request.body;
+            const payload: UserAttributes = {
+                id: uuid_v4(),
+                ...userDTO,
+                isDeleted: false,
+                createdAt: new Date(),
+                updatedAt: new Date(),
+            };
+            const newId = await this.userService.createUser(payload);
+            !newId
+                ? next(new HttpException(StatusCodes.INTERNAL_SERVER_ERROR, 'Oops, Something went wrong'))
+                : response.send(newId);
         } catch (error) {
             if (error instanceof Error) {
                 next(new HttpException(StatusCodes.INTERNAL_SERVER_ERROR, error.message));
             }
+            next(new HttpException(StatusCodes.INTERNAL_SERVER_ERROR, 'Oops, Something went wrong'));
         }
     };
 
     updateUser = async (request: Request, response: Response, next: NextFunction): Promise<void> => {
-        const { id } = request.params;
         try {
-            const updatedUser = await this.usersDb.update(id, request.body);
-            updatedUser ? response.send(updatedUser) : next(new UserNotFoundException(id));
+            const { id } = request.params;
+            const payload: Partial<IUser> = { ...request.body, updatedAt: new Date() };
+            const data = await this.userService.updateUser(id, payload);
+            data instanceof HttpException ? next(new UserNotFoundException(id)) : response.send(data.toJSON());
         } catch (error) {
             if (error instanceof Error) {
                 next(new HttpException(StatusCodes.INTERNAL_SERVER_ERROR, error.message));
             }
+            next(new HttpException(StatusCodes.INTERNAL_SERVER_ERROR, 'Oops, Something went wrong'));
         }
     };
 
     deleteUser = async (request: Request, response: Response, next: NextFunction): Promise<void> => {
         const { id } = request.params;
         try {
-            const deletedUser = await this.usersDb.delete(id);
-            deletedUser ? response.send(deletedUser.id) : next(new UserNotFoundException(id));
+            const userId = await this.userService.deleteUser(id);
+            if (userId instanceof HttpException) {
+                const exception = userId;
+                next(exception);
+            } else {
+                response.send(userId);
+            }
         } catch (error) {
             if (error instanceof Error) {
                 next(new HttpException(StatusCodes.INTERNAL_SERVER_ERROR, error.message));
             }
+            next(new HttpException(StatusCodes.INTERNAL_SERVER_ERROR, 'Oops, Something went wrong'));
         }
     };
 
     getSuggestions = async (request: Request, response: Response, next: NextFunction): Promise<void> => {
         const { pattern, order, limit } = request.query;
         let parsedLimit = 0;
-        let processedUsers: IUser[] = [];
         if (typeof limit === 'string') {
             parsedLimit = parseInt(limit, 10);
         }
@@ -99,9 +111,8 @@ class UserController implements IController {
             limit: parsedLimit,
         };
         try {
-            const users = await this.usersDb.findAll();
-            processedUsers = processedDataByQueryParams(users, params);
-            response.send(processedUsers);
+            const users = await this.userService.getSuggestions(params);
+            response.send(users);
         } catch (error) {
             if (error instanceof Error) {
                 next(new HttpException(StatusCodes.INTERNAL_SERVER_ERROR, error.message));

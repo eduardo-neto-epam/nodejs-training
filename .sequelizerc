@@ -1,0 +1,8 @@
+const path = require('path')
+
+module.exports = {
+  config: path.resolve('./ORM/config', 'config.js'),
+  'models-path': path.resolve('./ORM/models'),
+  'seeders-path': path.resolve('./ORM/seeders'),
+  'migrations-path': path.resolve('./ORM/migrations'),
+}

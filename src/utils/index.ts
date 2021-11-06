@@ -1,8 +1,10 @@
-import { IBaseRecord } from '../database/db.interfaces';
+interface IBaseRecord {
+    id: string;
+}
 
 type RequiredProps = { isDeleted: boolean; login: string };
 
-type ParamsProps = { order: string; pattern: string; limit: number };
+export type ParamsProps = { order: string; pattern: string; limit: number };
 
 function removeDeletedByIsDeletedProp<T extends IBaseRecord & RequiredProps>(item: T): boolean {
     return !item.isDeleted;

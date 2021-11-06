@@ -1,17 +1,8 @@
-import { ContainerTypes, ValidatedRequestSchema } from 'express-joi-validation';
 import Joi from 'joi';
 
-export interface IUserBodySchema extends ValidatedRequestSchema {
-    [ContainerTypes.Query]: {
-        id: string;
-        login: string;
-        password: string;
-        age: number;
-        isDeleted: boolean;
-    };
-}
+import { IUser } from './user.interfaces';
 
-export const UserBodySchema = Joi.object({
+export const UserBodySchema: Joi.ObjectSchema<IUser> = Joi.object({
     id: Joi.string(),
     login: Joi.string().required().min(3).max(20),
     password: Joi.string()
@@ -26,7 +17,7 @@ export const UserBodySchema = Joi.object({
     isDeleted: Joi.boolean(),
 });
 
-export const UserUpdateBodySchema = Joi.object({
+export const UserUpdateBodySchema: Joi.ObjectSchema<IUser> = Joi.object({
     id: Joi.string(),
     login: Joi.string().min(3).max(20),
     password: Joi.string().min(6).max(30).pattern(new RegExp('^(?=.*[0-9])(?=.*[a-zA-Z])([a-zA-Z0-9]+)$')).messages({

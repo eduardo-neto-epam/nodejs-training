@@ -28,7 +28,10 @@ class UserService {
     findById = async (id: string): Promise<User | UserNotFoundException> => {
         try {
             const user = await this.userModel.findByPk(id);
-            return user === null || user.getDataValue('isDeleted') ? new UserNotFoundException(id) : user;
+            if (user === null || user.getDataValue('isDeleted')) {
+                return new UserNotFoundException(id);
+            }
+            return user;
         } catch (error) {
             if (error instanceof Error) {
                 throw new HttpException(StatusCodes.INTERNAL_SERVER_ERROR, error.message);

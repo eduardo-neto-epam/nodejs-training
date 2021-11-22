@@ -35,14 +35,13 @@ class UserController implements IController {
     getUserById = async (request: Request, response: Response, next: NextFunction): Promise<void> => {
         const { id } = request.params;
         const data = await this.userService.findById(id).catch((e) => next(e));
-        if (data instanceof HttpException) {
-            next(data);
-        } else if (!data) {
-            next(new HttpException(StatusCodes.INTERNAL_SERVER_ERROR, 'Unable to get user'));
-        } else {
-            const user = data.toJSON();
-            response.send(user);
+        let user = {};
+        if (data instanceof HttpException) next(data);
+        if (!data) next(new HttpException(StatusCodes.INTERNAL_SERVER_ERROR, 'Unable to get user'));
+        if (data instanceof User) {
+            user = data.toJSON();
         }
+        response.send(user);
     };
 
     createUser = async (request: Request, response: Response, next: NextFunction): Promise<void> => {
@@ -56,9 +55,8 @@ class UserController implements IController {
                 updatedAt: new Date(),
             };
             const newId = await this.userService.createUser(payload);
-            !newId
-                ? next(new HttpException(StatusCodes.INTERNAL_SERVER_ERROR, 'Oops, Something went wrong'))
-                : response.send(newId);
+            if (!newId) next(new HttpException(StatusCodes.INTERNAL_SERVER_ERROR, 'Oops, Something went wrong'));
+            response.send(newId);
         } catch (error) {
             if (error instanceof Error) {
                 next(new HttpException(StatusCodes.INTERNAL_SERVER_ERROR, error.message));
@@ -72,7 +70,12 @@ class UserController implements IController {
             const { id } = request.params;
             const payload: Partial<IUser> = { ...request.body, updatedAt: new Date() };
             const data = await this.userService.updateUser(id, payload);
-            data instanceof HttpException ? next(new UserNotFoundException(id)) : response.send(data.toJSON());
+            let updatedUser = {};
+            if (data instanceof HttpException) next(new UserNotFoundException(id));
+            if (data instanceof User) {
+                updatedUser = data.toJSON();
+            }
+            response.send(updatedUser);
         } catch (error) {
             if (error instanceof Error) {
                 next(new HttpException(StatusCodes.INTERNAL_SERVER_ERROR, error.message));
@@ -88,9 +91,8 @@ class UserController implements IController {
             if (userId instanceof HttpException) {
                 const exception = userId;
                 next(exception);
-            } else {
-                response.send(userId);
             }
+            response.send(userId);
         } catch (error) {
             if (error instanceof Error) {
                 next(new HttpException(StatusCodes.INTERNAL_SERVER_ERROR, error.message));

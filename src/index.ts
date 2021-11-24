@@ -2,6 +2,7 @@ import 'dotenv/config';
 
 import App from './app';
 import UserController from './user/user.controller';
+import GroupController from './group/group.controller';
 import db from './database/config/database.config';
 
 if (!process.env.PORT) {
@@ -10,6 +11,6 @@ if (!process.env.PORT) {
 
 const PORT: number = parseInt(process.env.PORT as string, 10);
 
-const app = new App([new UserController()], PORT, db);
+const app = new App([new UserController(), new GroupController()], PORT, db);
 
 app.listen();

@@ -1,4 +1,5 @@
 import express from 'express';
+import { Sequelize } from 'sequelize/types';
 
 import { IController } from '../interfaces/controller.interfaces';
 import errorMiddleware from '../middleware/error.middleware';
@@ -7,9 +8,12 @@ class App {
     public app: express.Application;
     public port: number;
 
-    constructor(controllers: IController[], port: number) {
+    private db: Sequelize;
+
+    constructor(controllers: IController[], port: number, db: Sequelize) {
         this.app = express();
         this.port = port;
+        this.db = db;
 
         this.initializeMiddleWares();
         this.initializeControllers(controllers);
@@ -31,9 +35,14 @@ class App {
     }
 
     public listen(): void {
-        this.app.listen(this.port, () => {
-            console.log(`App listening on the port ${this.port}`);
-        });
+        this.db
+            .sync()
+            .then(() => {
+                this.app.listen(this.port, () => {
+                    console.log(`App listening on the port ${this.port}`);
+                });
+            })
+            .catch((error) => console.error(error));
     }
 }
 

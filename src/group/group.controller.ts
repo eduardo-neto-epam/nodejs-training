@@ -54,13 +54,10 @@ class GroupController implements IController {
                 updatedAt: new Date(),
             };
             const newId = await this.groupService.createGroup(payload);
-            if (!newId) next(new HttpException(StatusCodes.INTERNAL_SERVER_ERROR, 'Oops, Something went wrong'));
+            if (!newId) throw new InternalServerException();
             response.send(newId);
         } catch (error) {
-            if (error instanceof Error) {
-                next(new HttpException(StatusCodes.INTERNAL_SERVER_ERROR, error.message));
-            }
-            next(new HttpException(StatusCodes.INTERNAL_SERVER_ERROR, 'Oops, Something went wrong'));
+            next(error);
         }
     };
 
@@ -72,10 +69,7 @@ class GroupController implements IController {
             if (data instanceof HttpException) throw new GroupNotFoundException(id);
             response.send(data.toJSON());
         } catch (error) {
-            if (error instanceof Error) {
-                next(error);
-            }
-            next(new InternalServerException());
+            next(error);
         }
     };
 
@@ -83,10 +77,7 @@ class GroupController implements IController {
         const { id } = request.params;
         try {
             const deletedResources = await this.groupService.deleteGroup(id);
-            if (deletedResources === 0) {
-                throw new GroupNotFoundException(id);
-            }
-            console.log({ deletedResources });
+            if (deletedResources === 0) throw new GroupNotFoundException(id);
             response.sendStatus(StatusCodes.NO_CONTENT);
         } catch (error) {
             next(error);
@@ -98,10 +89,7 @@ class GroupController implements IController {
             const groups = await this.groupService.findAll();
             response.send(groups);
         } catch (error) {
-            if (error instanceof Error) {
-                next(error);
-            }
-            next(new InternalServerException());
+            next(error);
         }
     };
 }

@@ -1,8 +1,9 @@
 import { StatusCodes } from 'http-status-codes';
 
-import HttpException from '../exceptions/HttpException';
-import UserNotFoundException from '../exceptions/UserNotFoundException';
-import { ParamsProps, processedDataByQueryParams } from '../utils';
+import HttpException from '../../exceptions/HttpException';
+import UserNotFoundException from '../../exceptions/UserNotFoundException';
+import { ParamsProps, processedDataByQueryParams } from '../../utils';
+import { Group } from '../group/group.model';
 
 import { UserAttributes } from './user.interfaces';
 import { User } from './user.model';
@@ -27,7 +28,9 @@ class UserService {
 
     findById = async (id: string): Promise<User | UserNotFoundException> => {
         try {
-            const user = await this.userModel.findByPk(id);
+            const user = await this.userModel.findByPk(id, {
+                include: [Group],
+            });
             if (user === null || user.getDataValue('isDeleted')) {
                 return new UserNotFoundException(id);
             }
@@ -65,16 +68,14 @@ class UserService {
         }
     };
 
-    deleteUser = async (id: string): Promise<string | HttpException> => {
+    deleteUser = async (id: string): Promise<number> => {
         try {
-            const data = await this.userModel.update(
-                { isDeleted: true, updatedAt: new Date() },
-                {
-                    where: { id },
-                    returning: true,
+            const data = await this.userModel.destroy({
+                where: {
+                    id,
                 },
-            );
-            return data[0] === 0 ? new UserNotFoundException(id) : data[1][0].getDataValue('id');
+            });
+            return data;
         } catch (error) {
             if (error instanceof Error) {
                 throw new HttpException(StatusCodes.INTERNAL_SERVER_ERROR, error.message);
@@ -83,9 +84,11 @@ class UserService {
         }
     };
 
-    getSuggestions = async (params: ParamsProps): Promise<UserAttributes[]> => {
+    getSuggestions = async (params: ParamsProps): Promise<Partial<UserAttributes>[]> => {
         try {
-            const data = await this.userModel.findAll();
+            const data = await this.userModel.findAll({
+                include: [Group],
+            });
             const users = data.map((user) => user.get());
             const processedUsers = processedDataByQueryParams(users, params);
             return processedUsers;

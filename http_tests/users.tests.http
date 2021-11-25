@@ -2,14 +2,14 @@ POST http://localhost:3000/users HTTP/1.1
 content-type: application/json
 
 {
-    "login": "Eduardo",
+    "login": "Edu",
     "password": "123aaa",
-    "age": 45
+    "age": 25
 }
 
 ###
 
-GET http://localhost:3000/users/3TDZRreq5hu HTTP/1.1
+GET http://localhost:3000/users/dab5e828-952d-40c7-9fe4-7bb786e467ab HTTP/1.1
 content-type: application/json
 
 ###
@@ -48,5 +48,5 @@ content-type: application/json
 
 ###
 
-DELETE  http://localhost:3000/users/3TDZRreq5hu HTTP/1.1
+DELETE  http://localhost:3000/users/dab528-952d-40c7-9fe4-7bb786e467ab HTTP/1.1
 content-type: application/json

@@ -3,10 +3,10 @@ import { StatusCodes } from 'http-status-codes';
 import { createValidator } from 'express-joi-validation';
 import { v4 as uuid_v4 } from 'uuid';
 
-import { IController } from '../interfaces/controller.interfaces';
-import HttpException from '../exceptions/HttpException';
-import GroupNotFoundException from '../exceptions/GroupNotFoundException';
-import InternalServerException from '../exceptions/InternalServerException';
+import { IController } from '../../interfaces/controller.interfaces';
+import HttpException from '../../exceptions/HttpException';
+import GroupNotFoundException from '../../exceptions/GroupNotFoundException';
+import InternalServerException from '../../exceptions/InternalServerException';
 
 import { IGroupAttributes } from './group.interfaces';
 import { Group } from './group.model';

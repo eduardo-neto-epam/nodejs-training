@@ -1,0 +1,61 @@
+POST http://localhost:3000/groups HTTP/1.1
+content-type: application/json
+
+{
+    "name": "clients",
+    "permissions": ["READ"]
+}
+
+###
+POST http://localhost:3000/groups HTTP/1.1
+content-type: application/json
+
+{
+    "name": "sellers",
+    "permissions": ["READ", "WRITE", "UPLOAD_FILES"]
+}
+
+###
+###
+POST http://localhost:3000/groups HTTP/1.1
+content-type: application/json
+
+{
+    "name": "admin",
+    "permissions": ["READ", "WRITE", "UPLOAD_FILES", "DELETE", "SHARE"]
+}
+
+###
+POST http://localhost:3000/groups HTTP/1.1
+content-type: application/json
+
+{
+    "name": "ERROR_GROUP_TEST",
+    "permissions": ["BULLOCKS"]
+}
+
+###
+
+GET http://localhost:3000/groups HTTP/1.1
+content-type: application/json
+
+###
+
+GET http://localhost:3000/groups/a3a35560-df9a-4332-a270-c52aa8fb1a86 HTTP/1.1
+content-type: application/json
+
+###
+
+PATCH  http://localhost:3000/groups/5a1c8cf2-632d-4476-8a68-01a8b97dc2ae HTTP/1.1
+content-type: application/json
+
+{
+    "permissions": ["READ", "SHARE"]
+}
+
+###
+
+###
+
+DELETE  http://localhost:3000/groups/a3a35560-df9a-4332-a270-c52aa8fb1a86 HTTP/1.1
+content-type: application/json

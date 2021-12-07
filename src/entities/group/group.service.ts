@@ -1,6 +1,6 @@
-import HttpException from '../exceptions/HttpException';
-import GroupNotFoundException from '../exceptions/GroupNotFoundException';
-import InternalServerException from '../exceptions/InternalServerException';
+import HttpException from '../../exceptions/HttpException';
+import GroupNotFoundException from '../../exceptions/GroupNotFoundException';
+import InternalServerException from '../../exceptions/InternalServerException';
 
 import { IGroupAttributes } from './group.interfaces';
 import { Group } from './group.model';

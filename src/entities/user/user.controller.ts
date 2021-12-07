@@ -3,9 +3,9 @@ import { StatusCodes } from 'http-status-codes';
 import { createValidator } from 'express-joi-validation';
 import { v4 as uuid_v4 } from 'uuid';
 
-import { IController } from '../interfaces/controller.interfaces';
-import UserNotFoundException from '../exceptions/UserNotFoundException';
-import HttpException from '../exceptions/HttpException';
+import { IController } from '../../interfaces/controller.interfaces';
+import UserNotFoundException from '../../exceptions/UserNotFoundException';
+import HttpException from '../../exceptions/HttpException';
 
 import { IUser, IUserBase, UserAttributes } from './user.interfaces';
 import { User } from './user.model';
@@ -33,15 +33,14 @@ class UserController implements IController {
     }
 
     getUserById = async (request: Request, response: Response, next: NextFunction): Promise<void> => {
-        const { id } = request.params;
-        const data = await this.userService.findById(id).catch((e) => next(e));
-        let user = {};
-        if (data instanceof HttpException) next(data);
-        if (!data) next(new HttpException(StatusCodes.INTERNAL_SERVER_ERROR, 'Unable to get user'));
-        if (data instanceof User) {
-            user = data.toJSON();
+        try {
+            const { id } = request.params;
+            const data = await this.userService.findById(id);
+            if (data instanceof HttpException) throw new HttpException(data.status, data.message);
+            response.send(data.toJSON());
+        } catch (error) {
+            next(error);
         }
-        response.send(user);
     };
 
     createUser = async (request: Request, response: Response, next: NextFunction): Promise<void> => {
@@ -87,12 +86,8 @@ class UserController implements IController {
     deleteUser = async (request: Request, response: Response, next: NextFunction): Promise<void> => {
         const { id } = request.params;
         try {
-            const userId = await this.userService.deleteUser(id);
-            if (userId instanceof HttpException) {
-                const exception = userId;
-                next(exception);
-            }
-            response.send(userId);
+            const data = await this.userService.deleteUser(id);
+            response.send(`Deleted ${data} users.`);
         } catch (error) {
             if (error instanceof Error) {
                 next(new HttpException(StatusCodes.INTERNAL_SERVER_ERROR, error.message));

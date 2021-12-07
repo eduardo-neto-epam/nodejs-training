@@ -1,8 +1,17 @@
+/**
+ * Required imports to run compiled version from dist folder
+ */
+import 'core-js/stable';
+import 'regenerator-runtime/runtime';
+
 import 'dotenv/config';
 
 import App from './app';
-import UserController from './user/user.controller';
-import GroupController from './group/group.controller';
+import { User } from './entities/user/user.model';
+import { Group } from './entities/group/group.model';
+import UserController from './entities/user/user.controller';
+import GroupController from './entities/group/group.controller';
+import UserGroupController from './entities/user_group/userGroup.controller';
 import db from './database/config/database.config';
 
 if (!process.env.PORT) {
@@ -11,6 +20,6 @@ if (!process.env.PORT) {
 
 const PORT: number = parseInt(process.env.PORT as string, 10);
 
-const app = new App([new UserController(), new GroupController()], PORT, db);
+const app = new App([new UserController(), new GroupController(), new UserGroupController(User, Group)], PORT, db);
 
 app.listen();

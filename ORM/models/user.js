@@ -3,7 +3,7 @@
 'use strict';
 const { Model } = require('sequelize');
 
-const { attributes } = require('../../src/user/user.model');
+const { attributes } = require('../../src/entities/user/user.model');
 module.exports = (sequelize, _DataTypes) => {
     class User extends Model {
         /**
@@ -11,8 +11,8 @@ module.exports = (sequelize, _DataTypes) => {
          * This method is not a part of Sequelize lifecycle.
          * The `models/index` file will call this method automatically.
          */
-        static associate(_models) {
-            // define association here
+        static associate(models) {
+            this.belongsToMany(models.groups, { through: 'user_group' });
         }
     }
     User.init(attributes, {

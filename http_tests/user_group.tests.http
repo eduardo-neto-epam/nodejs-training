@@ -1,0 +1,13 @@
+POST http://localhost:3000/usergroup/a09b4f1d-394a-4f78-a79c-5935218fa6b7/2333c174-d002-45c1-83df-613f4f5d3bd1 HTTP/1.1
+content-type: application/json
+
+{}
+
+###
+GET http://localhost:3000/usergroup/users-from-group/2333c174-d002-45c1-83df-613f4f5d3bd1 HTTP/1.1
+content-type: application/json
+
+###
+
+DELETE http://localhost:3000/usergroup/remove-user-from-group/dab5e828-952d-40c7-9fe4-7bb786e467ab/2333c174-d002-45c1-83df-613f4f5d3bd1 HTTP/1.1
+Content-Type: application/json

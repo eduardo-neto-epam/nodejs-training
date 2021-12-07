@@ -41,7 +41,7 @@ content-type: application/json
 
 ###
 
-GET http://localhost:3000/groups/a3a35560-df9a-4332-a270-c52aa8fb1a86 HTTP/1.1
+GET http://localhost:3000/groups/cbcc7b73-add0-49cf-89d5-5b71ef70be74 HTTP/1.1
 content-type: application/json
 
 ###
@@ -57,5 +57,5 @@ content-type: application/json
 
 ###
 
-DELETE  http://localhost:3000/groups/a3a35560-df9a-4332-a270-c52aa8fb1a86 HTTP/1.1
+DELETE  http://localhost:3000/groups/05babbc9-18cc-4500-9d9d-90d5c268d8ca HTTP/1.1
 content-type: application/json

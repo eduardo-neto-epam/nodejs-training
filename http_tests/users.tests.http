@@ -9,7 +9,7 @@ content-type: application/json
 
 ###
 
-GET http://localhost:3000/users/dab5e828-952d-40c7-9fe4-7bb786e467ab HTTP/1.1
+GET http://localhost:3000/users/e0a38fb5-9062-4cd9-b5e1-6ef72b3b85ee HTTP/1.1
 content-type: application/json
 
 ###

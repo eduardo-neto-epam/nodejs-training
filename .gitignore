@@ -3,3 +3,4 @@ node_modules
 txt
 dist
 .env
+request_logs.txt

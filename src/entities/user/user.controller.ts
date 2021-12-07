@@ -54,13 +54,12 @@ class UserController implements IController {
                 updatedAt: new Date(),
             };
             const newId = await this.userService.createUser(payload);
-            if (!newId) next(new HttpException(StatusCodes.INTERNAL_SERVER_ERROR, 'Oops, Something went wrong'));
             response.send(newId);
         } catch (error) {
             if (error instanceof Error) {
-                next(new HttpException(StatusCodes.INTERNAL_SERVER_ERROR, error.message));
+                return next(new HttpException(StatusCodes.INTERNAL_SERVER_ERROR, error.message));
             }
-            next(new HttpException(StatusCodes.INTERNAL_SERVER_ERROR, 'Oops, Something went wrong'));
+            return next(new HttpException(StatusCodes.INTERNAL_SERVER_ERROR, 'Oops, Something went wrong'));
         }
     };
 
@@ -69,30 +68,24 @@ class UserController implements IController {
             const { id } = request.params;
             const payload: Partial<IUser> = { ...request.body, updatedAt: new Date() };
             const data = await this.userService.updateUser(id, payload);
-            let updatedUser = {};
-            if (data instanceof HttpException) next(new UserNotFoundException(id));
-            if (data instanceof User) {
-                updatedUser = data.toJSON();
-            }
+            if (data instanceof HttpException) throw new UserNotFoundException(id);
+            const updatedUser = data.toJSON();
             response.send(updatedUser);
         } catch (error) {
-            if (error instanceof Error) {
-                next(new HttpException(StatusCodes.INTERNAL_SERVER_ERROR, error.message));
-            }
-            next(new HttpException(StatusCodes.INTERNAL_SERVER_ERROR, 'Oops, Something went wrong'));
+            next(error);
         }
     };
 
     deleteUser = async (request: Request, response: Response, next: NextFunction): Promise<void> => {
-        const { id } = request.params;
         try {
+            const { id } = request.params;
             const data = await this.userService.deleteUser(id);
-            response.send(`Deleted ${data} users.`);
+            response.send(`Deleted ${data} user(s).`);
         } catch (error) {
             if (error instanceof Error) {
-                next(new HttpException(StatusCodes.INTERNAL_SERVER_ERROR, error.message));
+                return next(new HttpException(StatusCodes.INTERNAL_SERVER_ERROR, error.message));
             }
-            next(new HttpException(StatusCodes.INTERNAL_SERVER_ERROR, 'Oops, Something went wrong'));
+            return next(new HttpException(StatusCodes.INTERNAL_SERVER_ERROR, 'Oops, Something went wrong'));
         }
     };
 
@@ -112,8 +105,9 @@ class UserController implements IController {
             response.send(users);
         } catch (error) {
             if (error instanceof Error) {
-                next(new HttpException(StatusCodes.INTERNAL_SERVER_ERROR, error.message));
+                return next(new HttpException(StatusCodes.INTERNAL_SERVER_ERROR, error.message));
             }
+            return next(new HttpException(StatusCodes.INTERNAL_SERVER_ERROR, 'Oops, Something went wrong'));
         }
     };
 }

@@ -43,11 +43,12 @@ class UserService {
         }
     };
 
-    createUser = async (payload: UserAttributes): Promise<string | undefined> => {
+    createUser = async (payload: UserAttributes): Promise<string> => {
         try {
             const newUser = this.userModel.build(payload);
             const user = await newUser.save();
-            return user.getDataValue('id');
+            const userId = user.getDataValue('id');
+            return userId;
         } catch (error) {
             if (error instanceof Error) {
                 throw new HttpException(StatusCodes.INTERNAL_SERVER_ERROR, error.message);

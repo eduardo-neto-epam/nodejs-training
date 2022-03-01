@@ -37,3 +37,10 @@ export const processedDataByQueryParams = <T extends IBaseRecord & RequiredProps
     }
     return processedData;
 };
+
+export const getActualRequestDurationInMilliseconds: (start: [number, number]) => number = (start) => {
+    const NS_PER_SEC = 1e9; // convert to nanoseconds
+    const NS_TO_MS = 1e6; // convert to milliseconds
+    const diff = process.hrtime(start);
+    return (diff[0] * NS_PER_SEC + diff[1]) / NS_TO_MS;
+};

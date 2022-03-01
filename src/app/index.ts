@@ -3,6 +3,7 @@ import { Sequelize } from 'sequelize/types';
 
 import { IController } from '../interfaces/controller.interfaces';
 import errorMiddleware from '../middleware/error.middleware';
+import requestLogger from '../middleware/request-logger.midleware';
 
 class App {
     public app: express.Application;
@@ -22,6 +23,7 @@ class App {
 
     private initializeMiddleWares() {
         this.app.use(express.json());
+        this.app.use(requestLogger);
     }
 
     private initializeErrorHandling() {

@@ -3,7 +3,8 @@ import { Sequelize } from 'sequelize/types';
 
 import { IController } from '../interfaces/controller.interfaces';
 import errorMiddleware from '../middleware/error.middleware';
-import requestLogger from '../middleware/request-logger.midleware';
+import requestLogger from '../middleware/request-logger.middleware';
+import Logger from '../lib/logger';
 
 class App {
     public app: express.Application;
@@ -41,10 +42,18 @@ class App {
             .sync()
             .then(() => {
                 this.app.listen(this.port, () => {
-                    console.log(`App listening on the port ${this.port}`);
+                    Logger.info(`App listening on the port ${this.port}`);
+                    process
+                        .on('unhandledRejection', (reason, p) => {
+                            Logger.error(`Reason: ${reason}, Unhandled Rejection at Promise, Promise: ${p}`);
+                        })
+                        .on('uncaughtException', (err) => {
+                            Logger.error(`Uncaught Exception thrown, Error: ${err}`);
+                            process.exit(1);
+                        });
                 });
             })
-            .catch((error) => console.error(error));
+            .catch((error) => Logger.error(error));
     }
 }
 

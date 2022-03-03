@@ -1,5 +1,6 @@
 import express from 'express';
 import { Sequelize } from 'sequelize/types';
+import cors from 'cors';
 
 import { IController } from '../interfaces/controller.interfaces';
 import errorMiddleware from '../middleware/error.middleware';
@@ -25,6 +26,11 @@ class App {
     private initializeMiddleWares() {
         this.app.use(express.json());
         this.app.use(requestLogger);
+        this.app.use(
+            cors({
+                origin: '*',
+            }),
+        );
     }
 
     private initializeErrorHandling() {

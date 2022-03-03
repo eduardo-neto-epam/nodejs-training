@@ -1,0 +1,36 @@
+2022-03-03 17:37:44:3744 [31merror[39m: [31mStatus: 400. Message: Unexpected token } in JSON at position 48. Method: POST,  Args: {"params":{},"query":{},"body":{}},  [39m
+2022-03-03 17:38:09:389 [31merror[39m: [31mWHERE parameter "login" has invalid "undefined" value WHERE parameter "login" has invalid "undefined" value[39m
+2022-03-03 17:38:09:389 [31merror[39m: [31mReason: Error: Internal Server Error. WHERE parameter "login" has invalid "undefined" value, Unhandled Rejection at Promise, Promise: [object Promise][39m
+2022-03-03 17:39:47:3947 [31merror[39m: [31mWHERE parameter "login" has invalid "undefined" value WHERE parameter "login" has invalid "undefined" value[39m
+2022-03-03 17:39:47:3947 [31merror[39m: [31mReason: Error: Internal Server Error. WHERE parameter "login" has invalid "undefined" value, Unhandled Rejection at Promise, Promise: {}[39m
+2022-03-03 20:20:47:2047 [31merror[39m: [31mStatus: 500. Message: Internal Server Error. Internal Server Error. Forbidden. Login already exists, please try an unique name.. Method: POST,  Args: {"params":{},"query":{},"body":{"login":"EduNeto","password":"123aaa","age":45}},  [39m
+2022-03-03 20:37:02:372 [31merror[39m: [31mLogin Bullocks already exists, please try an unique name.[39m
+2022-03-03 20:38:29:3829 [31merror[39m: [31mUnauthorized. No match fo this credentials. Unauthorized. No match fo this credentials.[39m
+2022-03-03 20:38:29:3829 [31merror[39m: [31mLogin attempted Failed.[39m
+2022-03-03 20:38:29:3829 [31merror[39m: [31mStatus: 500. Message: Internal Server Error. Unauthorized. No match fo this credentials.. Method: POST,  Args: {"params":{},"query":{},"body":{"login":"Bullocks12","password":"123aaa"}},  [39m
+2022-03-03 20:41:45:4145 [31merror[39m: [31mStatus: 401. Message: Unauthorized. No match for this credentials.. Method: POST,  Args: {"params":{},"query":{},"body":{"login":"Bullocks12","password":"123aaa"}},  [39m
+2022-03-03 20:56:17:5617 [31merror[39m: [31mStatus: 401. Message: Unauthorized. No match for this credentials.. Method: POST,  Args: {"params":{},"query":{},"body":{"login":"Bullocks12"}},  [39m
+2022-03-03 20:57:40:5740 [31merror[39m: [31mStatus: 401. Message: Unauthorized. No match for this credentials.. Method: POST,  Args: {"params":{},"query":{},"body":{"login":"Bullocks12","password":"xxxxxxxx"}},  [39m
+2022-03-03 21:24:46:2446 [31merror[39m: [31mStatus: 500. Message: Cannot set headers after they are sent to the client. Method: GET,  Args: {"params":{},"query":{},"body":{"password":"xxxxxxxx"}},  [39m
+2022-03-03 21:25:20:2520 [31merror[39m: [31mStatus: 500. Message: Cannot set headers after they are sent to the client. Method: GET,  Args: {"params":{},"query":{},"body":{"password":"xxxxxxxx"}},  [39m
+2022-03-03 21:26:02:262 [31merror[39m: [31mStatus: 500. Message: Cannot set headers after they are sent to the client. Method: GET,  Args: {"params":{},"query":{},"body":{"password":"xxxxxxxx"}},  [39m
+2022-03-03 21:26:24:2624 [31merror[39m: [31mStatus: 500. Message: Cannot set headers after they are sent to the client. Method: GET,  Args: {"params":{},"query":{},"body":{"password":"xxxxxxxx"}},  [39m
+2022-03-03 21:26:39:2639 [31merror[39m: [31mStatus: 500. Message: Cannot set headers after they are sent to the client. Method: GET,  Args: {"params":{},"query":{},"body":{"password":"xxxxxxxx"}},  [39m
+2022-03-03 21:27:35:2735 [31merror[39m: [31mStatus: 500. Message: Cannot set headers after they are sent to the client. Method: GET,  Args: {"params":{},"query":{},"body":{"password":"xxxxxxxx"}},  [39m
+2022-03-03 21:28:24:2824 [31merror[39m: [31mStatus: 500. Message: Cannot set headers after they are sent to the client. Method: GET,  Args: {"params":{},"query":{},"body":{"password":"xxxxxxxx"}},  [39m
+2022-03-03 21:31:17:3117 [31merror[39m: [31mStatus: 500. Message: Cannot set headers after they are sent to the client. Method: GET,  Args: {"params":{},"query":{},"body":{"password":"xxxxxxxx"}},  [39m
+2022-03-03 21:33:06:336 [31merror[39m: [31mStatus: 500. Message: Cannot set headers after they are sent to the client. Method: GET,  Args: {"params":{},"query":{},"body":{"password":"xxxxxxxx"}},  [39m
+2022-03-03 21:33:12:3312 [31merror[39m: [31mStatus: 500. Message: Cannot set headers after they are sent to the client. Method: GET,  Args: {"params":{},"query":{},"body":{"password":"xxxxxxxx"}},  [39m
+2022-03-03 21:35:01:351 [31merror[39m: [31mStatus: 500. Message: Cannot set headers after they are sent to the client. Method: GET,  Args: {"params":{},"query":{},"body":{"password":"xxxxxxxx"}},  [39m
+2022-03-03 21:35:10:3510 [31merror[39m: [31mStatus: 500. Message: Cannot set headers after they are sent to the client. Method: GET,  Args: {"params":{},"query":{},"body":{"password":"xxxxxxxx"}},  [39m
+2022-03-03 21:37:55:3755 [31merror[39m: [31mStatus: 500. Message: Cannot set headers after they are sent to the client. Method: GET,  Args: {"params":{},"query":{},"body":{"password":"xxxxxxxx"}},  Headers: {"user-agent":"vscode-restclient","content-type":"application/json","authorization":"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJ1bGxvY2tzMTIzIiwiaWF0IjoxNjQ2MzQyNjY3LCJleHAiOjMyOTMwNDUzMzQsImlzcyI6ImFtYXppbmdfaXNzdWVyIn0.QjKVKq3FmdfCmyiSroWIBah_DyvvM1hZnUhBXs6mVXE","accept-encoding":"gzip, deflate","host":"localhost:3000","connection":"close"} [39m
+2022-03-03 21:46:36:4636 [31merror[39m: [31mStatus: 500. Message: Cannot set headers after they are sent to the client. Method: GET,  Args: {"params":{},"query":{},"body":{"password":"xxxxxxxx"}},  Headers: {"user-agent":"vscode-restclient","content-type":"application/json","authorization":"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJ1bGxvY2tzMTIzIiwiaWF0IjoxNjQ2MzQyNjY3LCJleHAiOjMyOTMwNDUzMzQsImlzcyI6ImFtYXppbmdfaXNzdWVyIn0.QjKVKq3FmdfCmyiSroWIBah_DyvvM1hZnUhBXs6mVXE","accept-encoding":"gzip, deflate","host":"localhost:3000","connection":"close"} [39m
+2022-03-03 21:46:40:4640 [31merror[39m: [31mStatus: 500. Message: Cannot set headers after they are sent to the client. Method: GET,  Args: {"params":{},"query":{},"body":{"password":"xxxxxxxx"}},  Headers: {"user-agent":"vscode-restclient","content-type":"application/json","authorization":"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJ1bGxvY2tzMTIzIiwiaWF0IjoxNjQ2MzQzMDI3LCJleHAiOjMyOTMwNDYwNTQsImlzcyI6ImFtYXppbmdfaXNzdWVyIn0.7e9OQhJ9--fWtvmBqz2Tr4HoZbqFe6wjU3VPPn4HaIA","accept-encoding":"gzip, deflate","host":"localhost:3000","connection":"close"} [39m
+2022-03-03 21:56:29:5629 [31merror[39m: [31mLogin Bullocks123 already exists, please try an unique name.[39m
+2022-03-03 21:59:42:5942 [31merror[39m: [31mUnauthorized - Invalid Token[39m
+2022-03-03 22:01:06:16 [31merror[39m: [31mUnauthorized - Invalid Token[39m
+2022-03-03 22:01:35:135 [31merror[39m: [31mUnauthorized - Missing Token[39m
+2022-03-03 22:05:47:547 [31merror[39m: [31mUnauthorized - Missing Token[39m
+2022-03-03 22:06:10:610 [31merror[39m: [31mUnauthorized - Missing Token[39m
+2022-03-03 22:07:36:736 [31merror[39m: [31mUnauthorized - Missing Token[39m
+2022-03-03 22:10:39:1039 [31merror[39m: [31mUnauthorized - Missing Token[39m

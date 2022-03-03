@@ -6,6 +6,9 @@ import { v4 as uuid_v4 } from 'uuid';
 import { IController } from '../../interfaces/controller.interfaces';
 import UserNotFoundException from '../../exceptions/UserNotFoundException';
 import HttpException from '../../exceptions/HttpException';
+import { signJWT } from '../../utils';
+import Logger from '../../lib/logger';
+import getJWT from '../../middleware/getJWT.middleware';
 
 import { IUser, IUserBase, UserAttributes } from './user.interfaces';
 import { User } from './user.model';
@@ -25,12 +28,52 @@ class UserController implements IController {
     }
 
     initializeRoutes(): void {
-        this.router.get(this.path, this.getSuggestions);
+        this.router.get(`${this.path}/validate_token`, getJWT, this.validateToken);
+        this.router.post(`${this.path}/login`, this.validator.body(valid.UserLoginSchema), this.login);
+        this.router.get(this.path, getJWT, this.getSuggestions);
         this.router.post(this.path, this.validator.body(valid.UserBodySchema), this.createUser);
-        this.router.get(`${this.path}/:id`, this.getUserById);
-        this.router.patch(`${this.path}/:id`, this.validator.body(valid.UserUpdateBodySchema), this.updateUser);
-        this.router.delete(`${this.path}/:id`, this.deleteUser);
+        this.router.get(`${this.path}/:id`, getJWT, this.getUserById);
+        this.router.patch(`${this.path}/:id`, getJWT, this.validator.body(valid.UserUpdateBodySchema), this.updateUser);
+        this.router.delete(`${this.path}/:id`, getJWT, this.deleteUser);
     }
+
+    validateToken = async (
+        _request: Request,
+        response: Response,
+        next: NextFunction,
+    ): Promise<void | Response<unknown, Record<string, unknown>>> => {
+        try {
+            Logger.info('token validated, user is Authorized.');
+
+            return response.status(200).json({
+                message: 'Authorized',
+            });
+        } catch (error) {
+            return next(error);
+        }
+    };
+
+    login = async (request: Request, response: Response, next: NextFunction): Promise<void> => {
+        try {
+            const { login, password } = request.body;
+            Logger.info(`${login} is attempting to login.`);
+            const user = await this.userService.loginUser(login, password);
+            if (user instanceof HttpException) throw user;
+            signJWT(user, (err, token) => {
+                if (err) {
+                    throw new HttpException(StatusCodes.UNAUTHORIZED, err.message);
+                } else if (token) {
+                    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+                    const { password, ...userData } = user;
+                    Logger.info(`Login attempt was successful.`);
+                    return response.status(200).json({ userData, token });
+                }
+                return response.status(StatusCodes.UNAUTHORIZED).json('Unauthorized');
+            });
+        } catch (error) {
+            next(error);
+        }
+    };
 
     getUserById = async (request: Request, response: Response, next: NextFunction): Promise<void> => {
         try {
@@ -53,8 +96,8 @@ class UserController implements IController {
                 createdAt: new Date(),
                 updatedAt: new Date(),
             };
-            const newId = await this.userService.createUser(payload);
-            response.send(newId);
+            const userId = await this.userService.createUser(payload);
+            response.status(201).json({ userId });
         } catch (error) {
             if (error instanceof Error) {
                 return next(new HttpException(StatusCodes.INTERNAL_SERVER_ERROR, error.message));

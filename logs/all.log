@@ -1,0 +1,163 @@
+2022-03-03 15:51:08:518 [32minfo[39m: [32mApp listening on the port 3000[39m
+2022-03-03 15:52:58:5258 [32minfo[39m: [32mUser id:1ae137d0-a623-4462-8011-59b4e0d6421c created.[39m
+2022-03-03 17:00:49:049 [32minfo[39m: [32mApp listening on the port 3000[39m
+2022-03-03 17:20:09:209 [32minfo[39m: [32mApp listening on the port 3000[39m
+2022-03-03 17:21:19:2119 [32minfo[39m: [32mApp listening on the port 3000[39m
+2022-03-03 17:21:41:2141 [32minfo[39m: [32mApp listening on the port 3000[39m
+2022-03-03 17:22:43:2243 [32minfo[39m: [32mApp listening on the port 3000[39m
+2022-03-03 17:37:44:3744 [31merror[39m: [31mStatus: 400. Message: Unexpected token } in JSON at position 48. Method: POST,  Args: {"params":{},"query":{},"body":{}},  [39m
+2022-03-03 17:38:09:389 [31merror[39m: [31mWHERE parameter "login" has invalid "undefined" value WHERE parameter "login" has invalid "undefined" value[39m
+2022-03-03 17:38:09:389 [31merror[39m: [31mReason: Error: Internal Server Error. WHERE parameter "login" has invalid "undefined" value, Unhandled Rejection at Promise, Promise: [object Promise][39m
+2022-03-03 17:39:36:3936 [32minfo[39m: [32mApp listening on the port 3000[39m
+2022-03-03 17:39:47:3947 [31merror[39m: [31mWHERE parameter "login" has invalid "undefined" value WHERE parameter "login" has invalid "undefined" value[39m
+2022-03-03 17:39:47:3947 [31merror[39m: [31mReason: Error: Internal Server Error. WHERE parameter "login" has invalid "undefined" value, Unhandled Rejection at Promise, Promise: {}[39m
+2022-03-03 17:42:25:4225 [32minfo[39m: [32mApp listening on the port 3000[39m
+2022-03-03 17:44:15:4415 [32minfo[39m: [32mApp listening on the port 3000[39m
+2022-03-03 17:45:17:4517 [32minfo[39m: [32mAttempting to sign token for NewUser[39m
+2022-03-03 17:48:03:483 [32minfo[39m: [32mApp listening on the port 3000[39m
+2022-03-03 17:48:05:485 [32minfo[39m: [32mAttempting to sign token for NewUser[39m
+2022-03-03 17:49:38:4938 [32minfo[39m: [32mApp listening on the port 3000[39m
+2022-03-03 17:49:41:4941 [32minfo[39m: [32mAttempting to sign token for NewUser[39m
+2022-03-03 18:07:47:747 [32minfo[39m: [32mApp listening on the port 3000[39m
+2022-03-03 18:08:24:824 [32minfo[39m: [32mApp listening on the port 3000[39m
+2022-03-03 18:08:56:856 [32minfo[39m: [32mUser id:c3e3bac6-7384-4a3f-9e72-dd32ff3110ca created.[39m
+2022-03-03 19:18:29:1829 [32minfo[39m: [32mApp listening on the port 3000[39m
+2022-03-03 19:40:48:4048 [32minfo[39m: [32mApp listening on the port 3000[39m
+2022-03-03 20:07:46:746 [32minfo[39m: [32mApp listening on the port 3000[39m
+2022-03-03 20:11:37:1137 [32minfo[39m: [32mApp listening on the port 3000[39m
+2022-03-03 20:12:23:1223 [32minfo[39m: [32mApp listening on the port 3000[39m
+2022-03-03 20:12:33:1233 [32minfo[39m: [32mAttempting to sign token for NewUser[39m
+2022-03-03 20:20:32:2032 [32minfo[39m: [32mApp listening on the port 3000[39m
+2022-03-03 20:20:47:2047 [31merror[39m: [31mStatus: 500. Message: Internal Server Error. Internal Server Error. Forbidden. Login already exists, please try an unique name.. Method: POST,  Args: {"params":{},"query":{},"body":{"login":"EduNeto","password":"123aaa","age":45}},  [39m
+2022-03-03 20:21:55:2155 [32minfo[39m: [32mApp listening on the port 3000[39m
+2022-03-03 20:23:08:238 [32minfo[39m: [32mApp listening on the port 3000[39m
+2022-03-03 20:24:09:249 [32minfo[39m: [32mUser id:2586a1b0-bd78-404f-a59d-faca13d9e9b5 created.[39m
+2022-03-03 20:25:03:253 [32minfo[39m: [32mAttempting to sign token for NewUser[39m
+2022-03-03 20:26:12:2612 [32minfo[39m: [32mApp listening on the port 3000[39m
+2022-03-03 20:26:40:2640 [32minfo[39m: [32mApp listening on the port 3000[39m
+2022-03-03 20:36:49:3649 [32minfo[39m: [32mApp listening on the port 3000[39m
+2022-03-03 20:37:02:372 [31merror[39m: [31mLogin Bullocks already exists, please try an unique name.[39m
+2022-03-03 20:37:17:3717 [32minfo[39m: [32mUser id:26da82d8-37f8-42b4-92ec-1213e45f8378 created.[39m
+2022-03-03 20:37:38:3738 [32minfo[39m: [32mBullocks123 is attempting to login.[39m
+2022-03-03 20:37:38:3738 [32minfo[39m: [32mAttempting to sign token for Bullocks123[39m
+2022-03-03 20:37:38:3738 [32minfo[39m: [32mLogin attempt was successful.[39m
+2022-03-03 20:38:29:3829 [32minfo[39m: [32mBullocks12 is attempting to login.[39m
+2022-03-03 20:38:29:3829 [31merror[39m: [31mUnauthorized. No match fo this credentials. Unauthorized. No match fo this credentials.[39m
+2022-03-03 20:38:29:3829 [31merror[39m: [31mLogin attempted Failed.[39m
+2022-03-03 20:38:29:3829 [31merror[39m: [31mStatus: 500. Message: Internal Server Error. Unauthorized. No match fo this credentials.. Method: POST,  Args: {"params":{},"query":{},"body":{"login":"Bullocks12","password":"123aaa"}},  [39m
+2022-03-03 20:39:55:3955 [32minfo[39m: [32mApp listening on the port 3000[39m
+2022-03-03 20:41:39:4139 [32minfo[39m: [32mApp listening on the port 3000[39m
+2022-03-03 20:41:45:4145 [32minfo[39m: [32mBullocks12 is attempting to login.[39m
+2022-03-03 20:41:45:4145 [31merror[39m: [31mStatus: 401. Message: Unauthorized. No match for this credentials.. Method: POST,  Args: {"params":{},"query":{},"body":{"login":"Bullocks12","password":"123aaa"}},  [39m
+2022-03-03 20:55:59:5559 [32minfo[39m: [32mApp listening on the port 3000[39m
+2022-03-03 20:56:17:5617 [32minfo[39m: [32mBullocks12 is attempting to login.[39m
+2022-03-03 20:56:17:5617 [31merror[39m: [31mStatus: 401. Message: Unauthorized. No match for this credentials.. Method: POST,  Args: {"params":{},"query":{},"body":{"login":"Bullocks12"}},  [39m
+2022-03-03 20:57:33:5733 [32minfo[39m: [32mApp listening on the port 3000[39m
+2022-03-03 20:57:40:5740 [32minfo[39m: [32mBullocks12 is attempting to login.[39m
+2022-03-03 20:57:40:5740 [31merror[39m: [31mStatus: 401. Message: Unauthorized. No match for this credentials.. Method: POST,  Args: {"params":{},"query":{},"body":{"login":"Bullocks12","password":"xxxxxxxx"}},  [39m
+2022-03-03 21:15:53:1553 [32minfo[39m: [32mApp listening on the port 3000[39m
+2022-03-03 21:23:04:234 [32minfo[39m: [32mBullocks123 is attempting to login.[39m
+2022-03-03 21:23:04:234 [32minfo[39m: [32mAttempting to sign token for Bullocks123[39m
+2022-03-03 21:23:04:234 [32minfo[39m: [32mLogin attempt was successful.[39m
+2022-03-03 21:24:23:2423 [32minfo[39m: [32mApp listening on the port 3000[39m
+2022-03-03 21:24:27:2427 [32minfo[39m: [32mBullocks123 is attempting to login.[39m
+2022-03-03 21:24:27:2427 [32minfo[39m: [32mAttempting to sign token for Bullocks123[39m
+2022-03-03 21:24:27:2427 [32minfo[39m: [32mLogin attempt was successful.[39m
+2022-03-03 21:24:46:2446 [32minfo[39m: [32mValidating Token[39m
+2022-03-03 21:24:46:2446 [32minfo[39m: [32mtoken validated, user is Authorized.[39m
+2022-03-03 21:24:46:2446 [31merror[39m: [31mStatus: 500. Message: Cannot set headers after they are sent to the client. Method: GET,  Args: {"params":{},"query":{},"body":{"password":"xxxxxxxx"}},  [39m
+2022-03-03 21:25:20:2520 [32minfo[39m: [32mValidating Token[39m
+2022-03-03 21:25:20:2520 [31merror[39m: [31mStatus: 500. Message: Cannot set headers after they are sent to the client. Method: GET,  Args: {"params":{},"query":{},"body":{"password":"xxxxxxxx"}},  [39m
+2022-03-03 21:26:02:262 [32minfo[39m: [32mValidating Token[39m
+2022-03-03 21:26:02:262 [31merror[39m: [31mStatus: 500. Message: Cannot set headers after they are sent to the client. Method: GET,  Args: {"params":{},"query":{},"body":{"password":"xxxxxxxx"}},  [39m
+2022-03-03 21:26:24:2624 [32minfo[39m: [32mValidating Token[39m
+2022-03-03 21:26:24:2624 [32minfo[39m: [32mtoken validated, user is Authorized.[39m
+2022-03-03 21:26:24:2624 [31merror[39m: [31mStatus: 500. Message: Cannot set headers after they are sent to the client. Method: GET,  Args: {"params":{},"query":{},"body":{"password":"xxxxxxxx"}},  [39m
+2022-03-03 21:26:39:2639 [32minfo[39m: [32mValidating Token[39m
+2022-03-03 21:26:39:2639 [31merror[39m: [31mStatus: 500. Message: Cannot set headers after they are sent to the client. Method: GET,  Args: {"params":{},"query":{},"body":{"password":"xxxxxxxx"}},  [39m
+2022-03-03 21:27:30:2730 [32minfo[39m: [32mApp listening on the port 3000[39m
+2022-03-03 21:27:35:2735 [32minfo[39m: [32mValidating Token[39m
+2022-03-03 21:27:35:2735 [32minfo[39m: [32mtoken validated, user is Authorized.[39m
+2022-03-03 21:27:35:2735 [31merror[39m: [31mStatus: 500. Message: Cannot set headers after they are sent to the client. Method: GET,  Args: {"params":{},"query":{},"body":{"password":"xxxxxxxx"}},  [39m
+2022-03-03 21:28:19:2819 [32minfo[39m: [32mBullocks123 is attempting to login.[39m
+2022-03-03 21:28:19:2819 [32minfo[39m: [32mAttempting to sign token for Bullocks123[39m
+2022-03-03 21:28:19:2819 [32minfo[39m: [32mLogin attempt was successful.[39m
+2022-03-03 21:28:23:2823 [32minfo[39m: [32mValidating Token[39m
+2022-03-03 21:28:23:2823 [32minfo[39m: [32mtoken validated, user is Authorized.[39m
+2022-03-03 21:28:24:2824 [31merror[39m: [31mStatus: 500. Message: Cannot set headers after they are sent to the client. Method: GET,  Args: {"params":{},"query":{},"body":{"password":"xxxxxxxx"}},  [39m
+2022-03-03 21:30:02:302 [32minfo[39m: [32mApp listening on the port 3000[39m
+2022-03-03 21:30:27:3027 [32minfo[39m: [32mBullocks123 is attempting to login.[39m
+2022-03-03 21:30:27:3027 [32minfo[39m: [32mAttempting to sign token for Bullocks123[39m
+2022-03-03 21:30:27:3027 [32minfo[39m: [32mLogin attempt was successful.[39m
+2022-03-03 21:31:17:3117 [32minfo[39m: [32mValidating Token[39m
+2022-03-03 21:31:17:3117 [32minfo[39m: [32mtoken validated, user is Authorized.[39m
+2022-03-03 21:31:17:3117 [31merror[39m: [31mStatus: 500. Message: Cannot set headers after they are sent to the client. Method: GET,  Args: {"params":{},"query":{},"body":{"password":"xxxxxxxx"}},  [39m
+2022-03-03 21:33:06:336 [32minfo[39m: [32mValidating Token[39m
+2022-03-03 21:33:06:336 [32minfo[39m: [32mtoken validated, user is Authorized.[39m
+2022-03-03 21:33:06:336 [31merror[39m: [31mStatus: 500. Message: Cannot set headers after they are sent to the client. Method: GET,  Args: {"params":{},"query":{},"body":{"password":"xxxxxxxx"}},  [39m
+2022-03-03 21:33:12:3312 [32minfo[39m: [32mValidating Token[39m
+2022-03-03 21:33:12:3312 [32minfo[39m: [32mtoken validated, user is Authorized.[39m
+2022-03-03 21:33:12:3312 [31merror[39m: [31mStatus: 500. Message: Cannot set headers after they are sent to the client. Method: GET,  Args: {"params":{},"query":{},"body":{"password":"xxxxxxxx"}},  [39m
+2022-03-03 21:34:47:3447 [32minfo[39m: [32mApp listening on the port 3000[39m
+2022-03-03 21:35:01:351 [32minfo[39m: [32mValidating Token[39m
+2022-03-03 21:35:01:351 [32minfo[39m: [32mtoken validated, user is Authorized.[39m
+2022-03-03 21:35:01:351 [31merror[39m: [31mStatus: 500. Message: Cannot set headers after they are sent to the client. Method: GET,  Args: {"params":{},"query":{},"body":{"password":"xxxxxxxx"}},  [39m
+2022-03-03 21:35:10:3510 [32minfo[39m: [32mValidating Token[39m
+2022-03-03 21:35:10:3510 [32minfo[39m: [32mtoken validated, user is Authorized.[39m
+2022-03-03 21:35:10:3510 [31merror[39m: [31mStatus: 500. Message: Cannot set headers after they are sent to the client. Method: GET,  Args: {"params":{},"query":{},"body":{"password":"xxxxxxxx"}},  [39m
+2022-03-03 21:37:35:3735 [32minfo[39m: [32mApp listening on the port 3000[39m
+2022-03-03 21:37:50:3750 [32minfo[39m: [32mApp listening on the port 3000[39m
+2022-03-03 21:37:55:3755 [32minfo[39m: [32mValidating Token[39m
+2022-03-03 21:37:55:3755 [32minfo[39m: [32mtoken validated, user is Authorized.[39m
+2022-03-03 21:37:55:3755 [31merror[39m: [31mStatus: 500. Message: Cannot set headers after they are sent to the client. Method: GET,  Args: {"params":{},"query":{},"body":{"password":"xxxxxxxx"}},  Headers: {"user-agent":"vscode-restclient","content-type":"application/json","authorization":"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJ1bGxvY2tzMTIzIiwiaWF0IjoxNjQ2MzQyNjY3LCJleHAiOjMyOTMwNDUzMzQsImlzcyI6ImFtYXppbmdfaXNzdWVyIn0.QjKVKq3FmdfCmyiSroWIBah_DyvvM1hZnUhBXs6mVXE","accept-encoding":"gzip, deflate","host":"localhost:3000","connection":"close"} [39m
+2022-03-03 21:46:31:4631 [32minfo[39m: [32mApp listening on the port 3000[39m
+2022-03-03 21:46:36:4636 [32minfo[39m: [32mValidating Token[39m
+2022-03-03 21:46:36:4636 [32minfo[39m: [32mtoken validated, user is Authorized.[39m
+2022-03-03 21:46:36:4636 [31merror[39m: [31mStatus: 500. Message: Cannot set headers after they are sent to the client. Method: GET,  Args: {"params":{},"query":{},"body":{"password":"xxxxxxxx"}},  Headers: {"user-agent":"vscode-restclient","content-type":"application/json","authorization":"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJ1bGxvY2tzMTIzIiwiaWF0IjoxNjQ2MzQyNjY3LCJleHAiOjMyOTMwNDUzMzQsImlzcyI6ImFtYXppbmdfaXNzdWVyIn0.QjKVKq3FmdfCmyiSroWIBah_DyvvM1hZnUhBXs6mVXE","accept-encoding":"gzip, deflate","host":"localhost:3000","connection":"close"} [39m
+2022-03-03 21:46:40:4640 [32minfo[39m: [32mValidating Token[39m
+2022-03-03 21:46:40:4640 [32minfo[39m: [32mtoken validated, user is Authorized.[39m
+2022-03-03 21:46:40:4640 [31merror[39m: [31mStatus: 500. Message: Cannot set headers after they are sent to the client. Method: GET,  Args: {"params":{},"query":{},"body":{"password":"xxxxxxxx"}},  Headers: {"user-agent":"vscode-restclient","content-type":"application/json","authorization":"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJ1bGxvY2tzMTIzIiwiaWF0IjoxNjQ2MzQzMDI3LCJleHAiOjMyOTMwNDYwNTQsImlzcyI6ImFtYXppbmdfaXNzdWVyIn0.7e9OQhJ9--fWtvmBqz2Tr4HoZbqFe6wjU3VPPn4HaIA","accept-encoding":"gzip, deflate","host":"localhost:3000","connection":"close"} [39m
+2022-03-03 21:48:03:483 [32minfo[39m: [32mValidating Token[39m
+2022-03-03 21:55:26:5526 [32minfo[39m: [32mApp listening on the port 3000[39m
+2022-03-03 21:55:36:5536 [32minfo[39m: [32mApp listening on the port 3000[39m
+2022-03-03 21:55:41:5541 [32minfo[39m: [32mValidating Token[39m
+2022-03-03 21:55:47:5547 [32minfo[39m: [32mValidating Token[39m
+2022-03-03 21:55:47:5547 [32minfo[39m: [32mtoken validated, user is Authorized.[39m
+2022-03-03 21:56:07:567 [32minfo[39m: [32mBullocks123 is attempting to login.[39m
+2022-03-03 21:56:07:567 [32minfo[39m: [32mAttempting to sign token for Bullocks123[39m
+2022-03-03 21:56:07:567 [32minfo[39m: [32mLogin attempt was successful.[39m
+2022-03-03 21:56:29:5629 [31merror[39m: [31mLogin Bullocks123 already exists, please try an unique name.[39m
+2022-03-03 21:56:48:5648 [32minfo[39m: [32mUser id:582a19cb-6958-4822-9cf2-c3cbb2967add created.[39m
+2022-03-03 21:57:05:575 [32minfo[39m: [32mBullocks1234 is attempting to login.[39m
+2022-03-03 21:57:05:575 [32minfo[39m: [32mAttempting to sign token for Bullocks1234[39m
+2022-03-03 21:57:05:575 [32minfo[39m: [32mLogin attempt was successful.[39m
+2022-03-03 21:57:48:5748 [32minfo[39m: [32mApp listening on the port 3000[39m
+2022-03-03 21:58:04:584 [32minfo[39m: [32mValidating Token[39m
+2022-03-03 21:58:04:584 [32minfo[39m: [32mtoken validated, user is Authorized.[39m
+2022-03-03 21:58:11:5811 [32minfo[39m: [32mValidating Token[39m
+2022-03-03 21:59:41:5941 [32minfo[39m: [32mApp listening on the port 3000[39m
+2022-03-03 21:59:42:5942 [32minfo[39m: [32mValidating Token[39m
+2022-03-03 21:59:42:5942 [31merror[39m: [31mUnauthorized - Invalid Token[39m
+2022-03-03 22:00:02:02 [32minfo[39m: [32mValidating Token[39m
+2022-03-03 22:01:00:10 [32minfo[39m: [32mApp listening on the port 3000[39m
+2022-03-03 22:01:06:16 [32minfo[39m: [32mValidating Token[39m
+2022-03-03 22:01:06:16 [31merror[39m: [31mUnauthorized - Invalid Token[39m
+2022-03-03 22:01:35:135 [32minfo[39m: [32mValidating Token[39m
+2022-03-03 22:01:35:135 [31merror[39m: [31mUnauthorized - Missing Token[39m
+2022-03-03 22:05:25:525 [32minfo[39m: [32mApp listening on the port 3000[39m
+2022-03-03 22:05:47:547 [32minfo[39m: [32mValidating Token[39m
+2022-03-03 22:05:47:547 [31merror[39m: [31mUnauthorized - Missing Token[39m
+2022-03-03 22:06:10:610 [32minfo[39m: [32mValidating Token[39m
+2022-03-03 22:06:10:610 [31merror[39m: [31mUnauthorized - Missing Token[39m
+2022-03-03 22:06:25:625 [32minfo[39m: [32mValidating Token[39m
+2022-03-03 22:07:36:736 [32minfo[39m: [32mValidating Token[39m
+2022-03-03 22:07:36:736 [31merror[39m: [31mUnauthorized - Missing Token[39m
+2022-03-03 22:08:03:83 [32minfo[39m: [32mApp listening on the port 3000[39m
+2022-03-03 22:10:20:1020 [32minfo[39m: [32mApp listening on the port 3000[39m
+2022-03-03 22:10:39:1039 [32minfo[39m: [32mValidating Token[39m
+2022-03-03 22:10:39:1039 [31merror[39m: [31mUnauthorized - Missing Token[39m
+2022-03-03 22:11:23:1123 [32minfo[39m: [32mValidating Token[39m
+2022-03-03 22:11:51:1151 [32minfo[39m: [32mValidating Token[39m
+2022-03-03 22:12:04:124 [32minfo[39m: [32mValidating Token[39m
+2022-03-03 22:14:10:1410 [32minfo[39m: [32mApp listening on the port 3000[39m
+2022-03-03 22:17:05:175 [32minfo[39m: [32mApp listening on the port 3000[39m

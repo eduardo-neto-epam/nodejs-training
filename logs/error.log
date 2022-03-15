@@ -41,3 +41,13 @@
 2022-03-03 22:45:03:453 [31merror[39m: [31mUnauthorized - Missing Token[39m
 2022-03-03 22:46:53:4653 [31merror[39m: [31mUnauthorized - Missing Token[39m
 2022-03-03 22:48:34:4834 [31merror[39m: [31mUnauthorized - Missing Token[39m
+2022-03-11 16:18:26:1826 [31merror[39m: [31mUnauthorized - Missing Token[39m
+2022-03-11 16:18:41:1841 [31merror[39m: [31mStatus: 500. Message: Internal Server Error. Cannot set headers after they are sent to the client. Method: GET,  Args: {"params":{},"query":{},"body":{"password":"xxxxxxxx"}},  Headers: {"user-agent":"vscode-restclient","content-type":"application/json","authorization":"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJ1bGxvY2tzMTIzIiwiaWF0IjoxNjQ2MzQyNjY3LCJleHAiOjMyOTMwNDUzMzQsImlzcyI6ImFtYXppbmdfaXNzdWVyIn0.QjKVKq3FmdfCmyiSroWIBah_DyvvM1hZnUhBXs6mVXE","accept-encoding":"gzip, deflate","host":"localhost:3000","connection":"close"} [39m
+2022-03-11 16:19:09:199 [31merror[39m: [31mStatus: 500. Message: Internal Server Error. Cannot set headers after they are sent to the client. Method: GET,  Args: {"params":{},"query":{"pattern":"B","order":"asc","limit":"5"},"body":{"password":"xxxxxxxx"}},  Headers: {"user-agent":"vscode-restclient","content-type":"application/json","authorization":"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJ1bGxvY2tzMTIzIiwiaWF0IjoxNjQ2MzQyNjY3LCJleHAiOjMyOTMwNDUzMzQsImlzcyI6ImFtYXppbmdfaXNzdWVyIn0.QjKVKq3FmdfCmyiSroWIBah_DyvvM1hZnUhBXs6mVXE","accept-encoding":"gzip, deflate","host":"localhost:3000","connection":"close"} [39m
+2022-03-11 16:23:38:2338 [31merror[39m: [31mUnauthorized - Missing Token[39m
+2022-03-15 10:05:37:537 [31merror[39m: [31mLogin Bullocks1234 already exists, please try an unique name.[39m
+2022-03-15 10:06:52:652 [31merror[39m: [31mUnauthorized - Invalid Token[39m
+2022-03-15 10:08:15:815 [31merror[39m: [31mUnauthorized - Missing Token[39m
+2022-03-15 13:17:27:1727 [31merror[39m: [31mLogin Bullocks123456 already exists, please try an unique name.[39m
+2022-03-15 13:18:45:1845 [31merror[39m: [31mUnauthorized - Invalid Token[39m
+2022-03-15 13:32:46:3246 [31merror[39m: [31mUnauthorized - Missing Token[39m

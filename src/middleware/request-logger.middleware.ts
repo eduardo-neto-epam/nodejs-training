@@ -3,7 +3,7 @@ import fs from 'fs';
 import { NextFunction, Request, Response } from 'express';
 import colors from 'colors';
 
-import { getActualRequestDurationInMilliseconds } from '../utils';
+import { getActualRequestDurationInMilliseconds, replacePassword } from '../utils';
 
 const requestLogger = (req: Request, res: Response, next: NextFunction): void => {
     try {
@@ -31,7 +31,7 @@ const requestLogger = (req: Request, res: Response, next: NextFunction): void =>
             Method: ${method}
             headers: ${JSON.stringify(headers)};
             URL: ${url}
-            body: ${JSON.stringify(body)}
+            body: ${body.password ? JSON.stringify(replacePassword(body)) : JSON.stringify(body)}
             ${status < 300 ? colors.green(status.toString()) : colors.red(status.toString())} 
             ${colors.magenta(durationInMilliseconds.toLocaleString() + 'ms')}`;
         console.log(log);

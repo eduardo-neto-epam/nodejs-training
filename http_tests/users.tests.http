@@ -2,7 +2,7 @@ POST http://localhost:3000/users HTTP/1.1
 content-type: application/json
 
 {
-    "login": "Bullocks1234",
+    "login": "Bullocks12345678",
     "password": "123aaa",
     "age": 45
 }
@@ -13,33 +13,22 @@ POST http://localhost:3000/users/login HTTP/1.1
 content-type: application/json
 
 {
-    "login": "Bullocks1234",
+    "login": "Bullocks1234567",
     "password": "123aaa"
 }
 
 ###
 
-GET http://localhost:3000/users/validate_token HTTP/1.1
+GET http://localhost:3000/users/6fe1f33b-e447-4c4a-9b15-db5600ee689a HTTP/1.1
 content-type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJ1bGxvY2tzMTIzIiwiaWF0IjoxNjQ2MzQyNjY3LCJleHAiOjMyOTMwNDUzMzQsImlzcyI6ImFtYXppbmdfaXNzdWVyIn0.QjKVKq3FmdfCmyiSroWIBah_DyvvM1hZnUhBXs6mVXE
-
-###
-###
-
-GET http://localhost:3000/users/validate_token HTTP/1.1
-content-type: application/json
-Authorization: Bearer XXX
-###
-
-###
-
-GET http://localhost:3000/users/2586a1b0-bd78-404f-a59d-faca13d9e9b5 HTTP/1.1
-content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJ1bGxvY2tzMTIzNCIsImlhdCI6MTY0NzMzODc1MywiZXhwIjozMjk1MDM3NTA2LCJpc3MiOiJhbWF6aW5nX2lzc3VlciJ9.sH5Ww7RNvXp5BF-JVN5Z-VYgui6rXmejDNw2hFrzOuM
 
 ###
 
 GET http://localhost:3000/users HTTP/1.1
 content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IiQyYiQxMCRvMU5aQ3pnc3djS0JzSHcuOGRta3V1cTYwZUZ6UzY4c0tQZ2JlRHk5dERna1o1VldIb1hsMiIsImlhdCI6MTY0NzM1MDI2NiwiZXhwIjozMjk1MDYwNDk0LCJpc3MiOiJhbWF6aW5nX2lzc3VlciJ9.tPNSQF2kGiwo-yCFHGxOohm8zDtIvAXfxBbSBr10QOc
+
 
 ###
 
@@ -47,6 +36,7 @@ content-type: application/json
 
 GET http://localhost:3000/users?pattern=B&order=asc&limit=5 HTTP/1.1
 content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJ1bGxvY2tzMTIzIiwiaWF0IjoxNjQ2MzQyNjY3LCJleHAiOjMyOTMwNDUzMzQsImlzcyI6ImFtYXppbmdfaXNzdWVyIn0.QjKVKq3FmdfCmyiSroWIBah_DyvvM1hZnUhBXs6mVXE
 
 ###
 ###

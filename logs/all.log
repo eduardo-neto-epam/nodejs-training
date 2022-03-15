@@ -161,3 +161,131 @@
 2022-03-03 22:12:04:124 [32minfo[39m: [32mValidating Token[39m
 2022-03-03 22:14:10:1410 [32minfo[39m: [32mApp listening on the port 3000[39m
 2022-03-03 22:17:05:175 [32minfo[39m: [32mApp listening on the port 3000[39m
+2022-03-11 15:49:27:4927 [32minfo[39m: [32mApp listening on the port 3000[39m
+2022-03-11 16:01:58:158 [32minfo[39m: [32mApp listening on the port 3000[39m
+2022-03-11 16:02:50:250 [32minfo[39m: [32mApp listening on the port 3000[39m
+2022-03-11 16:04:37:437 [32minfo[39m: [32mApp listening on the port 3000[39m
+2022-03-11 16:06:02:62 [32minfo[39m: [32mApp listening on the port 3000[39m
+2022-03-11 16:18:14:1814 [32minfo[39m: [32mApp listening on the port 3000[39m
+2022-03-11 16:18:26:1826 [32minfo[39m: [32mValidating Token[39m
+2022-03-11 16:18:26:1826 [31merror[39m: [31mUnauthorized - Missing Token[39m
+2022-03-11 16:18:41:1841 [32minfo[39m: [32mValidating Token[39m
+2022-03-11 16:18:41:1841 [31merror[39m: [31mStatus: 500. Message: Internal Server Error. Cannot set headers after they are sent to the client. Method: GET,  Args: {"params":{},"query":{},"body":{"password":"xxxxxxxx"}},  Headers: {"user-agent":"vscode-restclient","content-type":"application/json","authorization":"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJ1bGxvY2tzMTIzIiwiaWF0IjoxNjQ2MzQyNjY3LCJleHAiOjMyOTMwNDUzMzQsImlzcyI6ImFtYXppbmdfaXNzdWVyIn0.QjKVKq3FmdfCmyiSroWIBah_DyvvM1hZnUhBXs6mVXE","accept-encoding":"gzip, deflate","host":"localhost:3000","connection":"close"} [39m
+2022-03-11 16:19:09:199 [32minfo[39m: [32mValidating Token[39m
+2022-03-11 16:19:09:199 [31merror[39m: [31mStatus: 500. Message: Internal Server Error. Cannot set headers after they are sent to the client. Method: GET,  Args: {"params":{},"query":{"pattern":"B","order":"asc","limit":"5"},"body":{"password":"xxxxxxxx"}},  Headers: {"user-agent":"vscode-restclient","content-type":"application/json","authorization":"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJ1bGxvY2tzMTIzIiwiaWF0IjoxNjQ2MzQyNjY3LCJleHAiOjMyOTMwNDUzMzQsImlzcyI6ImFtYXppbmdfaXNzdWVyIn0.QjKVKq3FmdfCmyiSroWIBah_DyvvM1hZnUhBXs6mVXE","accept-encoding":"gzip, deflate","host":"localhost:3000","connection":"close"} [39m
+2022-03-11 16:23:17:2317 [32minfo[39m: [32mApp listening on the port 3000[39m
+2022-03-11 16:23:25:2325 [32minfo[39m: [32mValidating Token[39m
+2022-03-11 16:23:38:2338 [32minfo[39m: [32mValidating Token[39m
+2022-03-11 16:23:38:2338 [31merror[39m: [31mUnauthorized - Missing Token[39m
+2022-03-14 16:45:21:4521 [32minfo[39m: [32mApp listening on the port 3000[39m
+2022-03-14 16:56:13:5613 [32minfo[39m: [32mApp listening on the port 3000[39m
+2022-03-14 17:00:11:011 [32minfo[39m: [32mApp listening on the port 3000[39m
+2022-03-14 17:11:43:1143 [32minfo[39m: [32mApp listening on the port 3000[39m
+2022-03-14 17:12:55:1255 [32minfo[39m: [32mApp listening on the port 3000[39m
+2022-03-14 17:17:01:171 [32minfo[39m: [32mApp listening on the port 3000[39m
+2022-03-14 17:32:20:3220 [32minfo[39m: [32mApp listening on the port 3000[39m
+2022-03-14 17:34:06:346 [32minfo[39m: [32mApp listening on the port 3000[39m
+2022-03-15 09:51:38:5138 [32minfo[39m: [32mApp listening on the port 3000[39m
+2022-03-15 09:53:46:5346 [32minfo[39m: [32mApp listening on the port 3000[39m
+2022-03-15 09:58:18:5818 [32minfo[39m: [32mApp listening on the port 3000[39m
+2022-03-15 09:59:38:5938 [32minfo[39m: [32mApp listening on the port 3000[39m
+2022-03-15 10:00:20:020 [32minfo[39m: [32mApp listening on the port 3000[39m
+2022-03-15 10:05:09:59 [32minfo[39m: [32mApp listening on the port 3000[39m
+2022-03-15 10:05:37:537 [31merror[39m: [31mLogin Bullocks1234 already exists, please try an unique name.[39m
+2022-03-15 10:05:53:553 [32minfo[39m: [32mBullocks1234 is attempting to login.[39m
+2022-03-15 10:05:53:553 [32minfo[39m: [32mAttempting to sign token for Bullocks1234[39m
+2022-03-15 10:05:53:553 [32minfo[39m: [32mToken signed for Bullocks1234[39m
+2022-03-15 10:06:20:620 [32minfo[39m: [32mValidating Token[39m
+2022-03-15 10:06:20:620 [32minfo[39m: [32mtoken validated, user is Authorized.[39m
+2022-03-15 10:06:52:652 [32minfo[39m: [32mValidating Token[39m
+2022-03-15 10:06:52:652 [31merror[39m: [31mUnauthorized - Invalid Token[39m
+2022-03-15 10:07:02:72 [32minfo[39m: [32mValidating Token[39m
+2022-03-15 10:07:02:72 [32minfo[39m: [32mtoken validated, user is Authorized.[39m
+2022-03-15 10:07:42:742 [32minfo[39m: [32mUser id:e8766f57-ea79-4c1c-bdc1-3b695709a356 created.[39m
+2022-03-15 10:08:15:815 [32minfo[39m: [32mValidating Token[39m
+2022-03-15 10:08:15:815 [31merror[39m: [31mUnauthorized - Missing Token[39m
+2022-03-15 10:08:38:838 [32minfo[39m: [32mValidating Token[39m
+2022-03-15 10:09:03:93 [32minfo[39m: [32mValidating Token[39m
+2022-03-15 10:09:55:955 [32minfo[39m: [32mBullocks12345 is attempting to login.[39m
+2022-03-15 10:09:55:955 [32minfo[39m: [32mAttempting to sign token for Bullocks12345[39m
+2022-03-15 10:09:55:955 [32minfo[39m: [32mToken signed for Bullocks12345[39m
+2022-03-15 10:10:41:1041 [32minfo[39m: [32mValidating Token[39m
+2022-03-15 10:11:21:1121 [32minfo[39m: [32mEdu is attempting to login.[39m
+2022-03-15 10:11:21:1121 [32minfo[39m: [32mAttempting to sign token for Edu[39m
+2022-03-15 10:11:21:1121 [32minfo[39m: [32mToken signed for Edu[39m
+2022-03-15 10:19:28:1928 [32minfo[39m: [32mApp listening on the port 3000[39m
+2022-03-15 10:31:51:3151 [32minfo[39m: [32mApp listening on the port 3000[39m
+2022-03-15 10:52:08:528 [32minfo[39m: [32mApp listening on the port 3000[39m
+2022-03-15 10:54:06:546 [32minfo[39m: [32mApp listening on the port 3000[39m
+2022-03-15 10:54:57:5457 [32minfo[39m: [32mApp listening on the port 3000[39m
+2022-03-15 11:05:18:518 [32minfo[39m: [32mApp listening on the port 3000[39m
+2022-03-15 11:07:01:71 [32minfo[39m: [32mApp listening on the port 3000[39m
+2022-03-15 11:12:25:1225 [32minfo[39m: [32mApp listening on the port 3000[39m
+2022-03-15 11:13:13:1313 [32minfo[39m: [32mApp listening on the port 3000[39m
+2022-03-15 11:13:28:1328 [32minfo[39m: [32mUser id:4a63a7c6-613b-44ae-906b-56eee043b32b created.[39m
+2022-03-15 11:13:48:1348 [32minfo[39m: [32mBullocks123456 is attempting to login.[39m
+2022-03-15 11:13:48:1348 [32minfo[39m: [32mAttempting to sign token for Bullocks123456[39m
+2022-03-15 11:13:48:1348 [32minfo[39m: [32mToken signed for Bullocks123456[39m
+2022-03-15 11:15:20:1520 [32minfo[39m: [32mApp listening on the port 3000[39m
+2022-03-15 11:18:52:1852 [32minfo[39m: [32mApp listening on the port 3000[39m
+2022-03-15 11:19:02:192 [32minfo[39m: [32mApp listening on the port 3000[39m
+2022-03-15 11:59:09:599 [32minfo[39m: [32mApp listening on the port 3000[39m
+2022-03-15 12:01:54:154 [32minfo[39m: [32mApp listening on the port 3000[39m
+2022-03-15 12:51:21:5121 [32minfo[39m: [32mApp listening on the port 3000[39m
+2022-03-15 12:53:08:538 [32minfo[39m: [32mApp listening on the port 3000[39m
+2022-03-15 12:57:04:574 [32minfo[39m: [32mApp listening on the port 3000[39m
+2022-03-15 12:58:33:5833 [32minfo[39m: [32mApp listening on the port 3000[39m
+2022-03-15 13:04:06:46 [32minfo[39m: [32mApp listening on the port 3000[39m
+2022-03-15 13:11:28:1128 [32minfo[39m: [32mApp listening on the port 3000[39m
+2022-03-15 13:14:45:1445 [32minfo[39m: [32mApp listening on the port 3000[39m
+2022-03-15 13:17:09:179 [32minfo[39m: [32mApp listening on the port 3000[39m
+2022-03-15 13:17:27:1727 [31merror[39m: [31mLogin Bullocks123456 already exists, please try an unique name.[39m
+2022-03-15 13:17:38:1738 [32minfo[39m: [32mUser id:6748a3d1-aa21-461d-8d2e-2895f139fc86 created.[39m
+2022-03-15 13:17:46:1746 [32minfo[39m: [32mBullocks1234567 is attempting to login.[39m
+2022-03-15 13:17:46:1746 [32minfo[39m: [32mAttempting to sign token for $2b$10$o1NZCzgswcKBsHw.8dmkuuq60eFzS68sKPgbeDy9tDgkZ5VWHoXl2[39m
+2022-03-15 13:17:46:1746 [32minfo[39m: [32mToken signed for $2b$10$o1NZCzgswcKBsHw.8dmkuuq60eFzS68sKPgbeDy9tDgkZ5VWHoXl2[39m
+2022-03-15 13:17:46:1746 [32minfo[39m: [32mBullocks1234567 logged in successfully.[39m
+2022-03-15 13:18:34:1834 [32minfo[39m: [32mValidating Token[39m
+2022-03-15 13:18:45:1845 [32minfo[39m: [32mValidating Token[39m
+2022-03-15 13:18:45:1845 [31merror[39m: [31mUnauthorized - Invalid Token[39m
+2022-03-15 13:19:13:1913 [32minfo[39m: [32mValidating Token[39m
+2022-03-15 13:31:21:3121 [32minfo[39m: [32mApp listening on the port 3000[39m
+2022-03-15 13:31:35:3135 [32minfo[39m: [32mApp listening on the port 3000[39m
+2022-03-15 13:32:13:3213 [32minfo[39m: [32mUser id:6fe1f33b-e447-4c4a-9b15-db5600ee689a created.[39m
+2022-03-15 13:32:29:3229 [32minfo[39m: [32mValidating Token[39m
+2022-03-15 13:32:38:3238 [32minfo[39m: [32mBullocks1234567 is attempting to login.[39m
+2022-03-15 13:32:38:3238 [32minfo[39m: [32mAttempting to sign token for $2b$10$o1NZCzgswcKBsHw.8dmkuuq60eFzS68sKPgbeDy9tDgkZ5VWHoXl2[39m
+2022-03-15 13:32:38:3238 [32minfo[39m: [32mToken signed for $2b$10$o1NZCzgswcKBsHw.8dmkuuq60eFzS68sKPgbeDy9tDgkZ5VWHoXl2[39m
+2022-03-15 13:32:38:3238 [32minfo[39m: [32mBullocks1234567 logged in successfully.[39m
+2022-03-15 13:32:46:3246 [32minfo[39m: [32mValidating Token[39m
+2022-03-15 13:32:46:3246 [31merror[39m: [31mUnauthorized - Missing Token[39m
+2022-03-15 13:42:25:4225 [32minfo[39m: [32mApp listening on the port 3000[39m
+2022-03-15 13:42:48:4248 [32minfo[39m: [32mBullocks1234567 is attempting to login.[39m
+2022-03-15 13:42:48:4248 [32minfo[39m: [32mDecrypting and checking if strings match...[39m
+2022-03-15 13:42:48:4248 [32minfo[39m: [32mAttempting to sign token for $2b$10$o1NZCzgswcKBsHw.8dmkuuq60eFzS68sKPgbeDy9tDgkZ5VWHoXl2[39m
+2022-03-15 13:42:48:4248 [32minfo[39m: [32mToken signed for $2b$10$o1NZCzgswcKBsHw.8dmkuuq60eFzS68sKPgbeDy9tDgkZ5VWHoXl2[39m
+2022-03-15 13:42:48:4248 [32minfo[39m: [32mBullocks1234567 logged in successfully.[39m
+2022-03-15 13:42:48:4248 [32minfo[39m: [32mMatching successful[39m
+2022-03-15 13:45:11:4511 [32minfo[39m: [32mApp listening on the port 3000[39m
+2022-03-15 13:46:48:4648 [32minfo[39m: [32mApp listening on the port 3000[39m
+2022-03-15 13:47:03:473 [32minfo[39m: [32mBullocks1234567 is attempting to login.[39m
+2022-03-15 13:47:04:474 [32minfo[39m: [32mDecrypting and checking if strings match...[39m
+2022-03-15 13:47:04:474 [32minfo[39m: [32mAttempting to sign token...[39m
+2022-03-15 13:47:04:474 [32minfo[39m: [32mBullocks1234567 logged in successfully.[39m
+2022-03-15 13:48:49:4849 [32minfo[39m: [32mApp listening on the port 3000[39m
+2022-03-15 13:52:44:5244 [32minfo[39m: [32mApp listening on the port 3000[39m
+2022-03-15 13:54:22:5422 [32minfo[39m: [32mApp listening on the port 3000[39m
+2022-03-15 13:55:17:5517 [32minfo[39m: [32mApp listening on the port 3000[39m
+2022-03-15 13:55:33:5533 [32minfo[39m: [32mBullocks1234567 is attempting to login.[39m
+2022-03-15 13:55:33:5533 [32minfo[39m: [32mDecrypting and checking if passwords match...[39m
+2022-03-15 13:55:33:5533 [32minfo[39m: [32mAttempting to sign token...[39m
+2022-03-15 13:55:33:5533 [32minfo[39m: [32mBullocks1234567 logged in successfully.[39m
+2022-03-15 13:58:54:5854 [32minfo[39m: [32mApp listening on the port 3000[39m
+2022-03-15 13:59:18:5918 [32minfo[39m: [32mApp listening on the port 3000[39m
+2022-03-15 13:59:38:5938 [32minfo[39m: [32mApp listening on the port 3000[39m
+2022-03-15 14:06:12:612 [32minfo[39m: [32mApp listening on the port 3000[39m
+2022-03-15 14:06:26:626 [32minfo[39m: [32mBullocks1234567 is attempting to login.[39m
+2022-03-15 14:06:26:626 [32minfo[39m: [32mDecrypting and checking if passwords match...[39m
+2022-03-15 14:06:26:626 [32minfo[39m: [32mAttempting to sign token...[39m
+2022-03-15 14:06:26:626 [32minfo[39m: [32mBullocks1234567 logged in successfully.[39m
+2022-03-15 14:08:08:88 [32minfo[39m: [32mApp listening on the port 3000[39m

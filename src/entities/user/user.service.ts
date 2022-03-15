@@ -1,20 +1,24 @@
 import { StatusCodes } from 'http-status-codes';
-import bcrypt from 'bcrypt';
 
 import HttpException from '../../exceptions/HttpException';
 import UserNotFoundException from '../../exceptions/UserNotFoundException';
-import { processedDataByQueryParams } from '../../utils';
+import { processedDataByQueryParams, omitPassword, EncryptionService, Auth } from '../../utils';
 import { ParamsProps } from '../../utils/types';
 import { Group } from '../group/group.model';
 import Logger from '../../lib/logger';
 
-import { IUserBase, UserAttributes } from './user.interfaces';
+import { IUserDto, UserAttributes } from './user.interfaces';
 import { User } from './user.model';
 
 class UserService {
     private userModel: typeof User;
-    constructor(userInstance: typeof User) {
+    private encryptionService: EncryptionService;
+    private authService: Auth;
+
+    constructor(userInstance: typeof User, encryptionInstance: EncryptionService, authService: Auth) {
         this.userModel = userInstance;
+        this.encryptionService = encryptionInstance;
+        this.authService = authService;
     }
 
     findAll = async (): Promise<User[]> => {
@@ -57,8 +61,7 @@ class UserService {
                     `Login ${login} already exists, please try an unique name.`,
                 );
             }
-            const salt = await bcrypt.genSalt();
-            const hashedPassword = await bcrypt.hash(password, salt);
+            const hashedPassword = await this.encryptionService.encrypt(password);
             const payloadWithHashedPassword = {
                 ...payload,
                 password: hashedPassword,
@@ -76,11 +79,11 @@ class UserService {
         }
     };
 
-    loginUser = async (username: string, passDts: string): Promise<IUserBase | HttpException> => {
+    loginUser = async (username: string, passDts: string): Promise<IUserDto | HttpException> => {
         try {
             const data = await this.userModel.findAll({ where: { login: username } });
             const passwords = data.map((user) => user.get('password'));
-            const uniquePass = passwords.filter(async (pass) => await bcrypt.compare(passDts, pass))[0];
+            const uniquePass = passwords.filter(async (pass) => await this.encryptionService.match(passDts, pass))[0];
             if (!uniquePass) return new HttpException(StatusCodes.UNAUTHORIZED, 'No match for this credentials.');
             const user = data.filter((user) => user.password === uniquePass)[0];
             const { id, login, age, isDeleted, createdAt, updatedAt } = user;
@@ -93,7 +96,11 @@ class UserService {
                 createdAt,
                 updatedAt,
             };
-            return userBase;
+            const token = this.authService.signToken(user.password);
+            return {
+                data: omitPassword(userBase),
+                token,
+            };
         } catch (error) {
             if (error instanceof Error) {
                 Logger.error(error.message, error);

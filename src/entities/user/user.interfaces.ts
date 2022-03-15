@@ -25,3 +25,8 @@ export interface IUserBodySchema extends ValidatedRequestSchema {
         isDeleted: boolean;
     };
 }
+
+export interface IUserDto {
+    data: Omit<UserAttributes, 'password'>;
+    token: string;
+}

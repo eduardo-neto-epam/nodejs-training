@@ -7,7 +7,7 @@ import { IController } from '../../interfaces/controller.interfaces';
 import HttpException from '../../exceptions/HttpException';
 import GroupNotFoundException from '../../exceptions/GroupNotFoundException';
 import InternalServerException from '../../exceptions/InternalServerException';
-import getJWT from '../../middleware/getJWT.middleware';
+import authorize from '../../middleware/authorize.middleware';
 
 import { IGroupAttributes } from './group.interfaces';
 import { Group } from './group.model';
@@ -27,16 +27,16 @@ class GroupController implements IController {
     }
 
     initializeRoutes(): void {
-        this.router.get(this.path, getJWT, this.getAll);
-        this.router.post(this.path, getJWT, this.validator.body(valid.GroupBodySchema), this.createGroup);
-        this.router.get(`${this.path}/:id`, getJWT, this.getGroupById);
+        this.router.get(this.path, authorize, this.getAll);
+        this.router.post(this.path, authorize, this.validator.body(valid.GroupBodySchema), this.createGroup);
+        this.router.get(`${this.path}/:id`, authorize, this.getGroupById);
         this.router.patch(
             `${this.path}/:id`,
-            getJWT,
+            authorize,
             this.validator.body(valid.GroupUpdateBodySchema),
             this.updateGroup,
         );
-        this.router.delete(`${this.path}/:id`, getJWT, this.deleteGroup);
+        this.router.delete(`${this.path}/:id`, authorize, this.deleteGroup);
     }
 
     getGroupById = async (request: Request, response: Response, next: NextFunction): Promise<void> => {

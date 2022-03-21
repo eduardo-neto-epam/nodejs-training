@@ -1,11 +1,16 @@
 import { Router, Request, Response, NextFunction } from 'express';
-import { StatusCodes } from 'http-status-codes';
 import { createValidator } from 'express-joi-validation';
+import { StatusCodes } from 'http-status-codes';
 import { v4 as uuid_v4 } from 'uuid';
 
 import { IController } from '../../interfaces/controller.interfaces';
 import UserNotFoundException from '../../exceptions/UserNotFoundException';
 import HttpException from '../../exceptions/HttpException';
+import Logger from '../../lib/logger';
+import authorize from '../../middleware/authorize.middleware';
+import { EncryptionService } from '../../utils/encryption';
+import { authConfig } from '../../config';
+import { Auth } from '../../utils';
 
 import { IUser, IUserBase, UserAttributes } from './user.interfaces';
 import { User } from './user.model';
@@ -20,41 +25,68 @@ class UserController implements IController {
     private userService: UserService;
 
     constructor() {
-        this.userService = new UserService(User);
+        this.userService = new UserService(User, new EncryptionService(), new Auth(authConfig));
         this.initializeRoutes();
     }
 
     initializeRoutes(): void {
-        this.router.get(this.path, this.getSuggestions);
+        this.router.post(`${this.path}/login`, this.validator.body(valid.UserLoginSchema), this.login);
+        this.router.get(this.path, authorize, this.getSuggestions);
         this.router.post(this.path, this.validator.body(valid.UserBodySchema), this.createUser);
-        this.router.get(`${this.path}/:id`, this.getUserById);
-        this.router.patch(`${this.path}/:id`, this.validator.body(valid.UserUpdateBodySchema), this.updateUser);
-        this.router.delete(`${this.path}/:id`, this.deleteUser);
+        this.router.get(`${this.path}/:id`, authorize, this.getUserById);
+        this.router.patch(
+            `${this.path}/:id`,
+            authorize,
+            this.validator.body(valid.UserUpdateBodySchema),
+            this.updateUser,
+        );
+        this.router.delete(`${this.path}/:id`, authorize, this.deleteUser);
     }
+
+    login = async (request: Request, response: Response, next: NextFunction): Promise<void> => {
+        try {
+            const { login, password } = request.body;
+            Logger.info(`${login} is attempting to login.`);
+            const userDto = await this.userService.loginUser(login, password);
+            if (userDto instanceof Error) {
+                throw userDto;
+            }
+            Logger.info(`${login} logged in successfully.`);
+            response.status(StatusCodes.OK).json(userDto);
+        } catch (error) {
+            if (error instanceof Error) {
+                return next(new HttpException(StatusCodes.INTERNAL_SERVER_ERROR, error.message));
+            }
+            return next(new HttpException(StatusCodes.INTERNAL_SERVER_ERROR, 'Oops, Something went wrong'));
+        }
+    };
 
     getUserById = async (request: Request, response: Response, next: NextFunction): Promise<void> => {
         try {
             const { id } = request.params;
             const data = await this.userService.findById(id);
-            if (data instanceof HttpException) throw new HttpException(data.status, data.message);
+            if (data instanceof HttpException) throw data;
             response.send(data.toJSON());
         } catch (error) {
-            next(error);
+            if (error instanceof Error) {
+                return next(new HttpException(StatusCodes.INTERNAL_SERVER_ERROR, error.message));
+            }
+            return next(new HttpException(StatusCodes.INTERNAL_SERVER_ERROR, 'Oops, Something went wrong'));
         }
     };
 
     createUser = async (request: Request, response: Response, next: NextFunction): Promise<void> => {
         try {
-            const userDTO: IUserBase = request.body;
+            const user: IUserBase = request.body;
             const payload: UserAttributes = {
                 id: uuid_v4(),
-                ...userDTO,
+                ...user,
                 isDeleted: false,
                 createdAt: new Date(),
                 updatedAt: new Date(),
             };
-            const newId = await this.userService.createUser(payload);
-            response.send(newId);
+            const userId = await this.userService.createUser(payload);
+            response.status(StatusCodes.CREATED).json({ userId });
         } catch (error) {
             if (error instanceof Error) {
                 return next(new HttpException(StatusCodes.INTERNAL_SERVER_ERROR, error.message));
@@ -72,7 +104,10 @@ class UserController implements IController {
             const updatedUser = data.toJSON();
             response.send(updatedUser);
         } catch (error) {
-            next(error);
+            if (error instanceof Error) {
+                return next(new HttpException(StatusCodes.INTERNAL_SERVER_ERROR, error.message));
+            }
+            return next(new HttpException(StatusCodes.INTERNAL_SERVER_ERROR, 'Oops, Something went wrong'));
         }
     };
 

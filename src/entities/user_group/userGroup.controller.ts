@@ -5,6 +5,7 @@ import { IController } from '../../interfaces/controller.interfaces';
 import { User } from '../user/user.model';
 import { Group } from '../group/group.model';
 import HttpException from '../../exceptions/HttpException';
+import authorize from '../../middleware/authorize.middleware';
 
 import UserGroupService from './userGroup.service';
 
@@ -26,9 +27,9 @@ class UserGroupController implements IController {
     }
 
     initializeRoutes(): void {
-        this.router.post(`${this.path}/:userId/:groupId`, this.addUserToGroup);
-        this.router.get(`${this.path}/users-from-group/:groupId`, this.getAllUsersFromGroup);
-        this.router.delete(`${this.path}/remove-user-from-group/:userId/:groupId`, this.removeUserFromGroup);
+        this.router.post(`${this.path}/:userId/:groupId`, authorize, this.addUserToGroup);
+        this.router.get(`${this.path}/users-from-group/:groupId`, authorize, this.getAllUsersFromGroup);
+        this.router.delete(`${this.path}/remove-user-from-group/:userId/:groupId`, authorize, this.removeUserFromGroup);
     }
 
     addUserToGroup = async (request: Request, response: Response, next: NextFunction): Promise<void> => {

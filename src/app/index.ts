@@ -45,7 +45,9 @@ class App {
                     Logger.info(`App listening on the port ${this.port}`);
                     process
                         .on('unhandledRejection', (reason, p) => {
-                            Logger.error(`Reason: ${reason}, Unhandled Rejection at Promise, Promise: ${p}`);
+                            Logger.error(
+                                `Reason: ${reason}, Unhandled Rejection at Promise, Promise: ${JSON.stringify(p)}`,
+                            );
                         })
                         .on('uncaughtException', (err) => {
                             Logger.error(`Uncaught Exception thrown, Error: ${err}`);

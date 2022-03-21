@@ -7,6 +7,7 @@ import { IController } from '../../interfaces/controller.interfaces';
 import HttpException from '../../exceptions/HttpException';
 import GroupNotFoundException from '../../exceptions/GroupNotFoundException';
 import InternalServerException from '../../exceptions/InternalServerException';
+import authorize from '../../middleware/authorize.middleware';
 
 import { IGroupAttributes } from './group.interfaces';
 import { Group } from './group.model';
@@ -26,11 +27,16 @@ class GroupController implements IController {
     }
 
     initializeRoutes(): void {
-        this.router.get(this.path, this.getAll);
-        this.router.post(this.path, this.validator.body(valid.GroupBodySchema), this.createGroup);
-        this.router.get(`${this.path}/:id`, this.getGroupById);
-        this.router.patch(`${this.path}/:id`, this.validator.body(valid.GroupUpdateBodySchema), this.updateGroup);
-        this.router.delete(`${this.path}/:id`, this.deleteGroup);
+        this.router.get(this.path, authorize, this.getAll);
+        this.router.post(this.path, authorize, this.validator.body(valid.GroupBodySchema), this.createGroup);
+        this.router.get(`${this.path}/:id`, authorize, this.getGroupById);
+        this.router.patch(
+            `${this.path}/:id`,
+            authorize,
+            this.validator.body(valid.GroupUpdateBodySchema),
+            this.updateGroup,
+        );
+        this.router.delete(`${this.path}/:id`, authorize, this.deleteGroup);
     }
 
     getGroupById = async (request: Request, response: Response, next: NextFunction): Promise<void> => {

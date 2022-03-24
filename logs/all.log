@@ -307,3 +307,20 @@
 2022-03-15 14:06:26:626 [32minfo[39m: [32mBullocks1234567 logged in successfully.[39m
 2022-03-15 14:08:08:88 [32minfo[39m: [32mApp listening on the port 3000[39m
 2022-03-15 14:27:47:2747 [32minfo[39m: [32mApp listening on the port 3000[39m
+2022-03-03 22:36:51:3651 [32minfo[39m: [32mApp listening on the port 3000[39m
+2022-03-03 22:37:19:3719 [32minfo[39m: [32mValidating Token[39m
+2022-03-03 22:37:19:3719 [31merror[39m: [31mUnauthorized - Missing Token[39m
+2022-03-03 22:37:55:3755 [32minfo[39m: [32mValidating Token[39m
+2022-03-03 22:37:55:3755 [31merror[39m: [31mUnauthorized - Missing Token[39m
+2022-03-03 22:39:14:3914 [32minfo[39m: [32mValidating Token[39m
+2022-03-03 22:39:14:3914 [31merror[39m: [31mUnauthorized - Missing Token[39m
+2022-03-03 22:43:49:4349 [32minfo[39m: [32mApp listening on the port 3000[39m
+2022-03-03 22:44:19:4419 [32minfo[39m: [32mValidating Token[39m
+2022-03-03 22:44:19:4419 [31merror[39m: [31mUnauthorized - Missing Token[39m
+2022-03-03 22:44:59:4459 [32minfo[39m: [32mApp listening on the port 3000[39m
+2022-03-03 22:45:03:453 [32minfo[39m: [32mValidating Token[39m
+2022-03-03 22:45:03:453 [31merror[39m: [31mUnauthorized - Missing Token[39m
+2022-03-03 22:46:53:4653 [32minfo[39m: [32mValidating Token[39m
+2022-03-03 22:46:53:4653 [31merror[39m: [31mUnauthorized - Missing Token[39m
+2022-03-03 22:48:34:4834 [32minfo[39m: [32mValidating Token[39m
+2022-03-03 22:48:34:4834 [31merror[39m: [31mUnauthorized - Missing Token[39m

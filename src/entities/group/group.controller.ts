@@ -10,7 +10,6 @@ import InternalServerException from '../../exceptions/InternalServerException';
 import authorize from '../../middleware/authorize.middleware';
 
 import { IGroupAttributes } from './group.interfaces';
-import { Group } from './group.model';
 import GroupService from './group.service';
 import * as valid from './group.validation';
 
@@ -21,8 +20,8 @@ class GroupController implements IController {
     private validator = createValidator();
     private groupService: GroupService;
 
-    constructor() {
-        this.groupService = new GroupService(Group);
+    constructor(groupServiceInstance: GroupService) {
+        this.groupService = groupServiceInstance;
         this.initializeRoutes();
     }
 
@@ -44,7 +43,7 @@ class GroupController implements IController {
         try {
             const group = await this.groupService.findById(id);
             if (!group) throw new GroupNotFoundException(id);
-            response.send(group.toJSON());
+            response.status(StatusCodes.OK).json(group);
         } catch (error) {
             next(error);
         }
@@ -61,7 +60,7 @@ class GroupController implements IController {
             };
             const newId = await this.groupService.createGroup(payload);
             if (!newId) throw new InternalServerException();
-            response.send(newId);
+            response.status(StatusCodes.CREATED).json(newId);
         } catch (error) {
             next(error);
         }
@@ -73,7 +72,7 @@ class GroupController implements IController {
             const payload: Partial<IGroupAttributes> = { ...request.body, updatedAt: new Date() };
             const data = await this.groupService.updateGroup(id, payload);
             if (data instanceof HttpException) throw new GroupNotFoundException(id);
-            response.send(data.toJSON());
+            response.status(StatusCodes.OK).json(data);
         } catch (error) {
             next(error);
         }
@@ -84,7 +83,7 @@ class GroupController implements IController {
         try {
             const deletedResources = await this.groupService.deleteGroup(id);
             if (deletedResources === 0) throw new GroupNotFoundException(id);
-            response.sendStatus(StatusCodes.NO_CONTENT);
+            response.status(StatusCodes.NO_CONTENT);
         } catch (error) {
             next(error);
         }
@@ -93,7 +92,7 @@ class GroupController implements IController {
     getAll = async (_request: Request, response: Response, next: NextFunction): Promise<void> => {
         try {
             const groups = await this.groupService.findAll();
-            response.send(groups);
+            response.status(StatusCodes.OK).json(groups);
         } catch (error) {
             next(error);
         }

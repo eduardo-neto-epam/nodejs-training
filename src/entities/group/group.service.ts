@@ -3,7 +3,7 @@ import GroupNotFoundException from '../../exceptions/GroupNotFoundException';
 import InternalServerException from '../../exceptions/InternalServerException';
 
 import { IGroupAttributes } from './group.interfaces';
-import { Group } from './group.model';
+import Group from './group.model';
 
 class GroupService {
     private groupModel: typeof Group;

@@ -4,11 +4,11 @@ import HttpException from '../../exceptions/HttpException';
 import UserNotFoundException from '../../exceptions/UserNotFoundException';
 import { processedDataByQueryParams, omitPassword, EncryptionService, Auth } from '../../utils';
 import { ParamsProps } from '../../utils/types';
-import { Group } from '../group/group.model';
+import Group from '../group/group.model';
 import Logger from '../../lib/logger';
 
 import { IUserDto, UserAttributes } from './user.interfaces';
-import { User } from './user.model';
+import User from './user.model';
 
 class UserService {
     private userModel: typeof User;
@@ -46,7 +46,7 @@ class UserService {
             if (error instanceof Error) {
                 throw new HttpException(StatusCodes.INTERNAL_SERVER_ERROR, error.message);
             }
-            throw new HttpException(StatusCodes.INTERNAL_SERVER_ERROR, 'Oops, Something went wrong');
+            throw new HttpException(StatusCodes.INTERNAL_SERVER_ERROR, 'Error thrown on UserService method findById');
         }
     };
 
@@ -62,7 +62,7 @@ class UserService {
                 );
             }
             const hashedPassword = await this.encryptionService.encrypt(password);
-            const payloadWithHashedPassword = {
+            const payloadWithHashedPassword: UserAttributes = {
                 ...payload,
                 password: hashedPassword,
             };
@@ -82,6 +82,9 @@ class UserService {
     loginUser = async (username: string, passDts: string): Promise<IUserDto | HttpException> => {
         try {
             const data = await this.userModel.findAll({ where: { login: username } });
+            if (!data || data.length === 0) {
+                return new HttpException(StatusCodes.UNAUTHORIZED, `No match for this credentials.`);
+            }
             const passwords = data.map((user) => user.get('password'));
             const uniquePass = passwords.filter(async (pass) => await this.encryptionService.match(passDts, pass))[0];
             if (!uniquePass) return new HttpException(StatusCodes.UNAUTHORIZED, 'No match for this credentials.');

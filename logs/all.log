@@ -161,6 +161,23 @@
 2022-03-03 22:12:04:124 [32minfo[39m: [32mValidating Token[39m
 2022-03-03 22:14:10:1410 [32minfo[39m: [32mApp listening on the port 3000[39m
 2022-03-03 22:17:05:175 [32minfo[39m: [32mApp listening on the port 3000[39m
+2022-03-03 22:36:51:3651 [32minfo[39m: [32mApp listening on the port 3000[39m
+2022-03-03 22:37:19:3719 [32minfo[39m: [32mValidating Token[39m
+2022-03-03 22:37:19:3719 [31merror[39m: [31mUnauthorized - Missing Token[39m
+2022-03-03 22:37:55:3755 [32minfo[39m: [32mValidating Token[39m
+2022-03-03 22:37:55:3755 [31merror[39m: [31mUnauthorized - Missing Token[39m
+2022-03-03 22:39:14:3914 [32minfo[39m: [32mValidating Token[39m
+2022-03-03 22:39:14:3914 [31merror[39m: [31mUnauthorized - Missing Token[39m
+2022-03-03 22:43:49:4349 [32minfo[39m: [32mApp listening on the port 3000[39m
+2022-03-03 22:44:19:4419 [32minfo[39m: [32mValidating Token[39m
+2022-03-03 22:44:19:4419 [31merror[39m: [31mUnauthorized - Missing Token[39m
+2022-03-03 22:44:59:4459 [32minfo[39m: [32mApp listening on the port 3000[39m
+2022-03-03 22:45:03:453 [32minfo[39m: [32mValidating Token[39m
+2022-03-03 22:45:03:453 [31merror[39m: [31mUnauthorized - Missing Token[39m
+2022-03-03 22:46:53:4653 [32minfo[39m: [32mValidating Token[39m
+2022-03-03 22:46:53:4653 [31merror[39m: [31mUnauthorized - Missing Token[39m
+2022-03-03 22:48:34:4834 [32minfo[39m: [32mValidating Token[39m
+2022-03-03 22:48:34:4834 [31merror[39m: [31mUnauthorized - Missing Token[39m
 2022-03-11 15:49:27:4927 [32minfo[39m: [32mApp listening on the port 3000[39m
 2022-03-11 16:01:58:158 [32minfo[39m: [32mApp listening on the port 3000[39m
 2022-03-11 16:02:50:250 [32minfo[39m: [32mApp listening on the port 3000[39m
@@ -289,20 +306,246 @@
 2022-03-15 14:06:26:626 [32minfo[39m: [32mAttempting to sign token...[39m
 2022-03-15 14:06:26:626 [32minfo[39m: [32mBullocks1234567 logged in successfully.[39m
 2022-03-15 14:08:08:88 [32minfo[39m: [32mApp listening on the port 3000[39m
-2022-03-03 22:36:51:3651 [32minfo[39m: [32mApp listening on the port 3000[39m
-2022-03-03 22:37:19:3719 [32minfo[39m: [32mValidating Token[39m
-2022-03-03 22:37:19:3719 [31merror[39m: [31mUnauthorized - Missing Token[39m
-2022-03-03 22:37:55:3755 [32minfo[39m: [32mValidating Token[39m
-2022-03-03 22:37:55:3755 [31merror[39m: [31mUnauthorized - Missing Token[39m
-2022-03-03 22:39:14:3914 [32minfo[39m: [32mValidating Token[39m
-2022-03-03 22:39:14:3914 [31merror[39m: [31mUnauthorized - Missing Token[39m
-2022-03-03 22:43:49:4349 [32minfo[39m: [32mApp listening on the port 3000[39m
-2022-03-03 22:44:19:4419 [32minfo[39m: [32mValidating Token[39m
-2022-03-03 22:44:19:4419 [31merror[39m: [31mUnauthorized - Missing Token[39m
-2022-03-03 22:44:59:4459 [32minfo[39m: [32mApp listening on the port 3000[39m
-2022-03-03 22:45:03:453 [32minfo[39m: [32mValidating Token[39m
-2022-03-03 22:45:03:453 [31merror[39m: [31mUnauthorized - Missing Token[39m
-2022-03-03 22:46:53:4653 [32minfo[39m: [32mValidating Token[39m
-2022-03-03 22:46:53:4653 [31merror[39m: [31mUnauthorized - Missing Token[39m
-2022-03-03 22:48:34:4834 [32minfo[39m: [32mValidating Token[39m
-2022-03-03 22:48:34:4834 [31merror[39m: [31mUnauthorized - Missing Token[39m
+2022-03-15 14:27:47:2747 [32minfo[39m: [32mApp listening on the port 3000[39m
+2022-03-15 14:32:57:3257 [32minfo[39m: [32mApp listening on the port 3000[39m
+2022-03-16 10:34:52:3452 [32minfo[39m: [32mApp listening on the port 3000[39m
+2022-03-16 10:38:46:3846 [31merror[39m: [31mLogin Bullocks12345678 already exists, please try an unique name.[39m
+2022-03-16 10:41:46:4146 [32minfo[39m: [32mEncrypting...[39m
+2022-03-16 10:41:46:4146 [32minfo[39m: [32mEncrypting done[39m
+2022-03-16 10:41:46:4146 [32minfo[39m: [32mUser id:7deaf395-794e-460a-9414-61dd0d8ff57d created.[39m
+2022-03-16 10:42:41:4241 [32minfo[39m: [32mApp listening on the port 3000[39m
+2022-03-18 12:54:51:5451 [32minfo[39m: [32mApp listening on the port 3005[39m
+2022-03-18 13:05:15:515 [32minfo[39m: [32mApp listening on the port 3005[39m
+2022-03-18 13:12:52:1252 [32minfo[39m: [32mApp listening on the port 3005[39m
+2022-03-18 13:13:10:1310 [32minfo[39m: [32mApp listening on the port 3005[39m
+2022-03-18 13:13:21:1321 [32minfo[39m: [32mApp listening on the port 3005[39m
+2022-03-18 13:13:45:1345 [32minfo[39m: [32mApp listening on the port 3005[39m
+2022-03-18 13:35:48:3548 [32minfo[39m: [32mApp listening on the port 3005[39m
+2022-03-18 13:36:33:3633 [32minfo[39m: [32mApp listening on the port 3005[39m
+2022-03-18 13:36:57:3657 [32minfo[39m: [32mApp listening on the port 3005[39m
+2022-03-18 13:37:36:3736 [32minfo[39m: [32mApp listening on the port 3005[39m
+2022-03-18 13:38:36:3836 [32minfo[39m: [32mApp listening on the port 3005[39m
+2022-03-18 13:39:07:397 [32minfo[39m: [32mApp listening on the port 3005[39m
+2022-03-18 13:40:05:405 [32minfo[39m: [32mApp listening on the port 3005[39m
+2022-03-18 13:57:19:5719 [32minfo[39m: [32mApp listening on the port 3005[39m
+2022-03-18 13:57:38:5738 [32minfo[39m: [32mApp listening on the port 3005[39m
+2022-03-18 13:57:52:5752 [32minfo[39m: [32mApp listening on the port 3005[39m
+2022-03-18 17:38:03:383 [31merror[39m: [31mLogin someOtherUsername already exists, please try an unique name.[39m
+2022-03-18 17:38:03:383 [31merror[39m: [31mLogin someOtherUsername already exists, please try an unique name.[39m
+2022-03-18 18:01:50:150 [31merror[39m: [31mLogin someOtherUsername already exists, please try an unique name.[39m
+2022-03-18 18:01:50:150 [31merror[39m: [31mLogin someOtherUsername already exists, please try an unique name.[39m
+2022-03-18 18:01:50:150 [31merror[39m: [31mLogin someOtherUsername already exists, please try an unique name.[39m
+2022-03-18 18:02:14:214 [31merror[39m: [31mLogin someOtherUsername123 already exists, please try an unique name.[39m
+2022-03-18 18:02:15:215 [31merror[39m: [31mLogin someOtherUsername123 already exists, please try an unique name.[39m
+2022-03-18 18:02:58:258 [31merror[39m: [31mLogin someOtherUsername123 already exists, please try an unique name.[39m
+2022-03-18 18:02:58:258 [31merror[39m: [31mLogin someOtherUsername123 already exists, please try an unique name.[39m
+2022-03-18 18:02:59:259 [31merror[39m: [31mLogin someOtherUsername123 already exists, please try an unique name.[39m
+2022-03-18 18:35:41:3541 [31merror[39m: [31mLogin someOtherUsername123 already exists, please try an unique name.[39m
+2022-03-18 18:35:41:3541 [31merror[39m: [31mLogin someOtherUsername123 already exists, please try an unique name.[39m
+2022-03-18 18:35:41:3541 [31merror[39m: [31mLogin someOtherUsername123 already exists, please try an unique name.[39m
+2022-03-18 18:37:32:3732 [31merror[39m: [31mLogin someOtherUsername123 already exists, please try an unique name.[39m
+2022-03-18 18:37:32:3732 [31merror[39m: [31mLogin someOtherUsername123 already exists, please try an unique name.[39m
+2022-03-19 00:06:21:621 [31merror[39m: [31mCannot read property 'map' of undefined Cannot read property 'map' of undefined[39m
+2022-03-19 00:09:46:946 [31merror[39m: [31mCannot read property 'map' of undefined Cannot read property 'map' of undefined[39m
+2022-03-19 00:20:40:2040 [31merror[39m: [31mCannot read property 'map' of undefined Cannot read property 'map' of undefined[39m
+2022-03-19 00:22:18:2218 [31merror[39m: [31mCannot read property 'map' of undefined Cannot read property 'map' of undefined[39m
+2022-03-19 00:23:51:2351 [31merror[39m: [31mCannot read property 'map' of undefined Cannot read property 'map' of undefined[39m
+2022-03-19 00:25:11:2511 [31merror[39m: [31mCannot read property 'map' of undefined Cannot read property 'map' of undefined[39m
+2022-03-19 00:26:41:2641 [31merror[39m: [31mCannot read property 'map' of undefined Cannot read property 'map' of undefined[39m
+2022-03-19 00:27:16:2716 [31merror[39m: [31mCannot read property 'map' of undefined Cannot read property 'map' of undefined[39m
+2022-03-19 00:27:52:2752 [31merror[39m: [31mCannot read property 'map' of undefined Cannot read property 'map' of undefined[39m
+2022-03-19 00:38:42:3842 [31merror[39m: [31mCannot read property 'map' of undefined Cannot read property 'map' of undefined[39m
+2022-03-19 00:44:55:4455 [31merror[39m: [31mCannot read property 'map' of undefined Cannot read property 'map' of undefined[39m
+2022-03-19 00:46:51:4651 [31merror[39m: [31mCannot read property 'map' of undefined Cannot read property 'map' of undefined[39m
+2022-03-19 11:03:59:359 [31merror[39m: [31mCannot read property 'map' of undefined Cannot read property 'map' of undefined[39m
+2022-03-19 11:05:10:510 [31merror[39m: [31mCannot read property 'map' of undefined Cannot read property 'map' of undefined[39m
+2022-03-19 11:28:03:283 [31merror[39m: [31mCannot read property 'map' of undefined Cannot read property 'map' of undefined[39m
+2022-03-19 11:55:39:5539 [31merror[39m: [31mCannot read property 'length' of undefined Cannot read property 'length' of undefined[39m
+2022-03-19 12:23:27:2327 [31merror[39m: [31muser.get is not a function user.get is not a function[39m
+2022-03-19 12:25:19:2519 [31merror[39m: [31muser.get is not a function user.get is not a function[39m
+2022-03-19 12:26:53:2653 [31merror[39m: [31muser.get is not a function user.get is not a function[39m
+2022-03-21 13:49:45:4945 [32minfo[39m: [32mApp listening on the port 3005[39m
+2022-03-21 13:50:15:5015 [32minfo[39m: [32mValidating Token[39m
+2022-03-21 13:50:15:5015 [31merror[39m: [31mStatus: 500. Message: Internal Server Error. Converting circular structure to JSON[39m
+[31m    --> starting at object with constructor 'Array'[39m
+[31m    |     index 0 -> object with constructor 'Object'[39m
+[31m    |     property 'parent' -> object with constructor 'Object'[39m
+[31m    --- property 'include' closes the circle. Method: GET,  Args: {"params":{},"query":{},"body":{"password":"xxxxxxxx"}},  Headers: {"user-agent":"vscode-restclient","content-type":"application/json","authorization":"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJ1bGxvY2tzMTIzNCIsImlhdCI6MTY0NzMzODc1MywiZXhwIjozMjk1MDM3NTA2LCJpc3MiOiJhbWF6aW5nX2lzc3VlciJ9.sH5Ww7RNvXp5BF-JVN5Z-VYgui6rXmejDNw2hFrzOuM","accept-encoding":"gzip, deflate","host":"localhost:3005","connection":"close"} [39m
+2022-03-21 13:52:18:5218 [32minfo[39m: [32mApp listening on the port 3005[39m
+2022-03-21 13:52:25:5225 [32minfo[39m: [32mValidating Token[39m
+2022-03-21 13:52:25:5225 [31merror[39m: [31mStatus: 500. Message: Internal Server Error. Converting circular structure to JSON[39m
+[31m    --> starting at object with constructor 'Array'[39m
+[31m    |     index 0 -> object with constructor 'Object'[39m
+[31m    |     property 'parent' -> object with constructor 'Object'[39m
+[31m    --- property 'include' closes the circle. Method: GET,  Args: {"params":{},"query":{},"body":{"password":"xxxxxxxx"}},  Headers: {"user-agent":"vscode-restclient","content-type":"application/json","authorization":"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJ1bGxvY2tzMTIzNCIsImlhdCI6MTY0NzMzODc1MywiZXhwIjozMjk1MDM3NTA2LCJpc3MiOiJhbWF6aW5nX2lzc3VlciJ9.sH5Ww7RNvXp5BF-JVN5Z-VYgui6rXmejDNw2hFrzOuM","accept-encoding":"gzip, deflate","host":"localhost:3005","connection":"close"} [39m
+2022-03-21 13:53:57:5357 [32minfo[39m: [32mApp listening on the port 3005[39m
+2022-03-21 13:54:13:5413 [32minfo[39m: [32mApp listening on the port 3005[39m
+2022-03-21 13:54:22:5422 [32minfo[39m: [32mValidating Token[39m
+2022-03-21 13:54:22:5422 [31merror[39m: [31mStatus: 500. Message: Internal Server Error. Converting circular structure to JSON[39m
+[31m    --> starting at object with constructor 'Array'[39m
+[31m    |     index 0 -> object with constructor 'Object'[39m
+[31m    |     property 'parent' -> object with constructor 'Object'[39m
+[31m    --- property 'include' closes the circle. Method: GET,  Args: {"params":{},"query":{},"body":{"password":"xxxxxxxx"}},  Headers: {"user-agent":"vscode-restclient","content-type":"application/json","authorization":"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJ1bGxvY2tzMTIzNCIsImlhdCI6MTY0NzMzODc1MywiZXhwIjozMjk1MDM3NTA2LCJpc3MiOiJhbWF6aW5nX2lzc3VlciJ9.sH5Ww7RNvXp5BF-JVN5Z-VYgui6rXmejDNw2hFrzOuM","accept-encoding":"gzip, deflate","host":"localhost:3005","connection":"close"} [39m
+2022-03-21 13:55:34:5534 [32minfo[39m: [32mApp listening on the port 3005[39m
+2022-03-21 13:56:12:5612 [32minfo[39m: [32mApp listening on the port 3005[39m
+2022-03-21 13:56:43:5643 [32minfo[39m: [32mValidating Token[39m
+2022-03-21 13:59:03:593 [32minfo[39m: [32mApp listening on the port 3005[39m
+2022-03-21 13:59:08:598 [32minfo[39m: [32mValidating Token[39m
+2022-03-21 13:59:48:5948 [32minfo[39m: [32mBullocks1234567 is attempting to login.[39m
+2022-03-21 13:59:49:5949 [32minfo[39m: [32mDecrypting and checking if passwords match...[39m
+2022-03-21 13:59:49:5949 [32minfo[39m: [32mAttempting to sign token...[39m
+2022-03-21 13:59:49:5949 [32minfo[39m: [32mBullocks1234567 logged in successfully.[39m
+2022-03-21 14:00:05:05 [32minfo[39m: [32mValidating Token[39m
+2022-03-21 14:00:55:055 [32minfo[39m: [32mApp listening on the port 3005[39m
+2022-03-21 14:00:58:058 [32minfo[39m: [32mValidating Token[39m
+2022-03-21 14:00:58:058 [31merror[39m: [31mStatus: 500. Message: Internal Server Error. Converting circular structure to JSON[39m
+[31m    --> starting at object with constructor 'Array'[39m
+[31m    |     index 0 -> object with constructor 'Object'[39m
+[31m    |     property 'parent' -> object with constructor 'Object'[39m
+[31m    --- property 'include' closes the circle. Method: GET,  Args: {"params":{},"query":{},"body":{"password":"xxxxxxxx"}},  Headers: {"user-agent":"vscode-restclient","content-type":"application/json","authorization":"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJ1bGxvY2tzMTIzNCIsImlhdCI6MTY0NzMzODc1MywiZXhwIjozMjk1MDM3NTA2LCJpc3MiOiJhbWF6aW5nX2lzc3VlciJ9.sH5Ww7RNvXp5BF-JVN5Z-VYgui6rXmejDNw2hFrzOuM","accept-encoding":"gzip, deflate","host":"localhost:3005","connection":"close"} [39m
+2022-03-21 14:02:16:216 [32minfo[39m: [32mApp listening on the port 3005[39m
+2022-03-21 14:02:21:221 [32minfo[39m: [32mValidating Token[39m
+2022-03-21 14:02:21:221 [31merror[39m: [31mStatus: 500. Message: Internal Server Error. data.toJSON is not a function. Method: GET,  Args: {"params":{},"query":{},"body":{"password":"xxxxxxxx"}},  Headers: {"user-agent":"vscode-restclient","content-type":"application/json","authorization":"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJ1bGxvY2tzMTIzNCIsImlhdCI6MTY0NzMzODc1MywiZXhwIjozMjk1MDM3NTA2LCJpc3MiOiJhbWF6aW5nX2lzc3VlciJ9.sH5Ww7RNvXp5BF-JVN5Z-VYgui6rXmejDNw2hFrzOuM","accept-encoding":"gzip, deflate","host":"localhost:3005","connection":"close"} [39m
+2022-03-21 14:02:52:252 [32minfo[39m: [32mApp listening on the port 3005[39m
+2022-03-21 14:02:54:254 [32minfo[39m: [32mValidating Token[39m
+2022-03-21 14:02:54:254 [31merror[39m: [31mStatus: 500. Message: Internal Server Error. data.toJSON is not a function. Method: GET,  Args: {"params":{},"query":{},"body":{"password":"xxxxxxxx"}},  Headers: {"user-agent":"vscode-restclient","content-type":"application/json","authorization":"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJ1bGxvY2tzMTIzNCIsImlhdCI6MTY0NzMzODc1MywiZXhwIjozMjk1MDM3NTA2LCJpc3MiOiJhbWF6aW5nX2lzc3VlciJ9.sH5Ww7RNvXp5BF-JVN5Z-VYgui6rXmejDNw2hFrzOuM","accept-encoding":"gzip, deflate","host":"localhost:3005","connection":"close"} [39m
+2022-03-21 14:03:43:343 [32minfo[39m: [32mApp listening on the port 3005[39m
+2022-03-21 14:03:48:348 [32minfo[39m: [32mValidating Token[39m
+2022-03-21 14:03:48:348 [31merror[39m: [31mStatus: 500. Message: Internal Server Error. Converting circular structure to JSON[39m
+[31m    --> starting at object with constructor 'Array'[39m
+[31m    |     index 0 -> object with constructor 'Object'[39m
+[31m    |     property 'parent' -> object with constructor 'Object'[39m
+[31m    --- property 'include' closes the circle. Method: GET,  Args: {"params":{},"query":{},"body":{"password":"xxxxxxxx"}},  Headers: {"user-agent":"vscode-restclient","content-type":"application/json","authorization":"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJ1bGxvY2tzMTIzNCIsImlhdCI6MTY0NzMzODc1MywiZXhwIjozMjk1MDM3NTA2LCJpc3MiOiJhbWF6aW5nX2lzc3VlciJ9.sH5Ww7RNvXp5BF-JVN5Z-VYgui6rXmejDNw2hFrzOuM","accept-encoding":"gzip, deflate","host":"localhost:3005","connection":"close"} [39m
+2022-03-21 14:04:45:445 [32minfo[39m: [32mApp listening on the port 3005[39m
+2022-03-21 14:04:48:448 [32minfo[39m: [32mValidating Token[39m
+2022-03-21 14:04:48:448 [31merror[39m: [31mStatus: 500. Message: Internal Server Error. data.get is not a function. Method: GET,  Args: {"params":{},"query":{},"body":{"password":"xxxxxxxx"}},  Headers: {"user-agent":"vscode-restclient","content-type":"application/json","authorization":"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJ1bGxvY2tzMTIzNCIsImlhdCI6MTY0NzMzODc1MywiZXhwIjozMjk1MDM3NTA2LCJpc3MiOiJhbWF6aW5nX2lzc3VlciJ9.sH5Ww7RNvXp5BF-JVN5Z-VYgui6rXmejDNw2hFrzOuM","accept-encoding":"gzip, deflate","host":"localhost:3005","connection":"close"} [39m
+2022-03-21 14:05:16:516 [32minfo[39m: [32mApp listening on the port 3005[39m
+2022-03-21 14:05:19:519 [32minfo[39m: [32mValidating Token[39m
+2022-03-21 14:06:00:60 [32minfo[39m: [32mApp listening on the port 3005[39m
+2022-03-21 14:06:06:66 [32minfo[39m: [32mApp listening on the port 3005[39m
+2022-03-21 14:07:52:752 [32minfo[39m: [32mApp listening on the port 3005[39m
+2022-03-21 14:07:59:759 [32minfo[39m: [32mValidating Token[39m
+2022-03-21 14:07:59:759 [31merror[39m: [31mStatus: 500. Message: Internal Server Error. data.get is not a function. Method: GET,  Args: {"params":{},"query":{},"body":{"password":"xxxxxxxx"}},  Headers: {"user-agent":"vscode-restclient","content-type":"application/json","authorization":"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJ1bGxvY2tzMTIzNCIsImlhdCI6MTY0NzMzODc1MywiZXhwIjozMjk1MDM3NTA2LCJpc3MiOiJhbWF6aW5nX2lzc3VlciJ9.sH5Ww7RNvXp5BF-JVN5Z-VYgui6rXmejDNw2hFrzOuM","accept-encoding":"gzip, deflate","host":"localhost:3005","connection":"close"} [39m
+2022-03-21 14:08:22:822 [32minfo[39m: [32mApp listening on the port 3005[39m
+2022-03-21 14:09:03:93 [32minfo[39m: [32mApp listening on the port 3005[39m
+2022-03-21 14:09:08:98 [32minfo[39m: [32mValidating Token[39m
+2022-03-21 14:09:47:947 [32minfo[39m: [32mApp listening on the port 3005[39m
+2022-03-21 14:09:56:956 [32minfo[39m: [32mValidating Token[39m
+2022-03-21 14:09:56:956 [31merror[39m: [31mStatus: 500. Message: Internal Server Error. Converting circular structure to JSON[39m
+[31m    --> starting at object with constructor 'Array'[39m
+[31m    |     index 0 -> object with constructor 'Object'[39m
+[31m    |     property 'parent' -> object with constructor 'Object'[39m
+[31m    --- property 'include' closes the circle. Method: GET,  Args: {"params":{},"query":{},"body":{"password":"xxxxxxxx"}},  Headers: {"user-agent":"vscode-restclient","content-type":"application/json","authorization":"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJ1bGxvY2tzMTIzNCIsImlhdCI6MTY0NzMzODc1MywiZXhwIjozMjk1MDM3NTA2LCJpc3MiOiJhbWF6aW5nX2lzc3VlciJ9.sH5Ww7RNvXp5BF-JVN5Z-VYgui6rXmejDNw2hFrzOuM","accept-encoding":"gzip, deflate","host":"localhost:3005","connection":"close"} [39m
+2022-03-21 14:10:29:1029 [32minfo[39m: [32mApp listening on the port 3005[39m
+2022-03-21 14:10:39:1039 [32minfo[39m: [32mApp listening on the port 3005[39m
+2022-03-21 14:10:44:1044 [32minfo[39m: [32mValidating Token[39m
+2022-03-21 14:10:49:1049 [32minfo[39m: [32mValidating Token[39m
+2022-03-21 14:12:27:1227 [32minfo[39m: [32mApp listening on the port 3005[39m
+2022-03-21 14:12:32:1232 [32minfo[39m: [32mValidating Token[39m
+2022-03-21 14:14:20:1420 [32minfo[39m: [32mApp listening on the port 3005[39m
+2022-03-21 14:14:29:1429 [32minfo[39m: [32mValidating Token[39m
+2022-03-21 14:15:01:151 [32minfo[39m: [32mApp listening on the port 3005[39m
+2022-03-21 14:15:07:157 [32minfo[39m: [32mValidating Token[39m
+2022-03-21 17:19:15:1915 [32minfo[39m: [32mApp listening on the port 3005[39m
+2022-03-21 17:19:19:1919 [32minfo[39m: [32mValidating Token[39m
+2022-03-21 17:20:06:206 [32minfo[39m: [32mValidating Token[39m
+2022-03-21 17:23:56:2356 [32minfo[39m: [32mApp listening on the port 3005[39m
+2022-03-21 17:24:23:2423 [32minfo[39m: [32mApp listening on the port 3005[39m
+2022-03-21 17:25:17:2517 [32minfo[39m: [32mApp listening on the port 3005[39m
+2022-03-21 17:29:51:2951 [32minfo[39m: [32mApp listening on the port 3005[39m
+2022-03-21 17:30:07:307 [32minfo[39m: [32mApp listening on the port 3005[39m
+2022-03-21 17:31:22:3122 [32minfo[39m: [32mApp listening on the port 3005[39m
+2022-03-21 18:14:44:1444 [32minfo[39m: [32mApp listening on the port 3005[39m
+2022-03-22 08:55:08:558 [32minfo[39m: [32mApp listening on the port 3005[39m
+2022-03-22 09:01:54:154 [32minfo[39m: [32mApp listening on the port 3005[39m
+2022-03-22 09:04:09:49 [32minfo[39m: [32mApp listening on the port 3005[39m
+2022-03-22 09:05:21:521 [32minfo[39m: [32mApp listening on the port 3005[39m
+2022-03-22 09:08:17:817 [32minfo[39m: [32mValidating Token[39m
+2022-03-22 09:10:04:104 [32minfo[39m: [32mApp listening on the port 3005[39m
+2022-03-22 09:13:58:1358 [32minfo[39m: [32mApp listening on the port 3005[39m
+2022-03-22 09:15:52:1552 [32minfo[39m: [32mApp listening on the port 3005[39m
+2022-03-22 09:16:08:168 [32minfo[39m: [32mApp listening on the port 3005[39m
+2022-03-22 09:18:23:1823 [32minfo[39m: [32mApp listening on the port 3005[39m
+2022-03-22 09:22:23:2223 [32minfo[39m: [32mApp listening on the port 3005[39m
+2022-03-22 09:23:09:239 [32minfo[39m: [32mApp listening on the port 3005[39m
+2022-03-22 09:24:45:2445 [32minfo[39m: [32mApp listening on the port 3005[39m
+2022-03-22 09:25:57:2557 [32minfo[39m: [32mApp listening on the port 3005[39m
+2022-03-22 09:26:36:2636 [32minfo[39m: [32mApp listening on the port 3005[39m
+2022-03-22 09:27:35:2735 [32minfo[39m: [32mApp listening on the port 3005[39m
+2022-03-22 09:27:59:2759 [32minfo[39m: [32mApp listening on the port 3005[39m
+2022-03-22 09:28:20:2820 [32minfo[39m: [32mApp listening on the port 3005[39m
+2022-03-22 09:29:01:291 [32minfo[39m: [32mApp listening on the port 3005[39m
+2022-03-22 09:30:09:309 [32minfo[39m: [32mApp listening on the port 3005[39m
+2022-03-22 09:30:35:3035 [32minfo[39m: [32mApp listening on the port 3005[39m
+2022-03-22 09:33:13:3313 [32minfo[39m: [32mApp listening on the port 3005[39m
+2022-03-22 09:33:32:3332 [32minfo[39m: [32mApp listening on the port 3005[39m
+2022-03-22 09:34:32:3432 [32minfo[39m: [32mApp listening on the port 3005[39m
+2022-03-22 09:35:00:350 [32minfo[39m: [32mApp listening on the port 3005[39m
+2022-03-22 09:35:59:3559 [32minfo[39m: [32mApp listening on the port 3005[39m
+2022-03-22 09:36:34:3634 [32minfo[39m: [32mApp listening on the port 3005[39m
+2022-03-22 09:42:28:4228 [32minfo[39m: [32mApp listening on the port 3005[39m
+2022-03-22 09:44:16:4416 [32minfo[39m: [32mApp listening on the port 3005[39m
+2022-03-22 13:17:21:1721 [32minfo[39m: [32mApp listening on the port 3005[39m
+2022-03-22 13:21:46:2146 [32minfo[39m: [32mApp listening on the port 3005[39m
+2022-03-22 13:22:05:225 [32minfo[39m: [32mApp listening on the port 3005[39m
+2022-03-22 13:27:07:277 [32minfo[39m: [32mApp listening on the port 3005[39m
+2022-03-22 14:54:49:5449 [32minfo[39m: [32mApp listening on the port 3005[39m
+2022-03-22 17:29:01:291 [32minfo[39m: [32mApp listening on the port 3005[39m
+2022-03-23 07:05:46:546 [32minfo[39m: [32mApp listening on the port 3005[39m
+2022-03-23 16:27:26:2726 [32minfo[39m: [32mApp listening on the port 3005[39m
+2022-03-23 16:28:01:281 [32minfo[39m: [32mValidating Token[39m
+2022-03-23 16:28:02:282 [31merror[39m: [31mStatus: 404. Message: Not Found. Group with id cbcc7b73-add0-49cf-89d5-5b71ef70be74 not found.. Method: GET,  Args: {"params":{},"query":{},"body":{"password":"xxxxxxxx"}},  Headers: {"user-agent":"vscode-restclient","content-type":"application/json","authorization":"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJ1bGxvY2tzMTIzIiwiaWF0IjoxNjQ2MzQyNjY3LCJleHAiOjMyOTMwNDUzMzQsImlzcyI6ImFtYXppbmdfaXNzdWVyIn0.QjKVKq3FmdfCmyiSroWIBah_DyvvM1hZnUhBXs6mVXE","accept-encoding":"gzip, deflate","host":"localhost:3005","connection":"close"} [39m
+2022-03-23 16:28:49:2849 [32minfo[39m: [32mValidating Token[39m
+2022-03-23 16:29:25:2925 [32minfo[39m: [32mValidating Token[39m
+2022-03-23 16:41:59:4159 [32minfo[39m: [32mApp listening on the port 3005[39m
+2022-03-23 16:45:38:4538 [32minfo[39m: [32mApp listening on the port 3005[39m
+2022-03-23 16:50:11:5011 [32minfo[39m: [32mApp listening on the port 3005[39m
+2022-03-23 16:57:36:5736 [32minfo[39m: [32mApp listening on the port 3005[39m
+2022-03-23 16:57:46:5746 [32minfo[39m: [32mApp listening on the port 3005[39m
+2022-03-24 06:20:35:2035 [32minfo[39m: [32mApp listening on the port 3005[39m
+2022-03-24 06:22:32:2232 [32minfo[39m: [32mApp listening on the port 3005[39m
+2022-03-24 06:30:44:3044 [32minfo[39m: [32mApp listening on the port 3005[39m
+2022-03-24 06:36:06:366 [32minfo[39m: [32mApp listening on the port 3005[39m
+2022-03-24 06:38:11:3811 [32minfo[39m: [32mApp listening on the port 3005[39m
+2022-03-24 06:38:29:3829 [32minfo[39m: [32mApp listening on the port 3005[39m
+2022-03-24 06:39:12:3912 [32minfo[39m: [32mApp listening on the port 3005[39m
+2022-03-24 06:40:06:406 [32minfo[39m: [32mApp listening on the port 3005[39m
+2022-03-24 06:42:48:4248 [32minfo[39m: [32mApp listening on the port 3005[39m
+2022-03-24 06:45:17:4517 [32minfo[39m: [32mApp listening on the port 3005[39m
+2022-03-24 06:47:16:4716 [32minfo[39m: [32mApp listening on the port 3005[39m
+2022-03-24 06:48:17:4817 [32minfo[39m: [32mApp listening on the port 3005[39m
+2022-03-24 06:49:55:4955 [32minfo[39m: [32mApp listening on the port 3005[39m
+2022-03-24 06:50:06:506 [32minfo[39m: [32mApp listening on the port 3005[39m
+2022-03-24 06:52:07:527 [32minfo[39m: [32mApp listening on the port 3005[39m
+2022-03-24 06:52:52:5252 [32minfo[39m: [32mApp listening on the port 3005[39m
+2022-03-24 06:53:55:5355 [32minfo[39m: [32mApp listening on the port 3005[39m
+2022-03-24 06:54:22:5422 [32minfo[39m: [32mApp listening on the port 3005[39m
+2022-03-24 06:54:59:5459 [32minfo[39m: [32mApp listening on the port 3005[39m
+2022-03-24 06:55:53:5553 [32minfo[39m: [32mApp listening on the port 3005[39m
+2022-03-24 07:05:06:56 [32minfo[39m: [32mApp listening on the port 3005[39m
+2022-03-24 07:09:26:926 [32minfo[39m: [32mApp listening on the port 3005[39m
+2022-03-24 07:10:39:1039 [32minfo[39m: [32mApp listening on the port 3005[39m
+2022-03-24 07:11:17:1117 [32minfo[39m: [32mApp listening on the port 3005[39m
+2022-03-24 07:11:50:1150 [32minfo[39m: [32mApp listening on the port 3005[39m
+2022-03-24 07:12:12:1212 [32minfo[39m: [32mApp listening on the port 3005[39m
+2022-03-24 07:12:24:1224 [32minfo[39m: [32mApp listening on the port 3005[39m
+2022-03-24 07:14:30:1430 [32minfo[39m: [32mApp listening on the port 3005[39m
+2022-03-24 07:15:08:158 [32minfo[39m: [32mApp listening on the port 3005[39m
+2022-03-24 07:16:24:1624 [32minfo[39m: [32mApp listening on the port 3005[39m
+2022-03-24 07:32:19:3219 [32minfo[39m: [32mApp listening on the port 3005[39m
+2022-03-24 07:33:35:3335 [32minfo[39m: [32mApp listening on the port 3005[39m
+2022-03-24 07:34:59:3459 [32minfo[39m: [32mApp listening on the port 3005[39m
+2022-03-24 07:35:38:3538 [32minfo[39m: [32mApp listening on the port 3005[39m
+2022-03-24 07:43:13:4313 [32minfo[39m: [32mApp listening on the port 3005[39m
+2022-03-24 07:44:14:4414 [32minfo[39m: [32mApp listening on the port 3005[39m
+2022-03-24 07:45:31:4531 [32minfo[39m: [32mApp listening on the port 3005[39m
+2022-03-24 07:46:28:4628 [32minfo[39m: [32mApp listening on the port 3005[39m
+2022-03-24 07:46:40:4640 [32minfo[39m: [32mApp listening on the port 3005[39m
+2022-03-24 07:46:51:4651 [32minfo[39m: [32mApp listening on the port 3005[39m
+2022-03-24 07:58:17:5817 [32minfo[39m: [32mApp listening on the port 3005[39m
+2022-03-24 07:58:41:5841 [32minfo[39m: [32mApp listening on the port 3005[39m
+2022-03-24 07:59:38:5938 [32minfo[39m: [32mApp listening on the port 3005[39m
+2022-03-24 08:00:39:039 [32minfo[39m: [32mApp listening on the port 3005[39m
+2022-03-24 08:01:12:112 [32minfo[39m: [32mApp listening on the port 3005[39m
+2022-03-24 08:01:38:138 [32minfo[39m: [32mValidating Token[39m
+2022-03-24 08:02:35:235 [32minfo[39m: [32mValidating Token[39m

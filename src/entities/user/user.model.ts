@@ -13,7 +13,7 @@ import {
 } from 'sequelize';
 
 import db from '../../database/config/database.config';
-import { Group } from '../group/group.model';
+import Group from '../group/group.model';
 
 export const attributes = {
     id: {
@@ -63,7 +63,7 @@ interface UserAttributes {
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
 interface UserCreationAttributes extends Optional<UserAttributes, 'id'> {}
 
-export class User extends Model<UserAttributes, UserCreationAttributes> implements UserAttributes {
+class User extends Model<UserAttributes, UserCreationAttributes> implements UserAttributes {
     public id!: string;
     public login!: string;
     public password!: string;
@@ -92,3 +92,5 @@ User.init(attributes, {
     sequelize: db,
     tableName: 'users',
 });
+
+export default User;

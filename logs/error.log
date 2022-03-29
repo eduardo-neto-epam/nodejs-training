@@ -34,6 +34,13 @@
 2022-03-03 22:06:10:610 [31merror[39m: [31mUnauthorized - Missing Token[39m
 2022-03-03 22:07:36:736 [31merror[39m: [31mUnauthorized - Missing Token[39m
 2022-03-03 22:10:39:1039 [31merror[39m: [31mUnauthorized - Missing Token[39m
+2022-03-03 22:37:19:3719 [31merror[39m: [31mUnauthorized - Missing Token[39m
+2022-03-03 22:37:55:3755 [31merror[39m: [31mUnauthorized - Missing Token[39m
+2022-03-03 22:39:14:3914 [31merror[39m: [31mUnauthorized - Missing Token[39m
+2022-03-03 22:44:19:4419 [31merror[39m: [31mUnauthorized - Missing Token[39m
+2022-03-03 22:45:03:453 [31merror[39m: [31mUnauthorized - Missing Token[39m
+2022-03-03 22:46:53:4653 [31merror[39m: [31mUnauthorized - Missing Token[39m
+2022-03-03 22:48:34:4834 [31merror[39m: [31mUnauthorized - Missing Token[39m
 2022-03-11 16:18:26:1826 [31merror[39m: [31mUnauthorized - Missing Token[39m
 2022-03-11 16:18:41:1841 [31merror[39m: [31mStatus: 500. Message: Internal Server Error. Cannot set headers after they are sent to the client. Method: GET,  Args: {"params":{},"query":{},"body":{"password":"xxxxxxxx"}},  Headers: {"user-agent":"vscode-restclient","content-type":"application/json","authorization":"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJ1bGxvY2tzMTIzIiwiaWF0IjoxNjQ2MzQyNjY3LCJleHAiOjMyOTMwNDUzMzQsImlzcyI6ImFtYXppbmdfaXNzdWVyIn0.QjKVKq3FmdfCmyiSroWIBah_DyvvM1hZnUhBXs6mVXE","accept-encoding":"gzip, deflate","host":"localhost:3000","connection":"close"} [39m
 2022-03-11 16:19:09:199 [31merror[39m: [31mStatus: 500. Message: Internal Server Error. Cannot set headers after they are sent to the client. Method: GET,  Args: {"params":{},"query":{"pattern":"B","order":"asc","limit":"5"},"body":{"password":"xxxxxxxx"}},  Headers: {"user-agent":"vscode-restclient","content-type":"application/json","authorization":"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJ1bGxvY2tzMTIzIiwiaWF0IjoxNjQ2MzQyNjY3LCJleHAiOjMyOTMwNDUzMzQsImlzcyI6ImFtYXppbmdfaXNzdWVyIn0.QjKVKq3FmdfCmyiSroWIBah_DyvvM1hZnUhBXs6mVXE","accept-encoding":"gzip, deflate","host":"localhost:3000","connection":"close"} [39m
@@ -44,10 +51,73 @@
 2022-03-15 13:17:27:1727 [31merror[39m: [31mLogin Bullocks123456 already exists, please try an unique name.[39m
 2022-03-15 13:18:45:1845 [31merror[39m: [31mUnauthorized - Invalid Token[39m
 2022-03-15 13:32:46:3246 [31merror[39m: [31mUnauthorized - Missing Token[39m
-2022-03-03 22:37:19:3719 [31merror[39m: [31mUnauthorized - Missing Token[39m
-2022-03-03 22:37:55:3755 [31merror[39m: [31mUnauthorized - Missing Token[39m
-2022-03-03 22:39:14:3914 [31merror[39m: [31mUnauthorized - Missing Token[39m
-2022-03-03 22:44:19:4419 [31merror[39m: [31mUnauthorized - Missing Token[39m
-2022-03-03 22:45:03:453 [31merror[39m: [31mUnauthorized - Missing Token[39m
-2022-03-03 22:46:53:4653 [31merror[39m: [31mUnauthorized - Missing Token[39m
-2022-03-03 22:48:34:4834 [31merror[39m: [31mUnauthorized - Missing Token[39m
+2022-03-16 10:38:46:3846 [31merror[39m: [31mLogin Bullocks12345678 already exists, please try an unique name.[39m
+2022-03-18 17:38:03:383 [31merror[39m: [31mLogin someOtherUsername already exists, please try an unique name.[39m
+2022-03-18 17:38:03:383 [31merror[39m: [31mLogin someOtherUsername already exists, please try an unique name.[39m
+2022-03-18 18:01:50:150 [31merror[39m: [31mLogin someOtherUsername already exists, please try an unique name.[39m
+2022-03-18 18:01:50:150 [31merror[39m: [31mLogin someOtherUsername already exists, please try an unique name.[39m
+2022-03-18 18:01:50:150 [31merror[39m: [31mLogin someOtherUsername already exists, please try an unique name.[39m
+2022-03-18 18:02:14:214 [31merror[39m: [31mLogin someOtherUsername123 already exists, please try an unique name.[39m
+2022-03-18 18:02:15:215 [31merror[39m: [31mLogin someOtherUsername123 already exists, please try an unique name.[39m
+2022-03-18 18:02:58:258 [31merror[39m: [31mLogin someOtherUsername123 already exists, please try an unique name.[39m
+2022-03-18 18:02:58:258 [31merror[39m: [31mLogin someOtherUsername123 already exists, please try an unique name.[39m
+2022-03-18 18:02:59:259 [31merror[39m: [31mLogin someOtherUsername123 already exists, please try an unique name.[39m
+2022-03-18 18:35:41:3541 [31merror[39m: [31mLogin someOtherUsername123 already exists, please try an unique name.[39m
+2022-03-18 18:35:41:3541 [31merror[39m: [31mLogin someOtherUsername123 already exists, please try an unique name.[39m
+2022-03-18 18:35:41:3541 [31merror[39m: [31mLogin someOtherUsername123 already exists, please try an unique name.[39m
+2022-03-18 18:37:32:3732 [31merror[39m: [31mLogin someOtherUsername123 already exists, please try an unique name.[39m
+2022-03-18 18:37:32:3732 [31merror[39m: [31mLogin someOtherUsername123 already exists, please try an unique name.[39m
+2022-03-19 00:06:21:621 [31merror[39m: [31mCannot read property 'map' of undefined Cannot read property 'map' of undefined[39m
+2022-03-19 00:09:46:946 [31merror[39m: [31mCannot read property 'map' of undefined Cannot read property 'map' of undefined[39m
+2022-03-19 00:20:40:2040 [31merror[39m: [31mCannot read property 'map' of undefined Cannot read property 'map' of undefined[39m
+2022-03-19 00:22:18:2218 [31merror[39m: [31mCannot read property 'map' of undefined Cannot read property 'map' of undefined[39m
+2022-03-19 00:23:51:2351 [31merror[39m: [31mCannot read property 'map' of undefined Cannot read property 'map' of undefined[39m
+2022-03-19 00:25:11:2511 [31merror[39m: [31mCannot read property 'map' of undefined Cannot read property 'map' of undefined[39m
+2022-03-19 00:26:41:2641 [31merror[39m: [31mCannot read property 'map' of undefined Cannot read property 'map' of undefined[39m
+2022-03-19 00:27:16:2716 [31merror[39m: [31mCannot read property 'map' of undefined Cannot read property 'map' of undefined[39m
+2022-03-19 00:27:52:2752 [31merror[39m: [31mCannot read property 'map' of undefined Cannot read property 'map' of undefined[39m
+2022-03-19 00:38:42:3842 [31merror[39m: [31mCannot read property 'map' of undefined Cannot read property 'map' of undefined[39m
+2022-03-19 00:44:55:4455 [31merror[39m: [31mCannot read property 'map' of undefined Cannot read property 'map' of undefined[39m
+2022-03-19 00:46:51:4651 [31merror[39m: [31mCannot read property 'map' of undefined Cannot read property 'map' of undefined[39m
+2022-03-19 11:03:59:359 [31merror[39m: [31mCannot read property 'map' of undefined Cannot read property 'map' of undefined[39m
+2022-03-19 11:05:10:510 [31merror[39m: [31mCannot read property 'map' of undefined Cannot read property 'map' of undefined[39m
+2022-03-19 11:28:03:283 [31merror[39m: [31mCannot read property 'map' of undefined Cannot read property 'map' of undefined[39m
+2022-03-19 11:55:39:5539 [31merror[39m: [31mCannot read property 'length' of undefined Cannot read property 'length' of undefined[39m
+2022-03-19 12:23:27:2327 [31merror[39m: [31muser.get is not a function user.get is not a function[39m
+2022-03-19 12:25:19:2519 [31merror[39m: [31muser.get is not a function user.get is not a function[39m
+2022-03-19 12:26:53:2653 [31merror[39m: [31muser.get is not a function user.get is not a function[39m
+2022-03-21 13:50:15:5015 [31merror[39m: [31mStatus: 500. Message: Internal Server Error. Converting circular structure to JSON[39m
+[31m    --> starting at object with constructor 'Array'[39m
+[31m    |     index 0 -> object with constructor 'Object'[39m
+[31m    |     property 'parent' -> object with constructor 'Object'[39m
+[31m    --- property 'include' closes the circle. Method: GET,  Args: {"params":{},"query":{},"body":{"password":"xxxxxxxx"}},  Headers: {"user-agent":"vscode-restclient","content-type":"application/json","authorization":"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJ1bGxvY2tzMTIzNCIsImlhdCI6MTY0NzMzODc1MywiZXhwIjozMjk1MDM3NTA2LCJpc3MiOiJhbWF6aW5nX2lzc3VlciJ9.sH5Ww7RNvXp5BF-JVN5Z-VYgui6rXmejDNw2hFrzOuM","accept-encoding":"gzip, deflate","host":"localhost:3005","connection":"close"} [39m
+2022-03-21 13:52:25:5225 [31merror[39m: [31mStatus: 500. Message: Internal Server Error. Converting circular structure to JSON[39m
+[31m    --> starting at object with constructor 'Array'[39m
+[31m    |     index 0 -> object with constructor 'Object'[39m
+[31m    |     property 'parent' -> object with constructor 'Object'[39m
+[31m    --- property 'include' closes the circle. Method: GET,  Args: {"params":{},"query":{},"body":{"password":"xxxxxxxx"}},  Headers: {"user-agent":"vscode-restclient","content-type":"application/json","authorization":"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJ1bGxvY2tzMTIzNCIsImlhdCI6MTY0NzMzODc1MywiZXhwIjozMjk1MDM3NTA2LCJpc3MiOiJhbWF6aW5nX2lzc3VlciJ9.sH5Ww7RNvXp5BF-JVN5Z-VYgui6rXmejDNw2hFrzOuM","accept-encoding":"gzip, deflate","host":"localhost:3005","connection":"close"} [39m
+2022-03-21 13:54:22:5422 [31merror[39m: [31mStatus: 500. Message: Internal Server Error. Converting circular structure to JSON[39m
+[31m    --> starting at object with constructor 'Array'[39m
+[31m    |     index 0 -> object with constructor 'Object'[39m
+[31m    |     property 'parent' -> object with constructor 'Object'[39m
+[31m    --- property 'include' closes the circle. Method: GET,  Args: {"params":{},"query":{},"body":{"password":"xxxxxxxx"}},  Headers: {"user-agent":"vscode-restclient","content-type":"application/json","authorization":"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJ1bGxvY2tzMTIzNCIsImlhdCI6MTY0NzMzODc1MywiZXhwIjozMjk1MDM3NTA2LCJpc3MiOiJhbWF6aW5nX2lzc3VlciJ9.sH5Ww7RNvXp5BF-JVN5Z-VYgui6rXmejDNw2hFrzOuM","accept-encoding":"gzip, deflate","host":"localhost:3005","connection":"close"} [39m
+2022-03-21 14:00:58:058 [31merror[39m: [31mStatus: 500. Message: Internal Server Error. Converting circular structure to JSON[39m
+[31m    --> starting at object with constructor 'Array'[39m
+[31m    |     index 0 -> object with constructor 'Object'[39m
+[31m    |     property 'parent' -> object with constructor 'Object'[39m
+[31m    --- property 'include' closes the circle. Method: GET,  Args: {"params":{},"query":{},"body":{"password":"xxxxxxxx"}},  Headers: {"user-agent":"vscode-restclient","content-type":"application/json","authorization":"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJ1bGxvY2tzMTIzNCIsImlhdCI6MTY0NzMzODc1MywiZXhwIjozMjk1MDM3NTA2LCJpc3MiOiJhbWF6aW5nX2lzc3VlciJ9.sH5Ww7RNvXp5BF-JVN5Z-VYgui6rXmejDNw2hFrzOuM","accept-encoding":"gzip, deflate","host":"localhost:3005","connection":"close"} [39m
+2022-03-21 14:02:21:221 [31merror[39m: [31mStatus: 500. Message: Internal Server Error. data.toJSON is not a function. Method: GET,  Args: {"params":{},"query":{},"body":{"password":"xxxxxxxx"}},  Headers: {"user-agent":"vscode-restclient","content-type":"application/json","authorization":"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJ1bGxvY2tzMTIzNCIsImlhdCI6MTY0NzMzODc1MywiZXhwIjozMjk1MDM3NTA2LCJpc3MiOiJhbWF6aW5nX2lzc3VlciJ9.sH5Ww7RNvXp5BF-JVN5Z-VYgui6rXmejDNw2hFrzOuM","accept-encoding":"gzip, deflate","host":"localhost:3005","connection":"close"} [39m
+2022-03-21 14:02:54:254 [31merror[39m: [31mStatus: 500. Message: Internal Server Error. data.toJSON is not a function. Method: GET,  Args: {"params":{},"query":{},"body":{"password":"xxxxxxxx"}},  Headers: {"user-agent":"vscode-restclient","content-type":"application/json","authorization":"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJ1bGxvY2tzMTIzNCIsImlhdCI6MTY0NzMzODc1MywiZXhwIjozMjk1MDM3NTA2LCJpc3MiOiJhbWF6aW5nX2lzc3VlciJ9.sH5Ww7RNvXp5BF-JVN5Z-VYgui6rXmejDNw2hFrzOuM","accept-encoding":"gzip, deflate","host":"localhost:3005","connection":"close"} [39m
+2022-03-21 14:03:48:348 [31merror[39m: [31mStatus: 500. Message: Internal Server Error. Converting circular structure to JSON[39m
+[31m    --> starting at object with constructor 'Array'[39m
+[31m    |     index 0 -> object with constructor 'Object'[39m
+[31m    |     property 'parent' -> object with constructor 'Object'[39m
+[31m    --- property 'include' closes the circle. Method: GET,  Args: {"params":{},"query":{},"body":{"password":"xxxxxxxx"}},  Headers: {"user-agent":"vscode-restclient","content-type":"application/json","authorization":"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJ1bGxvY2tzMTIzNCIsImlhdCI6MTY0NzMzODc1MywiZXhwIjozMjk1MDM3NTA2LCJpc3MiOiJhbWF6aW5nX2lzc3VlciJ9.sH5Ww7RNvXp5BF-JVN5Z-VYgui6rXmejDNw2hFrzOuM","accept-encoding":"gzip, deflate","host":"localhost:3005","connection":"close"} [39m
+2022-03-21 14:04:48:448 [31merror[39m: [31mStatus: 500. Message: Internal Server Error. data.get is not a function. Method: GET,  Args: {"params":{},"query":{},"body":{"password":"xxxxxxxx"}},  Headers: {"user-agent":"vscode-restclient","content-type":"application/json","authorization":"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJ1bGxvY2tzMTIzNCIsImlhdCI6MTY0NzMzODc1MywiZXhwIjozMjk1MDM3NTA2LCJpc3MiOiJhbWF6aW5nX2lzc3VlciJ9.sH5Ww7RNvXp5BF-JVN5Z-VYgui6rXmejDNw2hFrzOuM","accept-encoding":"gzip, deflate","host":"localhost:3005","connection":"close"} [39m
+2022-03-21 14:07:59:759 [31merror[39m: [31mStatus: 500. Message: Internal Server Error. data.get is not a function. Method: GET,  Args: {"params":{},"query":{},"body":{"password":"xxxxxxxx"}},  Headers: {"user-agent":"vscode-restclient","content-type":"application/json","authorization":"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJ1bGxvY2tzMTIzNCIsImlhdCI6MTY0NzMzODc1MywiZXhwIjozMjk1MDM3NTA2LCJpc3MiOiJhbWF6aW5nX2lzc3VlciJ9.sH5Ww7RNvXp5BF-JVN5Z-VYgui6rXmejDNw2hFrzOuM","accept-encoding":"gzip, deflate","host":"localhost:3005","connection":"close"} [39m
+2022-03-21 14:09:56:956 [31merror[39m: [31mStatus: 500. Message: Internal Server Error. Converting circular structure to JSON[39m
+[31m    --> starting at object with constructor 'Array'[39m
+[31m    |     index 0 -> object with constructor 'Object'[39m
+[31m    |     property 'parent' -> object with constructor 'Object'[39m
+[31m    --- property 'include' closes the circle. Method: GET,  Args: {"params":{},"query":{},"body":{"password":"xxxxxxxx"}},  Headers: {"user-agent":"vscode-restclient","content-type":"application/json","authorization":"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJ1bGxvY2tzMTIzNCIsImlhdCI6MTY0NzMzODc1MywiZXhwIjozMjk1MDM3NTA2LCJpc3MiOiJhbWF6aW5nX2lzc3VlciJ9.sH5Ww7RNvXp5BF-JVN5Z-VYgui6rXmejDNw2hFrzOuM","accept-encoding":"gzip, deflate","host":"localhost:3005","connection":"close"} [39m
+2022-03-23 16:28:02:282 [31merror[39m: [31mStatus: 404. Message: Not Found. Group with id cbcc7b73-add0-49cf-89d5-5b71ef70be74 not found.. Method: GET,  Args: {"params":{},"query":{},"body":{"password":"xxxxxxxx"}},  Headers: {"user-agent":"vscode-restclient","content-type":"application/json","authorization":"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJ1bGxvY2tzMTIzIiwiaWF0IjoxNjQ2MzQyNjY3LCJleHAiOjMyOTMwNDUzMzQsImlzcyI6ImFtYXppbmdfaXNzdWVyIn0.QjKVKq3FmdfCmyiSroWIBah_DyvvM1hZnUhBXs6mVXE","accept-encoding":"gzip, deflate","host":"localhost:3005","connection":"close"} [39m

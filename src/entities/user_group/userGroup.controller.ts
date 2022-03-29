@@ -2,8 +2,8 @@ import { Router, Request, Response, NextFunction } from 'express';
 import { StatusCodes } from 'http-status-codes';
 
 import { IController } from '../../interfaces/controller.interfaces';
-import { User } from '../user/user.model';
-import { Group } from '../group/group.model';
+import User from '../user/user.model';
+import Group from '../group/group.model';
 import HttpException from '../../exceptions/HttpException';
 import authorize from '../../middleware/authorize.middleware';
 

@@ -1,8 +1,8 @@
 import GroupNotFoundException from '../../exceptions/GroupNotFoundException';
 import InternalServerException from '../../exceptions/InternalServerException';
 import UserNotFoundException from '../../exceptions/UserNotFoundException';
-import { User } from '../user/user.model';
-import { Group } from '../group/group.model';
+import User from '../user/user.model';
+import Group from '../group/group.model';
 import db from '../../database/config/database.config';
 
 class UserGroupService {

@@ -8,12 +8,8 @@ import UserNotFoundException from '../../exceptions/UserNotFoundException';
 import HttpException from '../../exceptions/HttpException';
 import Logger from '../../lib/logger';
 import authorize from '../../middleware/authorize.middleware';
-import { EncryptionService } from '../../utils/encryption';
-import { authConfig } from '../../config';
-import { Auth } from '../../utils';
 
 import { IUser, IUserBase, UserAttributes } from './user.interfaces';
-import { User } from './user.model';
 import UserService from './user.service';
 import * as valid from './user.validation';
 
@@ -24,8 +20,8 @@ class UserController implements IController {
     private validator = createValidator();
     private userService: UserService;
 
-    constructor() {
-        this.userService = new UserService(User, new EncryptionService(), new Auth(authConfig));
+    constructor(userService: UserService) {
+        this.userService = userService;
         this.initializeRoutes();
     }
 
@@ -66,7 +62,7 @@ class UserController implements IController {
             const { id } = request.params;
             const data = await this.userService.findById(id);
             if (data instanceof HttpException) throw data;
-            response.send(data.toJSON());
+            response.status(StatusCodes.OK).json(data);
         } catch (error) {
             if (error instanceof Error) {
                 return next(new HttpException(StatusCodes.INTERNAL_SERVER_ERROR, error.message));
@@ -101,8 +97,7 @@ class UserController implements IController {
             const payload: Partial<IUser> = { ...request.body, updatedAt: new Date() };
             const data = await this.userService.updateUser(id, payload);
             if (data instanceof HttpException) throw new UserNotFoundException(id);
-            const updatedUser = data.toJSON();
-            response.send(updatedUser);
+            response.status(StatusCodes.OK).json(data);
         } catch (error) {
             if (error instanceof Error) {
                 return next(new HttpException(StatusCodes.INTERNAL_SERVER_ERROR, error.message));
@@ -115,7 +110,8 @@ class UserController implements IController {
         try {
             const { id } = request.params;
             const data = await this.userService.deleteUser(id);
-            response.send(`Deleted ${data} user(s).`);
+            const json = `Deleted ${data} user(s).`;
+            response.status(StatusCodes.OK).json(json);
         } catch (error) {
             if (error instanceof Error) {
                 return next(new HttpException(StatusCodes.INTERNAL_SERVER_ERROR, error.message));
@@ -137,7 +133,7 @@ class UserController implements IController {
         };
         try {
             const users = await this.userService.getSuggestions(params);
-            response.send(users);
+            response.status(StatusCodes.OK).json(users);
         } catch (error) {
             if (error instanceof Error) {
                 return next(new HttpException(StatusCodes.INTERNAL_SERVER_ERROR, error.message));

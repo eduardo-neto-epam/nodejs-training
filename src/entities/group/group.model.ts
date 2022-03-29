@@ -13,7 +13,7 @@ import {
 } from 'sequelize';
 
 import db from '../../database/config/database.config';
-import { User } from '../user/user.model';
+import User from '../user/user.model';
 
 export const groupAttributes = {
     id: {
@@ -55,7 +55,7 @@ interface GroupAttributes {
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
 interface GroupCreationAttributes extends Optional<GroupAttributes, 'id'> {}
 
-export class Group extends Model<GroupAttributes, GroupCreationAttributes> implements GroupAttributes {
+class Group extends Model<GroupAttributes, GroupCreationAttributes> implements GroupAttributes {
     public id!: string;
     public name!: string;
     public permissions!: ('READ' | 'WRITE' | 'DELETE' | 'SHARE' | 'UPLOAD_FILES')[];
@@ -82,3 +82,5 @@ Group.init(groupAttributes, {
     sequelize: db,
     tableName: 'groups',
 });
+
+export default Group;
